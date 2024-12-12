@@ -1,1 +1,2 @@
 Test - Hugo
+Test - Hugo (GitHub)
