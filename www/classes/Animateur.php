@@ -9,8 +9,8 @@ class Animateur extends Personne {
     public $description = "";
     public $photo = "";
 
-    public function __construct($nom, $prenom, $age, $telephone, $description, $photo) {
-        parent::__construct($nom, $prenom, $age, $telephone);
+    public function __construct($id, $nom, $prenom, $age, $telephone, $description, $photo) {
+        parent::__construct($id, $nom, $prenom, $age, $telephone);
         $this->description = $description;
         $this->photo = $photo;
 
@@ -18,45 +18,44 @@ class Animateur extends Personne {
 
         $this->attributs = ["nom", "prenom", "age", "telephone", "description", "photo"];
         $this->valeurs = [$this->nom, $this->prenom, $this->age, $this->telephone, $this->description, $this->photo];
+        $this->requete_ajouter = "INSERT INTO `animateur` (nom, prenom, age, telephone, description, photo) VALUES (:nom, :prenom, :age, :telephone, :description, :photo);";
+        $this->requete_modifier = "UPDATE `animateur` SET nom = :nom, prenom = :prenom, age = :age, telephone = :telephone, description = :description, photo = :photo WHERE id = ".$this->id.";";
+        $this->requete_supprimer = "DELETE FROM `animateur` WHERE id = ".$this->id.";";
     }
 
     public function afficher() {
-        echo($this->nom." ".$this->prenom." ".$this->age." ".$this->telephone." ".$this->description." ".$this->photo);
-    }
-
-    public function ajouter() {
-        // On réalise une requête préparée (en utilisant la variable globale "$bdd_gestion_stages") => Ajouter
-
-        $requete_preparee = $GLOBALS["bdd_gestion_stages"]->prepare("INSERT INTO `animateur` (nom, prenom, age, telephone, description, photo) VALUES (:nom, :prenom, :age, :telephone, :description, :photo);");
-
-        for ($index = 0; $index < count($this->attributs); $index = $index + 1) {
-            if ($this->attributs[$index] == "age") {
-                $requete_preparee->bindValue(":".$this->attributs[$index], $this->valeurs[$index], PDO::PARAM_INT);
-            }
-            else {
-                $requete_preparee->bindValue(":".$this->attributs[$index], $this->valeurs[$index], PDO::PARAM_STR);
-            }
-        }
-
-        // On exécute la requête préparée et on stocke l'état de cette-dernière (1 = réussie, 0 = échec)
-
-        $etat = $requete_preparee->execute();
-
-        // Si la requête échoue, l'administrateur est automatiquement redirigé vers la page "redirection.php"
-
-        if ($etat == 0) {
-            header("Location: ../redirection.php?raison=requete_erreur");
+        if ($this->id == null) {
+            echo("ID : Null <br>");
         }
         else {
-            header("Location: ../redirection.php?raison=requete_reussie");
+            echo("ID : ".$this->id."<br>");
         }
-        exit();
+        echo("Nom : ".$this->nom."<br>");
+        echo("Prénom : ".$this->prenom."<br>");
+        echo("Âge : ".$this->age."<br>");
+        echo("Téléphone : ".$this->telephone."<br>");
+        echo("Description : ".$this->description."<br>");
+        echo("Photo : ".$this->photo."<br>");
     }
 }
 
-// Test de l'instanciation et des différentes méthodes
+// Récupération des animateurs depuis la BDD, conversion en tant qu'objets de la classe "Animateur" et tests des différentes méthodes
 
-$test = new Animateur("nom", "prenom", 25, "0647541214", "description", "photo.png");
-$test->afficher();
-$test->ajouter();
+$resultats = $bdd_gestion_stages -> query("SELECT * FROM `animateur`;");
+$donnees = $resultats -> fetchAll(PDO::FETCH_ASSOC);
+$resultats -> closeCursor();    // On ferme l'exécution de la requête une fois qu'elle est complétement terminée pour libérer une potentielle future requête
+
+$animateurs = [];
+
+foreach($donnees as $animateur) {
+    $animateurs[] = new Animateur(
+        $animateur["id"],
+        $animateur["nom"],
+        $animateur["prenom"],
+        $animateur["age"],
+        $animateur["telephone"],
+        $animateur["description"],
+        $animateur["photo"]
+    );
+}
 ?>
