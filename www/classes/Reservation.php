@@ -51,11 +51,11 @@ class Reservation extends Personne {
     }
 }
 
-// Récupération des animateurs depuis la BDD, conversion en tant qu'objets de la classe "Animateur" et tests des différentes méthodes
+// Récupération des réservations depuis la BDD, conversion en tant qu'objets de la classe "Reservation" et tests des différentes méthodes
 
-$resultats = $bdd_gestion_stages -> query("SELECT * FROM `reservation`;");
-$donnees = $resultats -> fetchAll(PDO::FETCH_ASSOC);
-$resultats -> closeCursor();    // On ferme l'exécution de la requête une fois qu'elle est complétement terminée pour libérer une potentielle future requête
+$resultats = $bdd_gestion_stages->query("SELECT * FROM `reservation`;");
+$donnees = $resultats->fetchAll(PDO::FETCH_ASSOC);
+$resultats->closeCursor();    // On ferme l'exécution de la requête une fois qu'elle est complétement terminée pour libérer une potentielle future requête
 
 $reservations = [];
 
