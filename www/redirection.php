@@ -1,5 +1,5 @@
 <?php
-//header("Refresh: 5; URL=connexion.html");
+header("Refresh: 5; URL=login.php");
 
 // On affiche un message lié à la raison de la redirection
 
