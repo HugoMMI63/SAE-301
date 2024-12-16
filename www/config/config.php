@@ -8,6 +8,7 @@ $identifiant = "root";
 $mot_de_passe = "";
 
 $dsn='mysql:host='.$hote.';port='.$port.';dbname='.$nom_bdd;
+
 $endodage = "utf8";
 $options = array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES ".$endodage);
 ?>
