@@ -52,7 +52,7 @@ $fileName = basename($Url);
 <script src="js/scriptsNavbars.js"></script>
 
 <!--Navigation web avec menu stantard-->
-<div class="container text-center mt-5 navWeb opacity-0 position-absolute">
+<div class="container text-center mt-5 navWeb d-none position-absolute">
     <div class="row justify-content-center">
         <div class="col-12 shadow-lg p-2 mb-5 bg-body-tertiary rounded-pill d-flex justify-content-between align-items-center pe-5 ps-5">
             <a class="nude" href="https://www.kafeteomomes.fr">
