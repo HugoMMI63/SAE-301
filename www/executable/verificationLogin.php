@@ -2,7 +2,7 @@
 // On se connecte à la base de données
 
 require("../config/config.php");
-$bdd_gestion_stages = new PDO("mysql:host=".$hote."; port=".$port."; dbname=".$nom_bdd, $identifiant, $mot_de_passe, $options);
+$bdd_gestion_stages = new PDO($dsn, $identifiant, $mot_de_passe, $options);
 
 $resultats = $bdd_gestion_stages->query("SELECT * FROM `administrateur`;");
 $donnees = $resultats->fetch(PDO::FETCH_ASSOC);
