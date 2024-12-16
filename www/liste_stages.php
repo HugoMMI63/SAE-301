@@ -26,8 +26,8 @@ $nbstage=count($stage);
   <title>Liste stage</title>
   <?php include("navbars/liensCommuns.php");?>
 </head>
-<body>
-  <?php include("navbars/navbarUtilisateur.php");?>
+<body class="vw-100">
+    <?php include("navbars/navbarUtilisateur.php");?>
   <main>
     <h1>NOS STAGES</h1>
     <img src="Images/barre-sep.png" alt="barre séparation">
