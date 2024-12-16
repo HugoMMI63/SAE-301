@@ -79,6 +79,7 @@ class Personne {
         }
         else {
             header("Location: ../redirection.php?raison=requete_erreur");
+            exit();
         }
     }
 
@@ -117,6 +118,7 @@ class Personne {
         }
         else {
             header("Location: ../redirection.php?raison=requete_erreur");
+            exit();
         }
     }
 
@@ -145,6 +147,7 @@ class Personne {
         }
         else {
             header("Location: ../redirection.php?raison=requete_erreur");
+            exit();
         }
     }
 }

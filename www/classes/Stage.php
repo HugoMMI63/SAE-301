@@ -93,6 +93,7 @@ class Stage {
         }
         else {
             header("Location: ../redirection.php?raison=requete_erreur");
+            exit();
         }
     }
 
@@ -131,6 +132,7 @@ class Stage {
         }
         else {
             header("Location: ../redirection.php?raison=requete_erreur");
+            exit();
         }
     }
 
@@ -158,6 +160,7 @@ class Stage {
         }
         else {
             header("Location: ../redirection.php?raison=requete_erreur");
+            exit();
         }
     }
 }
