@@ -62,7 +62,9 @@ $stagesAleatoires = $data['randStage'];
         <?php include "navbars/liensCommuns.php";?>
     </head>
     <body>
-        <?php include "navbars/navbarUtilisateur.php";?>
+        <header>
+            <?php include "navbars/navbarUtilisateur.php";?>
+        </header>
 
         <main>
             <!-- Informations du stage -->
