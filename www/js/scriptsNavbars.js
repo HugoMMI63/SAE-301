@@ -1,4 +1,4 @@
-// Recupération des divs via leur classe avec une constante (et ne peut donc pas être changées => cela évite des changements inutiles)
+// Récupération des divs via leur classe avec une constante (et ne peut donc pas être changées => cela évite des changements inutiles)
 
 const MenuBurger = document.querySelector('.menuBurger');
 const horsChamps = document.querySelector('.horsChamps');

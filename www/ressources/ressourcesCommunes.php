@@ -5,7 +5,7 @@
 
 <!-- Lien avec la feuille de styles CSS -->
 
-<link href="CSS/style.css" rel="stylesheet">
+<link href="css/styles.css" rel="stylesheet">
 
 <!-- Importation des polices d'écriture -->
 

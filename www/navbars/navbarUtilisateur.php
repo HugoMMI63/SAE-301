@@ -1,13 +1,18 @@
 <?php
-//On récupère notre URL
+// On récupère notre URL
+
 $Url = $_SERVER['SCRIPT_NAME'];
-//On prend depuis notre URL seulement le nom du fichier avec son extension
+
+// On prend depuis notre URL (seulement le nom du fichier avec son extension)
+
 $fileName = basename($Url);
 ?>
-<!--Navigation mobile en dessous de 992px avec menu burger-->
+
+<!-- Navigation mobile en dessous de 992px avec menu burger -->
+
 <div class="container navMobile">
     <div class="row justify-content-between pe-3">
-        <div class="col-3"><a href="liste_stages.php"><img class="w-100 h-100" src="https://www.kafeteomomes.fr/uploads/2016/10/logo.png" alt="logo de ka fête ô môme"></a></div>
+        <div class="col-3"><a href="index.php"><img class="w-100 h-100" src="https://www.kafeteomomes.fr/uploads/2016/10/logo.png" alt="Logo de l'association"></a></div>
         <div class="menuBurger col-2">
             <span></span>
             <span></span>
@@ -18,22 +23,23 @@ $fileName = basename($Url);
 
 <div class="horsChamps shadow-lg navMobile">
     <?php 
-    /**permet de savoir sur quelle page nous sommes sans JS*/
-    if ($fileName=="index.php") {
+    // Permet de savoir sur quelle page nous sommes (sans JS)
+
+    if ($fileName == "index.php") {
     ?>
         <ul>
             <li><a class="nude" href="index.php"><div class="rounded-4 text-decoration-underline p-3"><h6 class="mb-0">ACCUEIL</h6></div></a></li>
-            <li><a class="nude" href="liste_stages.php"><div class="rounded-4 p-3"><h6 class="mb-0">NOS STAGES</h6></div></a></li>
-            <li><a class="nude" href="AnimateursAdmin.php"><div class="rounded-4 p-3"><h6 class="mb-0">NOS ANIMATEURS</h6></div></a></li>
+            <li><a class="nude" href="nos_stages.php"><div class="rounded-4 p-3"><h6 class="mb-0">NOS STAGES</h6></div></a></li>
+            <li><a class="nude" href="admin_animateurs.php"><div class="rounded-4 p-3"><h6 class="mb-0">NOS ANIMATEURS</h6></div></a></li>
         </ul>
     <?php
     }
-    elseif ($fileName=="liste_stages.php"||"detailstage.php") {
+    elseif ($fileName == "nos_stages.php" || $fileName == "detailStage.php") {
         ?>
         <ul>
             <li><a class="nude" href="index.php"><div class="rounded-4 p-3"><h6 class="mb-0">ACCUEIL</h6></div></a></li>
-            <li><a class="nude" href="liste_stages.php"><div class="rounded-4 text-decoration-underline p-3"><h6 class="mb-0">NOS STAGES</h6></div></a></li>
-            <li><a class="nude" href="AnimateursAdmin.php"><div class="rounded-4 p-3"><h6 class="mb-0">NOS ANIMATEURS</h6></div></a></li>
+            <li><a class="nude" href="nos_stages.php"><div class="rounded-4 text-decoration-underline p-3"><h6 class="mb-0">NOS STAGES</h6></div></a></li>
+            <li><a class="nude" href="admin_animateurs.php"><div class="rounded-4 p-3"><h6 class="mb-0">NOS ANIMATEURS</h6></div></a></li>
         </ul>
         <?php
     }
@@ -41,8 +47,8 @@ $fileName = basename($Url);
     ?>
         <ul>
             <li> <a class="nude" href="index.php"><div class="rounded-4 p-3"><h6 class="mb-0">ACCUEIL</h6></div></a></li>
-            <li> <a class="nude" href="liste_stages.php"><div class="rounded-4 p-3"><h6 class="mb-0">NOS STAGES</h6></div></a></li>
-            <li> <a class="nude" href="AnimateursAdmin.php"><div class="rounded-4 text-decoration-underline p-3"><h6 class="mb-0">NOS ANIMATEURS</h6></div></a></li>
+            <li> <a class="nude" href="nos_stages.php"><div class="rounded-4 p-3"><h6 class="mb-0">NOS STAGES</h6></div></a></li>
+            <li> <a class="nude" href="admin_animateurs.php"><div class="rounded-4 text-decoration-underline p-3"><h6 class="mb-0">NOS ANIMATEURS</h6></div></a></li>
         </ul>
     <?php
     }
@@ -51,7 +57,8 @@ $fileName = basename($Url);
 
 <script src="js/scriptsNavbars.js"></script>
 
-<!--Navigation web avec menu stantard-->
+<!-- Navigation web avec menu standard -->
+
 <div class="container text-center mt-5 navWeb d-none position-absolute">
     <div class="row justify-content-center">
         <div class="col-12 shadow-lg p-2 mb-5 bg-body-tertiary rounded-pill d-flex justify-content-between align-items-center pe-5 ps-5">
@@ -63,26 +70,27 @@ $fileName = basename($Url);
             </a>
             <img class="col-lg-1 col-3" src="https://www.kafeteomomes.fr/uploads/2016/10/logo.png" alt="logo de ka fête ô môme">
             <?php
-            /**permet de savoir sur quelle page nous sommes sans JS*/
-            if ($fileName=="index.php") {
+            // Permet de savoir sur quelle page nous sommes sans JS
+
+            if ($fileName == "index.php") {
                 ?>
                 <a class="nude" href="index.php"><div class="rounded-4 text-decoration-underline p-3"><h6 class="mb-0">ACCUEIL</h6></div></a>
-                <a class="nude" href="liste_stages.php"><div class="rounded-4 p-3"><h6 class="mb-0">NOS STAGES</h6></div></a>
-                <a class="nude" href="AnimateursAdmin.php"><div class="rounded-4 p-3"><h6 class="mb-0">NOS ANIMATEURS</h6></div></a>
+                <a class="nude" href="nos_stages.php"><div class="rounded-4 p-3"><h6 class="mb-0">NOS STAGES</h6></div></a>
+                <a class="nude" href="admin_animateurs.php"><div class="rounded-4 p-3"><h6 class="mb-0">NOS ANIMATEURS</h6></div></a>
                 <?php
             }
-            elseif ($fileName=="liste_stages.php"||"detailstage.php") {
+            elseif ($fileName == "nos_stages.php" || $fileName == "detailStage.php") {
                 ?>
                 <a class="nude" href="index.php"><div class="rounded-4 p-3"><h6 class="mb-0">ACCUEIL</h6></div></a>
-                <a class="nude" href="liste_stages.php"><div class="rounded-4 text-decoration-underline p-3"><h6 class="mb-0">NOS STAGES</h6></div></a>
-                <a class="nude" href="AnimateursAdmin.php"><div class="rounded-4 p-3"><h6 class="mb-0">NOS ANIMATEURS</h6></div></a>
+                <a class="nude" href="nos_stages.php"><div class="rounded-4 text-decoration-underline p-3"><h6 class="mb-0">NOS STAGES</h6></div></a>
+                <a class="nude" href="admin_animateurs.php"><div class="rounded-4 p-3"><h6 class="mb-0">NOS ANIMATEURS</h6></div></a>
                 <?php
             }
             else {
                 ?>
                 <a class="nude" href="index.php"><div class="rounded-4 p-3"><h6 class="mb-0">ACCUEIL</h6></div></a>
-                <a class="nude" href="liste_stages.php"><div class="rounded-4 p-3"><h6 class="mb-0">NOS STAGES</h6></div></a>
-                <a class="nude" href="AnimateursAdmin.php"><div class="rounded-4 text-decoration-underline p-3"><h6 class="mb-0">NOS ANIMATEURS</h6></div></a>
+                <a class="nude" href="nos_stages.php"><div class="rounded-4 p-3"><h6 class="mb-0">NOS STAGES</h6></div></a>
+                <a class="nude" href="admin_animateurs.php"><div class="rounded-4 text-decoration-underline p-3"><h6 class="mb-0">NOS ANIMATEURS</h6></div></a>
                 <?php
             }
             ?>

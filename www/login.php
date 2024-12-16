@@ -1,6 +1,4 @@
-<?php
-require("navbars/liensCommuns.php");
-?>
+<?php include("ressources/ressourcesCommunes.php"); ?>
 <!DOCTYPE html>
 <html lang="fr">
     <head>

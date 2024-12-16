@@ -1,11 +1,12 @@
-// Fonction pour remplacer le contenu de la page "detailStage.php" par un autre + 3 nouveaux stages générés aléatoirement
+// Fonction pour remplacer le contenu de la page "detailStage.php" par un autre + 3 nouveaux stages générés aléatoirement (depuis la BDD)
 
 function afficherInfoStage(){
-	let idstage=this.value;
+	let idstage = this.value;
+    
 	// Requête AJAX
 
 	var xhttp = new XMLHttpRequest();
-	xhttp.open("GET", "API/remplacercontenustage.php?id="+idstage, true);
+	xhttp.open("GET", "API/remplacerContenuStage.php?id="+idstage, true);
 	xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 	xhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
@@ -49,7 +50,7 @@ function afficherInfoStage(){
     // Deuxième requête AJAX pour regénérer 3 stages aléatoires
 
     var xhttp2 = new XMLHttpRequest();
-	xhttp2.open("GET", "API/stagesaleatoires.php?id="+idstage, true);
+	xhttp2.open("GET", "API/stagesAleatoires.php?id="+idstage, true);
 	xhttp2.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 	xhttp2.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
@@ -77,6 +78,7 @@ function afficherInfoStage(){
                     `;
                     autresStages.innerHTML += nouveauStages;
                 });
+                
                 // Scroller en haut de la page une fois tous les éléments remplacés
 
                 window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -98,4 +100,4 @@ function init() {
     });
 }
 
-window.addEventListener('load',init);
+window.addEventListener('load', init);

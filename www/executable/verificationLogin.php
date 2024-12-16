@@ -12,7 +12,7 @@ $login = $_POST["login"];
 $mdp = $_POST["mdp"];
 
 if ($login == $donnees["login"] && $mdp == $donnees["mdp"]) {
-    header("Location: ../stagesAdmin.php");  
+    header("Location: ../admin_stages.php");  
     exit();
 }
 else {

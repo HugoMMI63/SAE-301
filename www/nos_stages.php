@@ -13,29 +13,30 @@ catch (PDOException $e) {
 
 /* Récupération des stages par ordre décroissant (en fonction de l'ID) */
 
-$requete = 'SELECT * FROM `stage` order by id DESC';
+$requete = 'SELECT * FROM `stage` ORDER BY id DESC';
 $resultats = $dbh->query($requete);
 $stages = $resultats->fetchAll(PDO::FETCH_ASSOC);
 $resultats->closeCursor();
 
 $nb_stages = count($stages);
 ?>
+
+<?php include("ressources/ressourcesCommunes.php"); ?>
 <!DOCTYPE html>
 <html lang="fr">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Nos stages</title>
-        <?php include "navbars/liensCommuns.php";?>
     </head>
     <body>
         <header>
-          <?php include "navbars/navbarUtilisateur.php";?>
+            <?php include("navbars/navbarUtilisateur.php"); ?>
         </header>
 
         <main>
             <h1>NOS STAGES</h1>
-            <img src="img/barre-sep.png" alt="Barre de séparation">
+            <img src="img/barre_separation.png" alt="Barre de séparation">
             
             <section>
             <!-- Boucle pour afficher l'ensemble des stages -->
@@ -54,7 +55,7 @@ $nb_stages = count($stages);
                     echo "<p>".$stages[$i]['date']."</p>";?>
                     <p><strong>Description :</strong> <?php echo $stages[$i]['description']; ?></p>
                     <!-- Bouton avec un ID unique -->
-                    <a href="detailStage.php?id=<?php echo $stages[$i]['id']; ?>"><button id="<?php echo $stages[$i]['id']; ?>">Voir plus</button></a>
+                    <a href="details_stage.php?id=<?php echo $stages[$i]['id']; ?>"><button id="<?php echo $stages[$i]['id']; ?>">Voir plus</button></a>
                     </div>
                 <?php }?>
             </section>

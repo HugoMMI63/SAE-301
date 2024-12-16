@@ -1,6 +1,4 @@
-<?php
-require("navbars/liensCommuns.php");
-?>
+<?php include("ressources/ressourcesCommunes.php"); ?>
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -9,7 +7,9 @@ require("navbars/liensCommuns.php");
         <title>Accueil</title>
     </head>
     <body>
-        <!-- Ajout de la nav -->
+        <header>
+            <?php include("navbars/navbarUtilisateur.php"); ?>
+        </header>
 
         <!-- Caroussel -->
 
@@ -26,7 +26,7 @@ require("navbars/liensCommuns.php");
                         <div class="carousel-caption d-block">
                             <h2>Vacances d'automne 2025 - Théâtre d'improvisation</h2>
                             <p>Plonge dans l'univers captivant du théâtre improvisé cet automne et libère ta créativité sur scène. Découvre des jeux scéniques drôles, dynamiques et pleins de surprises durant ce stage unique !</p>
-                            <a href="detailstage.php?id=1"><button value="1" type="button" class="">DECOUVRIR LE STAGE</button></a>
+                            <a href="details_stage.php?id=1"><button value="1" type="button" class="">DECOUVRIR LE STAGE</button></a>
                         </div>
                     </div>
                     
@@ -35,7 +35,7 @@ require("navbars/liensCommuns.php");
                         <div class="carousel-caption d-block">
                             <h2>Vacances d'automne 2025 - Découverte de la sérigraphie</h2>
                             <p>Découvre l'art fascinant de la sérigraphie cet automne et crée des œuvres uniques avec tes propres mains ! Laisse libre cours à ton imagination lors de ce stage créatif !</p>
-                            <a href="detailstage.php?id=3"><button value="3" type="button" class="">DECOUVRIR LE STAGE</button></a>
+                            <a href="details_stage.php?id=3"><button value="3" type="button" class="">DECOUVRIR LE STAGE</button></a>
                         </div>
                     </div>
                     <div class="carousel-item">
@@ -43,7 +43,7 @@ require("navbars/liensCommuns.php");
                         <div class="carousel-caption d-block">
                             <h2>Vacances d'été 2025 - Cuisine</h2>
                             <p>La Ka'fête ô mômes ouvre ses portes aux gourmands ! Cet été, mets la main à la pâte et explore l'art de la cuisine dans un stage gourmand et plein de saveurs !</p>
-                            <a href="detailstage.php?id=4"><button value="4" type="button" class="">DECOUVRIR LE STAGE</button></a>
+                            <a href="details_stage.php?id=4"><button value="4" type="button" class="">DECOUVRIR LE STAGE</button></a>
                         </div>
                     </div>
                 </div>
@@ -117,7 +117,7 @@ require("navbars/liensCommuns.php");
 
             <section>
                 <h2>NOUS CONTACTER</h2>
-                <img src="img/barre-sep.png" alt="Barre de séparation">
+                <img src="img/barre_separation.png" alt="Barre de séparation">
                 <div>
                     <div>
                         <!-- Mettre picto avec bootstrap d'une lettre pour mail -->

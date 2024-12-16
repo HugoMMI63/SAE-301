@@ -40,5 +40,5 @@ $donneesJson = str_replace("\\n", " ", $donneesJson);
 
 // On renvoie les données
 
-echo $donneesJson;
+echo($donneesJson);
 ?>

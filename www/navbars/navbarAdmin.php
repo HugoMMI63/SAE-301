@@ -12,7 +12,7 @@ $fileName = basename($Url);
 
 <div class="container navMobile">
     <div class="row justify-content-between pe-3">
-        <div class="col-3"><a href="stagesAdmin.php"><img class="w-100 h-100" src="https://www.kafeteomomes.fr/uploads/2016/10/logo.png" alt="Logo de l'association"></a></div>
+        <div class="col-3"><a href="admin_stages.php"><img class="w-100 h-100" src="https://www.kafeteomomes.fr/uploads/2016/10/logo.png" alt="Logo de l'association"></a></div>
         <div class="menuBurger col-2">
             <span></span>
             <span></span>
@@ -25,19 +25,19 @@ $fileName = basename($Url);
     <?php
     // Permet de savoir sur quelle page nous sommes (sans JS)
 
-    if ($fileName=="stagesAdmin.php") {
+    if ($fileName == "admin_stages.php") {
     ?>
         <ul>
-            <li><a class="nude" href="stagesAdmin.php"><div class="rounded-4 selection p-3"><h5 class="mb-0">Les stages</h5></div></a></li>
-            <li><a class="nude" href="animateursAdmin.php"><div class="rounded-4 p-3"><h5 class="mb-0">Les animateurs</h5></div></a></li>
+            <li><a class="nude" href="admin_stages.php"><div class="rounded-4 selection p-3"><h5 class="mb-0">Les stages</h5></div></a></li>
+            <li><a class="nude" href="admin_animateurs.php"><div class="rounded-4 p-3"><h5 class="mb-0">Les animateurs</h5></div></a></li>
         </ul>
     <?php
     }
     else {
     ?>
         <ul>
-            <li><a class="nude" href="stagesAdmin.php"><div class="rounded-4 p-3"><h5 class="mb-0">Les stages</h5></div></a></li>
-            <li><a class="nude" href="animateursAdmin.php"><div class="rounded-4 selection p-3"><h5 class="mb-0">Les animateurs</h5></div></a></li>
+            <li><a class="nude" href="admin_stages.php"><div class="rounded-4 p-3"><h5 class="mb-0">Les stages</h5></div></a></li>
+            <li><a class="nude" href="admin_animateurs.php"><div class="rounded-4 selection p-3"><h5 class="mb-0">Les animateurs</h5></div></a></li>
         </ul>
     <?php
     }
@@ -46,7 +46,7 @@ $fileName = basename($Url);
 
 <script src="js/scriptsNavbars.js"></script>
 
-<!-- Navigation web avec menu stantard -->
+<!-- Navigation web avec menu standard -->
 
 <div class="container text-center mt-5 navWeb opacity-0 position-absolute">
     <div class="row justify-content-center">
@@ -55,16 +55,16 @@ $fileName = basename($Url);
             <?php
             // Permet de savoir sur quelle page nous sommes sans JS
             
-            if ($fileName=="stagesAdmin.php") {
+            if ($fileName == "admin_stages.php") {
                 ?>
-                <a class="nude" href="stagesAdmin.php"><div class="rounded-4 selection p-3"><h5 class="mb-0">Les stages</h5></div></a>
-                <a class="nude" href="animateursAdmin.php"><div class="rounded-4 p-3"><h5 class="mb-0">Les animateurs</h5></div></a>
+                <a class="nude" href="admin_stages.php"><div class="rounded-4 selection p-3"><h5 class="mb-0">Les stages</h5></div></a>
+                <a class="nude" href="admin_animateurs.php"><div class="rounded-4 p-3"><h5 class="mb-0">Les animateurs</h5></div></a>
                 <?php
             }
             else {
                 ?>
-                <a class="nude" href="stagesAdmin.php"><div class="rounded-4 p-3"><h5 class="mb-0">Les stages</h5></div></a>
-                <a class="nude" href="animateursAdmin.php"><div class="rounded-4 selection p-3"><h5 class="mb-0">Les animateurs</h5></div></a>
+                <a class="nude" href="admin_stages.php"><div class="rounded-4 p-3"><h5 class="mb-0">Les stages</h5></div></a>
+                <a class="nude" href="admin_animateurs.php"><div class="rounded-4 selection p-3"><h5 class="mb-0">Les animateurs</h5></div></a>
                 <?php
             }
             ?>
