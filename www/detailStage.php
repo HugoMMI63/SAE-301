@@ -68,7 +68,7 @@ $stagesAleatoires = $data['randStage'];
 
             <section>
                 <h1 id='titreStage'><?php echo $stage[0]['titre']; ?></h1>
-                <img src="images/barre-sep.png" alt="Barre de séparation">
+                <img src="img/barre-sep.png" alt="Barre de séparation">
                 <p id='categorieStage'><strong>Catégorie :</strong><?php echo $stage[0]['intitule'] ?></p>
                 <p id='periodeStage'><strong>Période :</strong> <?php echo $stage[0]['date']; ?></p>
                 <p id='lieuStage'><strong>Lieu :</strong> <?php echo $stage[0]['lieu']; ?></p>
