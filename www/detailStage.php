@@ -59,9 +59,10 @@ $stagesAleatoires = $data['randStage'];
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Stage - <?php echo $stage[0]['titre']; ?></title>
         <script src="js/afficherDetailsStage.js"></script>
+        <?php include "navbars/liensCommuns.php";?>
     </head>
     <body>
-        <!-- Ajout de la nav -->
+        <?php include "navbars/navbarUtilisateur.php";?>
 
         <main>
             <!-- Informations du stage -->

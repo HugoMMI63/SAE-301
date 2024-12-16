@@ -26,9 +26,10 @@ $nb_stages = count($stages);
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Nos stages</title>
+        <?php include "navbars/liensCommuns.php";?>
     </head>
     <body>
-    <!-- Ajout de la nav -->
+        <?php include "navbars/navbarUtilisateur.php";?>
 
         <main>
             <h1>NOS STAGES</h1>
