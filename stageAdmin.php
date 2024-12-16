@@ -7,6 +7,9 @@
     <?php require 'Commun/lienCommun.php'; ?>
 </head>
 <body>
-    <?php require 'Commun/navbarAdmin.php'; ?>
+    <?php 
+    require 'Commun/navbarAdmin.php';
+    require 'Commun/navbarUtilisateur.php';
+    ?>
 </body>
 </html>

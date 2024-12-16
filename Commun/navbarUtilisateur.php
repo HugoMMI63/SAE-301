@@ -44,6 +44,12 @@ $fileName = basename($Url);
 <div class="container text-center mt-5 navWeb opacity-0 position-absolute">
     <div class="row justify-content-center">
         <div class="col-12 shadow-lg p-3 mb-5 bg-body-tertiary rounded-pill d-flex justify-content-between align-items-center pe-5 ps-5">
+            <a class="nude" href="https://www.kafeteomomes.fr">
+                <div class="d-flex  align-items-center">
+                    <img width="50" height="50" src="https://img.icons8.com/ios-filled/100/long-arrow-left.png" alt="long-arrow-left"/>
+                    <h5 class="m-0">REVENIR AU SITE WEB</h5>
+                </div>
+            </a>
             <img class="col-lg-1 col-3" src="https://www.kafeteomomes.fr/uploads/2016/10/logo.png" alt="logo de ka fête ô môme">
             <?php
             /**permet de savoir sur quelle page nous sommes sans JS*/

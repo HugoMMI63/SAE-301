@@ -3,6 +3,8 @@
 $Url = $_SERVER['SCRIPT_NAME'];
 //On prend depuis notre URL seulement le nom du fichier avec son extension
 $fileName = basename($Url);
+//on récupére la taille de notre page via les cookie
+$taillePage = $_COOKIE['taillePage'];
 ?>
 <!--Navigation mobile en dessous de 992px avec menu burger-->
 <div class="container navMobile">
