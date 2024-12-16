@@ -29,7 +29,9 @@ $nb_stages = count($stages);
         <?php include "navbars/liensCommuns.php";?>
     </head>
     <body>
-        <?php include "navbars/navbarUtilisateur.php";?>
+        <header>
+          <?php include "navbars/navbarUtilisateur.php";?>
+        </header>
 
         <main>
             <h1>NOS STAGES</h1>
