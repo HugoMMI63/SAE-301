@@ -32,7 +32,7 @@ $nb_stages = count($stages);
 
         <main>
             <h1>NOS STAGES</h1>
-            <img src="images/barre-sep.png" alt="Barre de séparation">
+            <img src="img/barre-sep.png" alt="Barre de séparation">
             
             <section>
             <!-- Boucle pour afficher l'ensemble des stages -->
