@@ -26,27 +26,31 @@ $nbstage=count($stage);
   <title>Liste stage</title>
 </head>
 <body>
-  <h1>NOS STAGES</h1>
-  <img src="Images/barre-sep.png" alt="barre séparation">
-  <!-- Boucle pour afficher l'ensemble des stages -->
-  <?php for ($i=0; $i<$nbstage; $i++){
-    // Requête pour récupérer le nombre d'enfants inscrit au stage en question grâce à l'id
-    $requete='SELECT COUNT(*) FROM reservation WHERE id_stage ='.$stage[$i]['id'];
-    $resultats= $dbh -> query($requete);
-    $nbparticipant = $resultats->fetchAll(PDO::FETCH_ASSOC);
-    $resultats -> closeCursor();?>
-    <div>
-      <h2><?php echo $stage[$i]['titre']; ?></h2>
-      <!-- Affichage de l'image -->
-      <?php echo "<img src=".$stage[$i]['miniature']." alt='Image du stage' style='width: 300px; height: auto;'>";
-      // Nombre place + date même ligne
-      echo "<p>".$nbparticipant[0]['COUNT(*)']."/".$stage[$i]['nb_places']." places restantes</p>";
-      echo "<p>".$stage[$i]['date']."</p>";?>
-      <!-- Affichage de la description -->
-      <p><strong>Description:</strong> <?php echo $stage[$i]['description']; ?></p>
-      <!-- Bouton avec un ID unique -->
-      <a href="detailstage.php?id=<?php echo $stage[$i]['id']; ?>"><button id="<?php echo $stage[$i]['id']; ?>">Voir plus</button></a>
-    </div>
-  <?php }?>
+  <!-- Ajout de la nav -->
+  <main>
+    <h1>NOS STAGES</h1>
+    <img src="Images/barre-sep.png" alt="barre séparation">
+    
+    <section>
+      <!-- Boucle pour afficher l'ensemble des stages -->
+      <?php for ($i=0; $i<$nbstage; $i++){
+        // Requête pour récupérer le nombre d'enfants inscrit au stage en question grâce à l'id
+        $requete='SELECT COUNT(*) FROM reservation WHERE id_stage ='.$stage[$i]['id'];
+        $resultats= $dbh -> query($requete);
+        $nbparticipant = $resultats->fetchAll(PDO::FETCH_ASSOC);
+        $resultats -> closeCursor();?>
+        <div>
+          <h2><?php echo $stage[$i]['titre']; ?></h2>
+          <?php echo "<img src=".$stage[$i]['miniature']." alt='Image du stage' style='width: 300px; height: auto;'>";
+          echo "<p>".$nbparticipant[0]['COUNT(*)']."/".$stage[$i]['nb_places']." places restantes</p>";
+          echo "<p>".$stage[$i]['date']."</p>";?>
+          <p><strong>Description:</strong> <?php echo $stage[$i]['description']; ?></p>
+          <!-- Bouton avec un ID unique -->
+          <a href="detailstage.php?id=<?php echo $stage[$i]['id']; ?>"><button id="<?php echo $stage[$i]['id']; ?>">Voir plus</button></a>
+        </div>
+      <?php }?>
+    </section>
+  <main>
+  <!-- Ajout du footer -->
 </body>
 </html>
