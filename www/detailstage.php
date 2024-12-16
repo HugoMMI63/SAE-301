@@ -21,7 +21,7 @@ if (isset($_GET['id'])) {
 
 
 // Récupérer les détails du stage via l'API
-$apiUrl = "http://localhost/SAE301/API/remplacercontenustage.php?id=" . $stageId;
+$apiUrl = "http://localhost/MMI2/SAE303-GIT/SAE-301-Association/www/API/remplacercontenustage.php?id=" . $stageId;
 $response=file_get_contents($apiUrl);
 $data=json_decode($response,true);
 // Vérifier si les données sont disponibles
@@ -32,7 +32,7 @@ if ($data['status'] != 'OK') {
 $stage = $data['stage'];
 
 // Récupérer 3 stages aléatoires via l'API
-$apiUrl = "http://localhost/SAE301/API/stagesaleatoires.php?id=" . $stageId;
+$apiUrl = "http://localhost/MMI2/SAE303-GIT/SAE-301-Association/www/API/stagesaleatoires.php?id=" . $stageId;
 $response=file_get_contents($apiUrl);
 $data=json_decode($response,true);
 // Vérifier si les données sont disponibles
@@ -51,9 +51,10 @@ $stagesAleatoires = $data['randStage'];
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Stage - <?php echo $stage[0]['titre']; ?></title>
   <script src="js/afficherDetailsStage.js"></script>
+  <?php include("navbars/liensCommuns.php");?>
 </head>
 <body>
-  <!-- Ajout de la nav -->
+  <?php include("navbars/navbarUtilisateur.php");?>
   <main>
     <!-- Informations du stage -->
     <section>

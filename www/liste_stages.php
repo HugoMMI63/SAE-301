@@ -24,9 +24,10 @@ $nbstage=count($stage);
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Liste stage</title>
+  <?php include("navbars/liensCommuns.php");?>
 </head>
 <body>
-  <!-- Ajout de la nav -->
+  <?php include("navbars/navbarUtilisateur.php");?>
   <main>
     <h1>NOS STAGES</h1>
     <img src="Images/barre-sep.png" alt="barre séparation">
