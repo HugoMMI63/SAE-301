@@ -7,6 +7,10 @@
         <?php require "navbars/liensCommuns.php"; ?>
     </head>
     <body>
-        <?php include "navbars/navbarAdmin.php"; ?>
+        <?php 
+        include "navbars/navbarAdmin.php"; 
+        include "navbars/navbarUtilisateur.php";
+        ?>
+
     </body>
 </html>
