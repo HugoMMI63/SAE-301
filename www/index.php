@@ -103,7 +103,7 @@
                         <h2 class="fw-bold text-stage mb-4">Les stages des vacances scolaires</h2>                
                         <p class="mb-3">Nos stages de vacances scolaires offrent à vos enfants une expérience unique alliant créativité, apprentissage et plaisir ! Animés par des professionnels passionnés, ces ateliers permettent aux jeunes de découvrir des activités ludiques et pédagogiques, telles que le théâtre ou encore la sérigraphie.</p>
                         <p class="mb-4">Chaque stage est conçu pour être sécurisé, épanouissant et adapté à l'âge de vos bouts de chou, leur offrant ainsi un cadre idéal pour grandir tout en s'amusant.</p>
-                        <button class="btn btn-warning fw-bold px-4 py-2">DÉCOUVRIR NOS STAGES ></button>
+                        <a href="nos_stages.php"><button class="btn btn-warning fw-bold px-4 py-2">DÉCOUVRIR NOS STAGES ></button></a>
                     </div>
                     <div class="col-md-6 text-center">
                         <img src=https://www.zupimages.net/up/24/51/4l41.png alt="Image des stages" class="img-fluid img-custom">
@@ -121,7 +121,7 @@
                     <div class="col-md-6 text-start">
                         <h2 class="fw-bold text-stage mb-4">L'équipe de la Ka'fête</h2>                
                         <p class="mb-3">Notre équipe d'animateurs est avant tout une grande famille de passionnés qui met un point d'honneur à créer une atmosphère bienveillante. Chaque membre est spécialement formé pour accompagner les enfants dans leur développement tout en favorisant leur créativité et leur épanouissement. Chacun apporte sa pierre personnelle à l'édifice Ka'fête ô mômes !</p>
-                        <button class="btn btn-warning fw-bold px-4 py-2">DECOUVRIR NOS ANIMATEURS ></button>
+                        <a href="nos_animateurs.php"><button class="btn btn-warning fw-bold px-4 py-2">DECOUVRIR NOS ANIMATEURS ></button></a>
                     </div>
                 </div>
             </section>
@@ -162,7 +162,8 @@
             </section>
 
         </main>
-        <!-- Ajout du footer -->
-
+        <footer>
+            <?php include("navbars/footer.php"); ?>
+        </footer>
     </body>
 </html>
