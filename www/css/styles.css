@@ -34,6 +34,7 @@ nav{display: flex;padding: 1rem;}
     .navWeb{top: 1rem; display: block !important;}
 }
 
+
 .info {
     text-align: center;
 }
@@ -101,4 +102,156 @@ nav{display: flex;padding: 1rem;}
     margin-right: auto;
     margin-bottom: 80px;
     margin-bottom: 80px;
+}
+
+section img {
+    object-fit: cover;
+}
+
+section h4 {
+    color: #000000;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+section p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #555;
+    text-align: left;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.text-stage {
+    color: #5FB3E4;
+    font-size: 2rem;
+}
+
+.btn-warning {
+    background-color: #FFE41B;
+    border: none;
+    border-radius: 30px;
+    color: #000;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-warning:hover {
+    background-color: #CEB70B;
+    transform: translateY(-3px);
+    color: #000;
+}
+
+.img-custom {
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.text-stage {
+    color: #5FB3E4;
+    font-size: 2rem;
+    font-weight: bold;
+    padding-top: 2%;
+    padding-bottom: 2.5%;
+}
+
+.img-fluid {
+    padding-bottom: 2.5%;
+}
+
+.container.my-5 {
+    padding-top: 2.5%;
+    padding-bottom: 2.5%;
+}
+
+.bi {
+    font-size: 50px;
+    color: #F16560;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+.row div {
+    transition: transform 0.3s ease-in-out;
+}
+
+.row div:hover {
+    transform: translateY(-5px);
+}
+
+.carousel-caption {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 25px;
+}
+
+.carousel-caption h2 {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.carousel-caption p {
+    color: #ffffff;
+    font-size: 1.2rem;
+    text-align: justify;
+}
+
+#carouselExampleIndicators {
+    width: 100%;
+    height: 650px;
+    margin-top: 0%;
+    overflow: hidden;
+}
+
+#carouselExampleIndicators img {
+    height: 650px;
+    width: 100%;
+}
+
+.py-5.bg-light {
+    padding-top: 0% !important;
+    padding-bottom: 0% !important;
+}
+
+
+
+/* Style personnalisé pour les boutons de navigation du carrousel */
+.carousel-control-prev, .carousel-control-next {
+    background-color: #F16560;  /* Fond rouge */
+    border-radius: 50%;      /* Forme ronde */
+    width: 50px;             /* Largeur du bouton */
+    height: 50px;            /* Hauteur du bouton */
+    display: flex;           /* Pour centrer les icônes à l'intérieur */
+    justify-content: center; /* Centrer l'icône */
+    align-items: center;     /* Centrer l'icône */
+    opacity: 0.7;            /* Opacité pour l'effet visuel */
+    transition: opacity 0.3s;
+    margin-top: 275px;
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+  /* Réduire l'opacité au survol pour un effet visuel */
+.carousel-control-prev:hover, .carousel-control-next:hover {
+    opacity: 1; /* Pleine opacité au survol */
+}
+
+  /* Style des icônes de navigation (précédent et suivant) */
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    border-radius: 50%;      /* Garde la forme ronde pour l'icône */
+    width: 20px;             /* Taille de l'icône */
+    height: 20px;            /* Taille de l'icône */
 }

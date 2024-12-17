@@ -5,6 +5,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Accueil</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
     </head>
     <body>
         <header>
@@ -13,8 +15,8 @@
 
         <!-- Caroussel -->
 
-        <section>
-            <div id="carouselExampleIndicators" class="carousel slide">
+        <section class="py-5 bg-light">
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -22,29 +24,27 @@
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="img/photo1.jpg" class="d-block w-100" alt="Bannière 1">
-                        <div class="carousel-caption d-block">
-                            <h2>Vacances d'automne 2025 - Théâtre d'improvisation</h2>
-                            <p>Plonge dans l'univers captivant du théâtre improvisé cet automne et libère ta créativité sur scène. Découvre des jeux scéniques drôles, dynamiques et pleins de surprises durant ce stage unique !</p>
-                            <a href="details_stage.php?id=1"><button value="1" type="button" class="">DECOUVRIR LE STAGE</button></a>
-                        </div>
+                        <img src="https://www.zupimages.net/up/24/51/od2a.jpg" class="d-block w-100 img-fluid" alt="Bannière 1">
+                        <div class="carousel-caption d-md-block bg-dark bg-opacity-50 rounded p-3">
+                        <h2 class="text-uppercase fw-bold text-warning">Vacances d'automne 2025 - Théâtre d'improvisation</h2>
+                        <p class="lead">Plonge dans l'univers captivant du théâtre improvisé cet automne et libère ta créativité sur scène. Découvre des jeux scéniques drôles, dynamiques et pleins de surprises durant ce stage unique !</p>
+                        <a href="details_stage.php?id=1" class="btn btn-warning fw-bold px-4 py-2"><button value="1" type="button" class="btn-yellow">DÉCOUVRIR LE STAGE</button></a>
                     </div>
-                    
-                    <div class="carousel-item">
-                        <img src="img/photo2.jpg" class="d-block w-100" alt="Bannière 2">
-                        <div class="carousel-caption d-block">
-                            <h2>Vacances d'automne 2025 - Découverte de la sérigraphie</h2>
-                            <p>Découvre l'art fascinant de la sérigraphie cet automne et crée des œuvres uniques avec tes propres mains ! Laisse libre cours à ton imagination lors de ce stage créatif !</p>
-                            <a href="details_stage.php?id=3"><button value="3" type="button" class="">DECOUVRIR LE STAGE</button></a>
-                        </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://www.zupimages.net/up/24/51/qwd4.jpg" class="d-block w-100 img-fluid" alt="Bannière 2">
+                    <div class="carousel-caption d-md-block bg-dark bg-opacity-50 rounded p-3">
+                        <h2 class="text-uppercase fw-bold text-warning">Vacances d'automne 2025 - Découverte de la sérigraphie</h2>
+                        <p class="lead">Découvre l'art fascinant de la sérigraphie cet automne et crée des œuvres uniques avec tes propres mains ! Laisse libre cours à ton imagination lors de ce stage créatif !</p>
+                        <a href="details_stage.php?id=3" class="btn btn-warning fw-bold px-4 py-2"><button value="3" type="button" class="btn-yellow">DÉCOUVRIR LE STAGE</button></a>
                     </div>
-                    <div class="carousel-item">
-                        <img src="img/photo3.jpg" class="d-block w-100" alt="Bannière 3">
-                        <div class="carousel-caption d-block">
-                            <h2>Vacances d'été 2025 - Cuisine</h2>
-                            <p>La Ka'fête ô mômes ouvre ses portes aux gourmands ! Cet été, mets la main à la pâte et explore l'art de la cuisine dans un stage gourmand et plein de saveurs !</p>
-                            <a href="details_stage.php?id=4"><button value="4" type="button" class="">DECOUVRIR LE STAGE</button></a>
-                        </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://www.zupimages.net/up/24/51/h4zo.png" class="d-block w-100 img-fluid" alt="Bannière 3">
+                    <div class="carousel-caption d-md-block bg-dark bg-opacity-50 rounded p-3">
+                        <h2 class="text-uppercase fw-bold text-warning">Vacances d'été 2025 - Cuisine</h2>
+                        <p class="lead">La Ka'fête ô mômes ouvre ses portes aux gourmands ! Cet été, mets la main à la pâte et explore l'art de la cuisine dans un stage gourmand et plein de saveurs ! Rejoins nous vite !</p>
+                        <a href="details_stage.php?id=4" class="btn btn-warning fw-bold px-4 py-2"><button value="4" type="button" class="btn-yellow">DÉCOUVRIR LE STAGE</button></a>
                     </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -58,90 +58,111 @@
             </div>
         </section>
         <main>
-            <!-- Section 1-arguments -->
+            
+        <!-- Section 1-adjectifs -->
+        <section class="container my-5">
+            <div class="row g-4">
+                    <div class="col-md-6 d-flex align-items-center text-center">
+                        <img src="img/encadre.png" alt="groupeAdulte" class="img-fluid me-3" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover;">
+                        <div>
+                            <h4 class="text-primary fw-bold">Encadré</h4>
+                            <p>Nos stages sont dirigés par des professionnels qualifiés, assurant un suivi personnalisé et un accompagnement de qualité pour vos enfants !</p>
+                        </div>
+                    </div>
 
-            <section>
-                <div>
-                    <!-- Rajouter les bonnes images -->
+                    <div class="col-md-6 d-flex align-items-center text-center">
+                        <img src="img/pedagogique.png" alt="ampoule" class="img-fluid me-3" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover;">
+                        <div>
+                            <h4 class="text-primary fw-bold">Pédagogique</h4>
+                            <p>Chaque activité est conçue pour stimuler la créativité et l'apprentissage des enfants, tout en respectant leur rythme et leurs besoins.</p>
+                        </div>
+                    </div>
 
-                    <img src="" alt="">
-                    <div>
-                        <h4>Encadré</h4>
-                        <p>Nos stages sont dirigés par des professionnels qualifiés, assurant un suivi personnalisé et un accompagnement de qualité pour vos enfants !</p>
+                    <div class="col-md-6 d-flex align-items-center text-center">
+                        <img src="img/securise.png" alt="bouclier" class="img-fluid me-3" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover;">
+                        <div>
+                            <h4 class="text-primary fw-bold">Sécurisé</h4>
+                            <p>La sécurité de vos enfants est notre priorité. Nos lieux d'activités sont sécurisés et nous veillons à une surveillance constante pour garantir leur bien-être.</p>
+                        </div>
                     </div>
-                </div>
-                <div>
-                    <img src="" alt="">
-                    <div>
-                        <h4>Pédagogique</h4>
-                        <p>Chaque activité est conçue pour stimuler la créativité et l'apprentissage des enfants, tout en respectant leur rythme et leurs besoins.</p>
+
+                    <div class="col-md-6 d-flex align-items-center text-center">
+                        <img src="img/ludique.png" alt="ballon" class="img-fluid me-3" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover;">
+                        <div>
+                            <h4 class="text-primary fw-bold">Ludique</h4>
+                            <p>Les stages sont avant tout des moments de plaisir, où les enfants apprennent en s'amusant, dans une ambiance dynamique et conviviale.</p>
+                        </div>
                     </div>
-                </div>
-                <div>
-                    <img src="" alt="">
-                    <div>
-                        <h4>Sécurisé</h4>
-                        <p>La sécurité de vos enfants est notre priorité. Nos lieux d'activités sont sécurisés et nous veillons à une surveillance constante pour garantir leur bien-être.</p>
-                    </div>
-                </div>
-                <div>
-                    <img src="" alt="">
-                    <div>
-                        <h4>Ludique</h4>
-                        <p>Les stages sont avant tout des moments de plaisir, où les enfants apprennent en s'amusant, dans une ambiance dynamique et conviviale.</p>
-                    </div>
-                </div>
-            </section>
+            </div>
+        </section>
+
             <!-- Section 2-stages -->
-
-            <section>
-                <div>
-                    <h2>Les stages des vacances scolaires</h2>
-                    <p>Nos stages de vacances scolaires offrent à vos enfants une expérience unique alliant créativité, apprentissage et plaisir ! Animés par des professionnels passionnés, ces ateliers permettent aux jeunes de découvrir des activités ludiques et pédagogiques, telles que le théâtre ou encore la sérigraphie. </p>
-                    <p>Chaque stage est conçu pour être sécurisé, épanouissant et adapté à l'âge de vos bouts de chou, leur offrant ainsi un cadre idéal pour grandir tout en s'amusant.</p>
-                    <button>DECOUVRIR NOS STAGES ></button>
+            <section class="container my-5">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-start">
+                        <h2 class="fw-bold text-stage mb-4">Les stages des vacances scolaires</h2>                
+                        <p class="mb-3">Nos stages de vacances scolaires offrent à vos enfants une expérience unique alliant créativité, apprentissage et plaisir ! Animés par des professionnels passionnés, ces ateliers permettent aux jeunes de découvrir des activités ludiques et pédagogiques, telles que le théâtre ou encore la sérigraphie.</p>
+                        <p class="mb-4">Chaque stage est conçu pour être sécurisé, épanouissant et adapté à l'âge de vos bouts de chou, leur offrant ainsi un cadre idéal pour grandir tout en s'amusant.</p>
+                        <button class="btn btn-warning fw-bold px-4 py-2">DÉCOUVRIR NOS STAGES ></button>
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <img src=https://www.zupimages.net/up/24/51/4l41.png alt="Image des stages" class="img-fluid img-custom">
+                    </div>
                 </div>
-                <img src="" alt="">
             </section>
+
             <!-- Section 3-Animateurs -->
 
-            <section>
-                <img src="" alt="">
-                <div>
-                    <h2>L'équipe de la Ka'fête</h2>
-                    <p>Notre équipe d'animateurs est avant tout une grande famille de passionnés qui met un point d'honneur à créer une atmosphère bienveillante. Chaque membre est spécialement formé pour accompagner les enfants dans leur développement tout en favorisant leur créativité et leur épanouissement. Chacun apporte sa pierre personnelle à l'édifice Ka'fête ô mômes !</p>
-                    <button>DECOUVRIR NOS ANIMATEURS ></button>
+            <section class="container my-5">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center">
+                        <img src=https://www.zupimages.net/up/24/51/zsi6.png alt="Image des stages" class="img-fluid img-custom">
+                    </div>
+                    <div class="col-md-6 text-start">
+                        <h2 class="fw-bold text-stage mb-4">L'équipe de la Ka'fête</h2>                
+                        <p class="mb-3">Notre équipe d'animateurs est avant tout une grande famille de passionnés qui met un point d'honneur à créer une atmosphère bienveillante. Chaque membre est spécialement formé pour accompagner les enfants dans leur développement tout en favorisant leur créativité et leur épanouissement. Chacun apporte sa pierre personnelle à l'édifice Ka'fête ô mômes !</p>
+                        <button class="btn btn-warning fw-bold px-4 py-2">DECOUVRIR NOS ANIMATEURS ></button>
+                    </div>
                 </div>
             </section>
+
             <!-- Section 4-Nous contacter -->
 
-            <section>
-                <h2>NOUS CONTACTER</h2>
-                <img src="img/barre_separation.png" alt="Barre de séparation">
-                <div>
-                    <div>
-                        <!-- Mettre picto avec bootstrap d'une lettre pour mail -->
+            <section class="container text-center my-5">
+                <h2 class="text-stage mb-3">NOUS CONTACTER</h2>
+                <img src="img/barre_separation.png" alt="Barre de séparation" class="img-fluid mb-4" style="max-width: 150px;">
 
-                        <h4>E-mail</h4>
-                        <p>kafeteomomes@gmail.com</p>
+                <div class="row justify-content-center gy-4">
+                    <!-- E-mail -->
+                    <div class="col-md-4 d-flex flex-column align-items-center">
+                        <div class="mb-2">
+                            <i class="bi bi-envelope-fill" style="font-size: 50px;"></i>
+                        </div>
+                        <h4 class="fw-bold">E-mail</h4>
+                        <p class="text-muted">kafeteomomes@gmail.com</p>
                     </div>
-                    <div>
-                        <!-- Mettre picto avec bootstrap d'un telephone -->
-
-                        <h4>Téléphone</h4>
-                        <p>04.78.61.21.79</p>
+                    <!-- Téléphone -->
+                    <div class="col-md-4 d-flex flex-column align-items-center">
+                        <div class="mb-2">
+                            <i class="bi bi-telephone-fill" style="font-size: 50px;"></i>
+                        </div>
+                        <h4 class="fw-bold">Téléphone</h4>
+                        <p class="text-muted">04.78.61.21.79</p>
                     </div>
-                    <div>
-                        <!-- Mettre picto avec bootstrap d'un point localisation -->
-
-                        <h4>Adresse</h4>
-                        <p>53 Montée de la Grande Côte 69001, Lyon</p>
+                    <!-- Adresse -->
+                    <div class="col-md-4 d-flex flex-column align-items-center">
+                        <!-- Icône pour l'adresse -->
+                        <div class="mb-2">
+                            <i class="bi bi-geo-alt-fill" style="font-size: 50px;"></i>
+                        </div>
+                        <h4 class="fw-bold">Adresse</h4>
+                        <p class="text-muted">53 Montée de la Grande Côte<br>69001, Lyon</p>
                     </div>
                 </div>
             </section>
+
         </main>
-        <footer>
-            <?php include("navbars/footer.php"); ?>
-        </footer>
+        <!-- Ajout du footer -->
+
     </body>
 </html>
