@@ -30,3 +30,72 @@ nav{display: flex;padding: 1rem;}
     .navMobile{display: none;}
     .navWeb{top: 1rem; opacity: 100 !important; position: static !important;}
 }
+
+.info {
+    text-align: center;
+}
+
+#descriptionStage {
+    padding-right: 15%;
+    padding-left: 15%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    text-align: justify;
+}
+
+.h2-custom {
+    color: #5FB3E4;
+    font-weight: bold;
+    font-size: 1.8rem;
+}
+
+.btn-yellow {
+    background-color: #FFE41B;
+    color: #000;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-yellow:hover {
+    background-color: #CEB70B;
+    color: #000;
+}
+
+#autresStages img {
+    height: 200px;
+    object-fit: cover;
+}
+
+#autresStages {
+    margin-left: 8%;
+    margin-right: 8%;
+}
+
+#autresStages .card {
+    margin: 10px auto;
+}
+
+.text-center .btn-yellow {
+    margin-top: 4%;
+    margin-bottom: 4%;
+}
+
+.info ul li {
+    line-height: 2.8;
+}
+#animateurs .col-md-4 {
+    margin-bottom: 40px; 
+}
+
+#animateurs {
+    justify-content: center;
+    margin-left: auto; 
+    margin-right: auto;
+    margin-bottom: 80px;
+    margin-bottom: 80px;
+}
