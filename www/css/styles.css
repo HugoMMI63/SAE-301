@@ -3,8 +3,7 @@
 /*CSS custom pour menu client lien a formulaire*/
 .fondJaune{background-color: #FFE41B;}
 /*CSS custom pour menu web admin/client*/
-.font{font-family: "Jua", serif;}
-.nude{text-decoration: none; color: black;}
+.nude{text-decoration: none; color: black;font-family: "Jua", serif;}
 .selection{background-color: #FF6D6D; font-size: 1rem; color: white;}
 /*CSS custom pour menu Burger*/
 li{list-style: none;}
@@ -18,8 +17,6 @@ nav{display: flex;padding: 1rem;}
 .menuBurger.active span:nth-child(1){ top: 50%;transform: translate(-50%,-50%) rotate(45deg);}
 .menuBurger.active span:nth-child(2){ opacity: 0;}
 .menuBurger.active span:nth-child(3){ top: 50%;transform: translate(-50%,-50%) rotate(-45deg);}
-/*CSS custom pour footer*/
-.bcFooter{background-color: #EDFBFD;}
 /*changement de menu celon la taille de notre page entre menu burger pour telephone et ipad et menu trad pour web*/
 @media(min-width:450){
     .horsChamps{background-color: white; height: 100vh; width: 100%; max-width: 450px; position: fixed; top: 0; right: -450px; display: flex; flex-direction: column; justify-content: center; text-align: center; font-size: 3rem; transition: .3s ease;padding-right: 5%;}
@@ -31,7 +28,7 @@ nav{display: flex;padding: 1rem;}
 }
 @media (min-width: 992px) {
     .navMobile{display: none;}
-    .navWeb{top: 1rem; opacity: 100 !important; position: static !important;display: unset !important;}
+    .navWeb{top: 1rem; opacity: 100 !important; position: static !important;}
 }
 
 .info {
@@ -101,4 +98,151 @@ nav{display: flex;padding: 1rem;}
     margin-right: auto;
     margin-bottom: 80px;
     margin-bottom: 80px;
+}
+
+
+/* ==============================
+   GLOBAL STYLES
+================================= */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+}
+
+.info{
+font-weight: bold;
+}
+/* ==============================
+   SECTION PRINCIPALE
+================================= */
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+main h1 {
+    color: #2196F3;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px 10%;
+
+}
+
+/* ==============================
+   STYLE DES CARTES DE STAGE
+================================= */
+section > div {
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease;
+    padding: 70px;
+    
+}
+
+section > div:hover {
+    transform: translateY(-10px);
+}
+
+section > div img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 2px solid #eeeeee;
+}
+
+section > div h3 {
+    font-size: 1.4rem;
+    color: #FF6D6D;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+section > div p {
+    font-size: 0.9rem;
+    color: #555;
+    margin: 5px 0;
+    line-height: 1.5;
+}
+
+/* ==============================
+   BOUTON "VOIR PLUS"
+================================= */
+section > div a button {
+    background-color: #FFE41B;
+    color: #333;
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 25px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+section > div a button:hover {
+    background-color: #CEB70B;
+    color: #000;
+}
+
+
+/* ==============================
+   STYLE POUR LES STAGES EN 2x2
+================================= */
+
+/* Conteneur des stages */
+.container-stages {
+    margin: 0 auto;
+    padding: 30px 10%;
+}
+
+/* Style des cartes */
+.card-stage {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    text-align: center;
+    margin: 0 15px; 
+    padding: 25px;
+    transition: transform 0.3s ease;
+    height: 100%;
+}
+.card-stage:hover {
+    transform: translateY(-10px);
+}
+/* Bouton */
+.card-stage button {
+    background-color: #FFE41B;
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    margin-top: 10px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+.card-stage button:hover {
+    background-color: #CEB70B;
+}
+
+.row .col-md-6 {
+    padding-left: 30px; /* Ajoute de l'espacement à gauche */
+    padding-right: 30px; /* Ajoute de l'espacement à droite */
+    margin-bottom: 80px; /* Ajoute plus d'espacement vertical */
+}
+
+/* Conteneur pour éviter un débordement horizontal */
+.container-stages .row {
+    margin-left: -30px; /* Compense l'espacement ajouté */
+    margin-right: -30px;
 }
