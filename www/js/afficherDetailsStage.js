@@ -17,12 +17,12 @@ function afficherInfoStage(){
                 // Ajout des nouveaux éléments d'un stage
 
                 document.getElementById("titreStage").innerHTML=response.stage[0].titre;
-                document.getElementById("categorieStage").innerHTML="<strong> Catégorie : </strong>"+response.stage[0].intitule;
-                document.getElementById("periodeStage").innerHTML="<strong>Période :</strong>"+response.stage[0].date;
-                document.getElementById("lieuStage").innerHTML="<strong>Lieu :</strong/>"+response.stage[0].lieu;
-                document.getElementById("horaireStage").innerHTML="<strong>Horaires :</strong/> De"+response.stage[0].horaire_debut+" à "+response.stage[0].horaire_fin;
-                document.getElementById("nbplaceStage").innerHTML="<strong>Nombre de places :</strong/>"+response.stage[0].nb_places;
-                document.getElementById("tarifStage").innerHTML="<strong>Prix :</strong/>"+response.stage[0].tarif_min+" à "+response.stage[0].tarif_max;
+                document.getElementById("categorieStage").innerHTML="<strong>Catégorie : </strong>"+response.stage[0].intitule;
+                document.getElementById("periodeStage").innerHTML="<strong>Période : </strong>"+response.stage[0].date;
+                document.getElementById("lieuStage").innerHTML="<strong>Lieu : </strong/>"+response.stage[0].lieu;
+                document.getElementById("horaireStage").innerHTML="<strong>Horaires : </strong/> De "+response.stage[0].horaire_debut+" à "+response.stage[0].horaire_fin;
+                document.getElementById("nbplaceStage").innerHTML="<strong>Nombre de places : </strong/>"+response.stage[0].nb_places;
+                document.getElementById("tarifStage").innerHTML="<strong>Tarif : </strong/>"+response.stage[0].tarif_min+" à "+response.stage[0].tarif_max+"€ selon le quotient familial";
                 document.getElementById("miniatureStage").src = response.stage[0].miniature;
                 document.getElementById("descriptionStage").innerText = response.stage[0].description;
 		        history.pushState(null, '', '/www/details_stage.php?id='+idstage);
@@ -38,7 +38,7 @@ function afficherInfoStage(){
                 response.stage.forEach(function(stage, index) {
                     let animateurNouveau = `
                         <div class='col-md-4 text-center'>
-                            <img src="${stage.photo}" alt="Image de ${stage.prenom}" class='img-fluid rounded-circle mb-3' style='width: 150px; height: 150px; object-fit: cover;'>
+                            <img src="${stage.photo}" alt="Photo de ${stage.prenom}" class='img-fluid rounded-circle mb-3' style='width: 150px; height: 150px; object-fit: cover;'>
                             <h3>${stage.prenom}</h3>
                         </div>
                     `;

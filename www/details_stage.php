@@ -77,7 +77,7 @@ include("ressources/ressourcesCommunes.php");
                     <li id="lieuStage" class="mb-2"><strong>Lieu :</strong> <?php echo $stage[0]['lieu']; ?></li>
                     <li id="horaireStage" class="mb-2"><strong>Horaires :</strong> De <?php echo $stage[0]['horaire_debut']; ?> à <?php echo $stage[0]['horaire_fin']; ?></li>
                     <li id="nbplaceStage" class="mb-2"><strong>Nombre de places :</strong> <?php echo $stage[0]['nb_places']; ?></li>
-                    <li id="tarifStage" class="mb-2"><strong>Prix :</strong> <?php echo $stage[0]['tarif_min']; ?> à <?php echo $stage[0]['tarif_max']; ?>€ selon le quotient familial</li>
+                    <li id="tarifStage" class="mb-2"><strong>Tarif :</strong> <?php echo $stage[0]['tarif_min']; ?> à <?php echo $stage[0]['tarif_max']; ?>€ selon le quotient familial</li>
                 </ul>
                 <img id="miniatureStage" src="<?php echo $stage[0]['miniature']; ?>" alt="Image du stage" class="img-fluid d-block mx-auto my-4">
                 <p id="descriptionStage"><strong>Description :</strong> <?php echo $stage[0]['description']; ?></p>
@@ -95,7 +95,7 @@ include("ressources/ressourcesCommunes.php");
                     $nbAnimateur=count($stage);
                     for ($i = 0; $i < $nbAnimateur; $i++) {
                         echo "<div class='col-md-4 text-center'>";
-                        echo "<img src=".$stage[$i]['photo']." alt='Photo animateur' class='img-fluid rounded-circle mb-3' style='width: 150px; height: 150px; object-fit: cover;'>";
+                        echo "<img src=".$stage[$i]['photo']." alt='Photo de ".$stage[$i]['prenom']."' class='img-fluid rounded-circle mb-3' style='width: 150px; height: 150px; object-fit: cover;'>";
                         echo "<h3>". $stage[$i]['prenom'] ."</h3>";
                         echo "</div>";
                     }
