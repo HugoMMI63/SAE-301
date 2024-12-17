@@ -1,31 +1,35 @@
 <?php 
-// Connexion à la base de données
-include("config/config.php");
+// On se connecte à la base de données
 
-// connection
+require("config/config.php");
+
 try {
-  $dbh = new PDO($dsn, $identifiant, $mot_de_passe,$options);
-  $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-  echo 'Échec lors de la connexion : ' . $e->getMessage();
+    $dbh = new PDO($dsn, $identifiant, $mot_de_passe);
+    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+}
+catch (PDOException $e) {
+    echo 'Échec lors de la connexion : '.$e->getMessage();
 }
 
 // Appel de l'API pour récupérer les stages
-$api = "http://localhost/www/API/tousStage.php"; 
-$response = file_get_contents($api); 
-$donnees = json_decode($response, true); 
+
+$api = "http://localhost/www/API/tousStage.php";
+$response = file_get_contents($api);
+$donnees = json_decode($response, true);
 
 // Vérifier que l'API a retourné un statut "OK"
-if ($donnees["status"] == "OK" ) {
-    $stages_data = $donnees['tousStage']; 
-    require_once("classes/Stage.php"); 
 
-} else {
+if ($donnees["status"] == "OK" ) {
+    $stages_data = $donnees['tousStage'];
+    require_once("classes/Stage.php");
+
+}
+else {
     echo "Erreur lors de la récupération des données.";
     exit();
 }
 
- include("ressources/ressourcesCommunes.php");
+include("ressources/ressourcesCommunes.php");
 ?>
 
 <!DOCTYPE html>
@@ -44,8 +48,10 @@ if ($donnees["status"] == "OK" ) {
     <h1>NOS STAGES</h1>
     <section>
         <!-- Boucle pour afficher tous les stages -->
+
         <?php foreach ($stages_data as $stage_data): 
             // Créer un objet Stage pour chaque stage
+            
             $stage = new Stage(
                 $stage_data["id"],
                 $stage_data["miniature"],
