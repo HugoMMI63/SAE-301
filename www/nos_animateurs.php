@@ -69,9 +69,10 @@ else {
                     <p><?php echo $animateur->description; ?></p>
                 </div>
              <?php } ?>
-        </section>
-    </main>
-    <!-- Ajout du footer -->
-
+            </section>
+        </main>
+        <footer>
+            <?php include("navbars/footer.php"); ?>
+        </footer>
     </body>
 </html>

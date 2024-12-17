@@ -45,40 +45,41 @@ include("ressources/ressourcesCommunes.php");
         </header>
 
         <main>
-    <h1>NOS STAGES</h1>
-    <section>
-        <!-- Boucle pour afficher tous les stages -->
+            <h1>NOS STAGES</h1>
+            <section>
+                <!-- Boucle pour afficher tous les stages -->
 
-        <?php foreach ($stages_data as $stage_data): 
-            // Créer un objet Stage pour chaque stage
-            
-            $stage = new Stage(
-                $stage_data["id"],
-                $stage_data["miniature"],
-                $stage_data["titre"],
-                $stage_data["date"],
-                $stage_data["horaire_debut"],
-                $stage_data["horaire_fin"],
-                $stage_data["description"],
-                $stage_data["nb_places"],
-                $stage_data["lieu"],
-                $stage_data["tarif_min"],
-                $stage_data["tarif_max"],
-                $stage_data["id_categorie"]
-            );
-        ?>
-            <div>
-                <h3><?php echo $stage->titre; ?></h3>
-                <img src="<?php echo $stage->miniature; ?>" alt="Image du stage" style="width: 300px; height: auto;">
-                <p><?php echo $stage->description; ?></p>
-                <p>Date : <?php echo $stage->date; ?></p>
-                <p>Places restantes : <?php echo $stage->nb_places; ?></p>
-                <a href="details_stage.php?id=<?php echo $stage->id; ?>"><button>Voir plus</button></a>
-            </div>
-        <?php endforeach; ?>
-    </section>
-  </main>
-    <!-- Ajout du footer -->
-
+                <?php foreach ($stages_data as $stage_data): 
+                    // Créer un objet Stage pour chaque stage
+                    
+                    $stage = new Stage(
+                        $stage_data["id"],
+                        $stage_data["miniature"],
+                        $stage_data["titre"],
+                        $stage_data["date"],
+                        $stage_data["horaire_debut"],
+                        $stage_data["horaire_fin"],
+                        $stage_data["description"],
+                        $stage_data["nb_places"],
+                        $stage_data["lieu"],
+                        $stage_data["tarif_min"],
+                        $stage_data["tarif_max"],
+                        $stage_data["id_categorie"]
+                    );
+                ?>
+                <div>
+                    <h3><?php echo $stage->titre; ?></h3>
+                    <img src="<?php echo $stage->miniature; ?>" alt="Image du stage" style="width: 300px; height: auto;">
+                    <p><?php echo $stage->description; ?></p>
+                    <p>Date : <?php echo $stage->date; ?></p>
+                    <p>Places restantes : <?php echo $stage->nb_places; ?></p>
+                    <a href="details_stage.php?id=<?php echo $stage->id; ?>"><button>Voir plus</button></a>
+                </div>
+                <?php endforeach; ?>
+            </section>
+        </main>
+        <footer>
+            <?php include("navbars/footer.php"); ?>
+        </footer>
     </body>
 </html>

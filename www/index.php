@@ -140,7 +140,8 @@
                 </div>
             </section>
         </main>
-        <!-- Ajout du footer -->
-
+        <footer>
+            <?php include("navbars/footer.php"); ?>
+        </footer>
     </body>
 </html>

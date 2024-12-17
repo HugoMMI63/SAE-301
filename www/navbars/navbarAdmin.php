@@ -21,7 +21,7 @@ $fileName = basename($Url);
     </div>
 </div>
 
-<div class="horsChamps shadow-lg navMobile">
+<div class="horsChamps shadow-lg navMobile font">
     <?php
     // Permet de savoir sur quelle page nous sommes (sans JS)
 
@@ -48,8 +48,8 @@ $fileName = basename($Url);
 
 <!-- Navigation web avec menu standard -->
 
-<div class="container text-center mt-5 navWeb opacity-0 position-absolute">
-    <div class="row justify-content-center">
+<div class="container text-center mt-5 navWeb display-none position-absolute font">
+    <div class="row w-100 justify-content-center">
         <div class="col-12 shadow-lg p-3 mb-5 bg-body-tertiary rounded-pill d-flex justify-content-between align-items-center pe-5 ps-5">
             <img class="col-lg-1 col-3" src="https://www.kafeteomomes.fr/uploads/2016/10/logo.png" alt="Logo de l'association">
             <?php
