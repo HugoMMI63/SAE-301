@@ -41,8 +41,9 @@ $stage = $data['stage'];
 // Récupérer 3 stages aléatoires via l'API
 
 $apiUrl = "http://localhost/www/API/stagesAleatoires.php?id=".$stageId;
-$response=file_get_contents($apiUrl);
-$data=json_decode($response,true);
+$response = file_get_contents($apiUrl);
+$data = json_decode($response, true);
+
 // Vérifier si les données sont disponibles
 
 if ($data['status'] != 'OK') {
@@ -68,15 +69,15 @@ include("ressources/ressourcesCommunes.php");
         <!-- Informations du stage -->
 
             <section class="info bg-light p-4 rounded shadow-sm mb-5">
-                <h2 class="text-primary text-center mb-4"><?php echo $stage[0]['titre']; ?></h2>
+                <h1 id="titreStage" class="text-primary text-center mb-4"><?php echo $stage[0]['titre']; ?></h1>
                 <img src="img/barre_separation.png" alt="Barre de séparation" class="d-block mx-auto my-3">
                 <ul class="list-unstyled">
-                    <li class="mb-2"><strong>Catégorie :</strong> <?php echo $stage[0]['intitule']; ?></li>
-                    <li class="mb-2"><strong>Période :</strong> <?php echo $stage[0]['date']; ?></li>
-                    <li class="mb-2"><strong>Lieu :</strong> <?php echo $stage[0]['lieu']; ?></li>
-                    <li class="mb-2"><strong>Horaires :</strong> De <?php echo $stage[0]['horaire_debut']; ?> à <?php echo $stage[0]['horaire_fin']; ?></li>
-                    <li class="mb-2"><strong>Nombre de places :</strong> <?php echo $stage[0]['nb_places']; ?></li>
-                    <li class="mb-2"><strong>Prix :</strong> <?php echo $stage[0]['tarif_min']; ?> à <?php echo $stage[0]['tarif_max']; ?>€ selon le quotient familial</li>
+                    <li id="categorieStage" class="mb-2"><strong>Catégorie :</strong> <?php echo $stage[0]['intitule']; ?></li>
+                    <li id="periodeStage" class="mb-2"><strong>Période :</strong> <?php echo $stage[0]['date']; ?></li>
+                    <li id="lieuStage" class="mb-2"><strong>Lieu :</strong> <?php echo $stage[0]['lieu']; ?></li>
+                    <li id="horaireStage" class="mb-2"><strong>Horaires :</strong> De <?php echo $stage[0]['horaire_debut']; ?> à <?php echo $stage[0]['horaire_fin']; ?></li>
+                    <li id="nbplaceStage" class="mb-2"><strong>Nombre de places :</strong> <?php echo $stage[0]['nb_places']; ?></li>
+                    <li id="tarifStage" class="mb-2"><strong>Prix :</strong> <?php echo $stage[0]['tarif_min']; ?> à <?php echo $stage[0]['tarif_max']; ?>€ selon le quotient familial</li>
                 </ul>
                 <img id="miniatureStage" src="<?php echo $stage[0]['miniature']; ?>" alt="Image du stage" class="img-fluid d-block mx-auto my-4">
                 <p id="descriptionStage"><strong>Description :</strong> <?php echo $stage[0]['description']; ?></p>
