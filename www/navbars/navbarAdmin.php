@@ -48,13 +48,13 @@ $fileName = basename($Url);
 
 <!-- Navigation web avec menu standard -->
 
-<div class="container text-center mt-5 navWeb display-none position-absolute font">
-    <div class="row w-100 justify-content-center">
-        <div class="col-12 shadow-lg p-3 mb-5 bg-body-tertiary rounded-pill d-flex justify-content-between align-items-center pe-5 ps-5">
-            <img class="col-lg-1 col-3" src="https://www.kafeteomomes.fr/uploads/2016/10/logo.png" alt="Logo de l'association">
+<div class="container text-center mt-5 navWeb d-none font">
+    <div class="row shadow-lg p-2 mb-5 bg-body-tertiary rounded-pill d-flex justify-content-between align-items-center pe-5 ps-5">
+        <a class="col-1" href="index.php"><img class="w-100" src="https://www.kafeteomomes.fr/uploads/2016/10/logo.png" alt="Logo de l'association"></a>
+        <div class="col-5 d-flex justify-content-between">
             <?php
             // Permet de savoir sur quelle page nous sommes sans JS
-            
+
             if ($fileName == "admin_stages.php"||"formulaire_ajouter_stage.php") {
                 ?>
                 <a class="nude" href="admin_stages.php"><div class="rounded-4 selection p-3"><h5 class="mb-0">Les stages</h5></div></a>

@@ -28,6 +28,8 @@ else {
     echo "Erreur lors de la récupération des données.";
     exit();
 }
+
+include("ressources/ressourcesCommunes.php");
 ?>
 
 <!DOCTYPE html>

@@ -76,7 +76,7 @@ $fileName = basename($Url);
                 </div>
             </a>
         </div>
-        <a class="col-1" href="index.php"><img class="w-100" src="https://www.kafeteomomes.fr/uploads/2016/10/logo.png" alt="logo de ka fête ô môme"></a>
+        <a class="col-1" href="index.php"><img class="w-100" src="https://www.kafeteomomes.fr/uploads/2016/10/logo.png" alt="Logo de l'association"></a>
         <div class="col-5 d-flex">
             <?php
             // Permet de savoir sur quelle page nous sommes sans JS
