@@ -31,7 +31,7 @@ nav{display: flex;padding: 1rem;}
 }
 @media (min-width: 992px) {
     .navMobile{display: none;}
-    .navWeb{top: 1rem; opacity: 100 !important; position: static !important;display: unset !important;}
+    .navWeb{top: 1rem; display: block !important;}
 }
 
 .info {
