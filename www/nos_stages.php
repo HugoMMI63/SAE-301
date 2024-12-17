@@ -72,7 +72,7 @@ if ($donnees["status"] == "OK" ) {
         <?php endforeach; ?>
     </section>
   </main>
-    <!-- Ajout du footer -->
+  <?php include("navbars/footer.php"); ?>
 
     </body>
 </html>
