@@ -25,6 +25,8 @@ function afficherInfoStage(){
                 document.getElementById("tarifStage").innerHTML="<strong>Prix :</strong/>"+response.stage[0].tarif_min+" à "+response.stage[0].tarif_max;
                 document.getElementById("miniatureStage").src = response.stage[0].miniature;
                 document.getElementById("descriptionStage").innerText = response.stage[0].description;
+		history.pushState(null, '', '/www/detailstage.php?id='+idstage);
+                document.title='Stage - '+response.stage[0].titre;
 
                 // Réinitialisation des animateurs
 

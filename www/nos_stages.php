@@ -1,27 +1,33 @@
 <?php 
-// On se connecte à la base de données
+// Connexion à la base de données
+include("config/config.php");
 
-require("config/config.php");
-
+// connection
 try {
-  $dbh = new PDO($dsn, $identifiant, $mot_de_passe, $options);
+  $dbh = new PDO($dsn, $identifiant, $mot_de_passe,$options);
   $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+  echo 'Échec lors de la connexion : ' . $e->getMessage();
 }
-catch (PDOException $e) {
-  echo "Échec lors de la connexion : ".$e->getMessage();
+
+// Appel de l'API pour récupérer les stages
+$api = "http://localhost/www/API/tousStage.php"; 
+$response = file_get_contents($api); 
+$donnees = json_decode($response, true); 
+
+// Vérifier que l'API a retourné un statut "OK"
+if ($donnees["status"] == "OK" ) {
+    $stages_data = $donnees['tousStage']; 
+    require_once("classes/Stage.php"); 
+
+} else {
+    echo "Erreur lors de la récupération des données.";
+    exit();
 }
 
-/* Récupération des stages par ordre décroissant (en fonction de l'ID) */
-
-$requete = 'SELECT * FROM `stage` ORDER BY id DESC';
-$resultats = $dbh->query($requete);
-$stages = $resultats->fetchAll(PDO::FETCH_ASSOC);
-$resultats->closeCursor();
-
-$nb_stages = count($stages);
+ include("ressources/ressourcesCommunes.php");
 ?>
 
-<?php include("ressources/ressourcesCommunes.php"); ?>
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -35,31 +41,37 @@ $nb_stages = count($stages);
         </header>
 
         <main>
-            <h1>NOS STAGES</h1>
-            <img src="img/barre_separation.png" alt="Barre de séparation">
-            
-            <section>
-            <!-- Boucle pour afficher l'ensemble des stages -->
-
-                <?php for ($i = 0; $i < $nb_stages; $i++) {
-                    // Requête pour récupérer le nombre d'enfants inscrit au stage en question grâce à l'id
-
-                    $requete = 'SELECT COUNT(*) FROM `reservation` WHERE id_stage ='.$stages[$i]['id'];
-                    $resultats = $dbh->query($requete);
-                    $nbparticipant = $resultats->fetchAll(PDO::FETCH_ASSOC);
-                    $resultats->closeCursor();?>
-                    <div>
-                    <h2><?php echo $stages[$i]['titre']; ?></h2>
-                    <?php echo "<img src=".$stages[$i]['miniature']." alt='Miniature du stage' style='width: 300px; height: auto;'>";
-                    echo "<p>".$nbparticipant[0]['COUNT(*)']."/".$stages[$i]['nb_places']." places restantes</p>";
-                    echo "<p>".$stages[$i]['date']."</p>";?>
-                    <p><strong>Description :</strong> <?php echo $stages[$i]['description']; ?></p>
-                    <!-- Bouton avec un ID unique -->
-                    <a href="details_stage.php?id=<?php echo $stages[$i]['id']; ?>"><button id="<?php echo $stages[$i]['id']; ?>">Voir plus</button></a>
-                    </div>
-                <?php }?>
-            </section>
-        <main>
+    <h1>NOS STAGES</h1>
+    <section>
+        <!-- Boucle pour afficher tous les stages -->
+        <?php foreach ($stages_data as $stage_data): 
+            // Créer un objet Stage pour chaque stage
+            $stage = new Stage(
+                $stage_data["id"],
+                $stage_data["miniature"],
+                $stage_data["titre"],
+                $stage_data["date"],
+                $stage_data["horaire_debut"],
+                $stage_data["horaire_fin"],
+                $stage_data["description"],
+                $stage_data["nb_places"],
+                $stage_data["lieu"],
+                $stage_data["tarif_min"],
+                $stage_data["tarif_max"],
+                $stage_data["id_categorie"]
+            );
+        ?>
+            <div>
+                <h3><?php echo $stage->titre; ?></h3>
+                <img src="<?php echo $stage->miniature; ?>" alt="Image du stage" style="width: 300px; height: auto;">
+                <p><?php echo $stage->description; ?></p>
+                <p>Date : <?php echo $stage->date; ?></p>
+                <p>Places restantes : <?php echo $stage->nb_places; ?></p>
+                <a href="details_stage.php?id=<?php echo $stage->id; ?>"><button>Voir plus</button></a>
+            </div>
+        <?php endforeach; ?>
+    </section>
+  </main>
     <!-- Ajout du footer -->
 
     </body>
