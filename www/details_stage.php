@@ -63,8 +63,9 @@ include("ressources/ressourcesCommunes.php");
         <script src="js/afficherDetailsStage.js"></script>
     </head>
     <body>
-        <!-- Ajout de la nav -->
-
+        <header>
+            <?php include("navbars/navbarUtilisateur.php"); ?>
+        </header>
         <main>
         <!-- Informations du stage -->
 

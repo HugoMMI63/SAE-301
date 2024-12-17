@@ -1,6 +1,6 @@
 <?php
-require("config/config.php");
-require("classes/Stage.php");
+require("../config/config.php");
+require("../classes/Stage.php");
 
 $attributs = ["miniature", "titre", "date", "horaire_debut", "horaire_fin", "description", "nb_places", "lieu", "tarif_min", "tarif_max", "id_categorie"];
 

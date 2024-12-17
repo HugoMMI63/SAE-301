@@ -22,7 +22,7 @@ include("ressources/ressourcesCommunes.php");
             <?php include("navbars/navbarAdmin.php"); ?>
         </header>
         <h1>Ajouter un stage</h1>
-        <form method="POST" action="ajouterStage.php">
+        <form method="POST" action="executable/ajouterStage.php">
             <div>
                 <label for="miniature">Miniature :</label>
                 <input id="miniature" name="miniature" type="text" required="required">
