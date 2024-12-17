@@ -1,25 +1,26 @@
-<footer class="bcFooter pt-5 pb-5">
+<footer>
     <div class="container">
-        <div class="row justify-content-between">
-            <a class="col-2" href="index.php"><img class="w-100" src="https://www.kafeteomomes.fr/uploads/2016/10/logo.png" alt="logo de ka fête ô môme"></a>
-            <div class="col-2">
-                <h6 class="nude font">PLAN DU SITE</h6>
-                <a class="nude" href="index.php"><div>Acceuil</div></a>
-                <a class="nude" href="nos_stages.php"><div>Nos Stages</div></a>
-                <a class="nude" href=""><div>Nos Animateurs</div></a>
-
+        <div class="row">
+        <a href="index.php"><img class="col-lg-1 col-3" src="https://www.kafeteomomes.fr/uploads/2016/10/logo.png" alt="logo de ka fête ô môme"></a>
+            <div>
+                <h6>PLAN DU SITE</h6>
+                <ul>
+                    <li><a href="index.php"><div>Acceuil</div></a></li>
+                    <li><a href="nos_stages.php"><div>Nos Stages</div></a></li>
+                    <li><a href=""><div>Nos Animateurs</div></a></li>
+                </ul>
             </div>
-            <div class="col-2">
-                <h6 class="nude font">DONNEES</h6>
-                <a class="nude" href="mentionLegal/mentionLegal.php"><div>Mentions légales</div></a>
-                <a class="nude" href="mentionLagal/poliqueConfidentialite.php"><div>Politique de confidentialité</div></a>
+            <div>
+                <h6>DONNEES</h6>
+                <ul>
+                    <li><a href=""><div>Menttions légales</div></a></li>
+                    <li><a href=""><div>Politique de confidentialité</div></a></li>
+                </ul>
             </div>
-            <div class="col-2">
-                <h6 class="nude font">RESEAUX SOCIAUX</h6>
-                <div class="d-flex">
-                    <a class="w-25" href="https://www.facebook.com/kafeteomomes.fr/"><img class="w-100" src="data:image/png;base64,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" alt="facebook-new"></a>
-                    <a class="w-25" href="https://www.instagram.com/kafeteomomes/"><img class="w-100" src="data:image/png;base64,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" alt="instagram-circle"></a>
-                </div>
+            <div>
+                <h6>RESEAUX SOCIAUX</h6>
+                <a href=""><img src="" alt=""></a>
+                <a href=""><img src="" alt=""></a>
             </div>
         </div>
     </div>

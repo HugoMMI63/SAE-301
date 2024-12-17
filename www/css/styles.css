@@ -2,9 +2,8 @@
 .jua-regular {font-family: "Jua", serif;font-weight: 400;font-style: normal;}
 /*CSS custom pour menu client lien a formulaire*/
 .fondJaune{background-color: #FFE41B;}
-/*CSS custom pour menu web admin/client et footer*/
-.font{font-family: "Jua", serif;}
-.nude{text-decoration: none; color: black;}
+/*CSS custom pour menu web admin/client*/
+.nude{text-decoration: none; color: black;font-family: "Jua", serif;}
 .selection{background-color: #FF6D6D; font-size: 1rem; color: white;}
 /*CSS custom pour menu Burger*/
 li{list-style: none;}
@@ -18,8 +17,6 @@ nav{display: flex;padding: 1rem;}
 .menuBurger.active span:nth-child(1){ top: 50%;transform: translate(-50%,-50%) rotate(45deg);}
 .menuBurger.active span:nth-child(2){ opacity: 0;}
 .menuBurger.active span:nth-child(3){ top: 50%;transform: translate(-50%,-50%) rotate(-45deg);}
-/*CSS custom pour footer*/
-.bcFooter{background-color: #EDFBFD;}
 /*changement de menu celon la taille de notre page entre menu burger pour telephone et ipad et menu trad pour web*/
 @media(min-width:450){
     .horsChamps{background-color: white; height: 100vh; width: 100%; max-width: 450px; position: fixed; top: 0; right: -450px; display: flex; flex-direction: column; justify-content: center; text-align: center; font-size: 3rem; transition: .3s ease;padding-right: 5%;}
