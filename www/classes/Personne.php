@@ -1,7 +1,7 @@
 <?php
 // On se connecte à la base de données
 
-//require("../config/config.php");
+require("../config/config.php");
 $bdd_gestion_stages = new PDO($dsn, $identifiant, $mot_de_passe, $options);
 
 // Création de la classe "Personne"
