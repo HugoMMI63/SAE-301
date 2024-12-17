@@ -7,7 +7,7 @@ if (isset($_GET['id'])) {
     require("config/config.php");
 
     try {
-        $dbh = new PDO($dsn, $identifiant, $mot_de_passe);
+        $dbh = new PDO($dsn, $identifiant, $mot_de_passe, $options);
         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         // Créer une instance de la classe Stage avec l'ID du stage
@@ -19,10 +19,13 @@ if (isset($_GET['id'])) {
         // Appeler la méthode pour supprimer le stage
         $stage->supprimerBDD();
 
-    } catch (PDOException $e) {
-        echo 'Échec lors de la connexion : ' . $e->getMessage();
     }
-} else {
-    echo "Aucun ID de stage fourni.";
+    catch (PDOException $e) {
+        echo 'Échec lors de la connexion : '.$e->getMessage();
+    }
+}
+else {
+    header("Location: redirection.php?raison=requete_erreur");
+    exit();
 }
 ?>

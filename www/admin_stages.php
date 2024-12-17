@@ -3,7 +3,7 @@
 require("config/config.php");
 
 try {
-    $dbh = new PDO($dsn, $identifiant, $mot_de_passe);
+    $dbh = new PDO($dsn, $identifiant, $mot_de_passe, $options);
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }
 catch (PDOException $e) {
@@ -42,6 +42,7 @@ include("ressources/ressourcesCommunes.php"); ?>
         <main>
         <h1>NOS STAGES</h1>
             <section id="liste_stage">
+                <a href="formulaire_ajouter_stage.php">Ajouter un stage</a>
                 <!-- Boucle pour afficher tous les stages -->
                 <?php foreach ($stages_data as $stage_data): 
                     // Créer un objet Stage pour chaque stage

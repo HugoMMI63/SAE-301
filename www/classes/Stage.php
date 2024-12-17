@@ -84,15 +84,15 @@ class Stage {
             // L'administrateur est automatiquement redirigé vers la page "redirection.php" avec un message lié à la raison de la redirection (échec ou réussite)
 
             if ($etat == 0) {
-                header("Location: ../redirection.php?raison=requete_erreur");
+                header("Location: redirection.php?raison=requete_erreur");
             }
             else {
-                header("Location: ../redirection.php?raison=requete_reussie");
+                header("Location: redirection.php?raison=requete_reussie");
             }
             exit();
         }
         else {
-            header("Location: ../redirection.php?raison=requete_erreur");
+            header("Location: redirection.php?raison=requete_erreur");
             exit();
         }
     }
@@ -122,13 +122,13 @@ class Stage {
 
             // L'administrateur est automatiquement redirigé vers la page "redirection.php" avec un message lié à la raison de la redirection (échec ou réussite)
 
-            if ($etat == 0) {
+            /*if ($etat == 0) {
                 header("Location: ../redirection.php?raison=requete_erreur");
             }
             else {
                 header("Location: ../redirection.php?raison=requete_reussie");
             }
-            exit();
+            exit();*/
         }
         else {
             header("Location: ../redirection.php?raison=requete_erreur");
