@@ -29,7 +29,7 @@ if (isset($_GET['id'])) {
     }
 }
 else {
-    header("Location: ../redirection.php?raison=requete_erreur");
+    header("Location: ../redirection.php");
     exit();
 }
 ?>

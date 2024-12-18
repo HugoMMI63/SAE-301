@@ -25,7 +25,7 @@ $fileName = basename($Url);
     <?php
     // Permet de savoir sur quelle page nous sommes (sans JS)
 
-    if ($fileName == "admin_stages.php"||"formulaire_ajouter_stage.php") {
+    if ($fileName == "admin_stages.php" || $fileName == "formulaire_ajouter_stage.php") {
     ?>
         <ul>
             <li><a class="nude" href="admin_stages.php"><div class="rounded-4 selection p-3"><h5 class="mb-0">Les stages</h5></div></a></li>
@@ -56,7 +56,7 @@ $fileName = basename($Url);
             <?php
             // Permet de savoir sur quelle page nous sommes sans JS
 
-            if ($fileName == "admin_stages.php"||"formulaire_ajouter_stage.php") {
+            if ($fileName == "admin_stages.php" || $fileName == "formulaire_ajouter_stage.php") {
                 ?>
                 <a class="nude" href="admin_stages.php"><div class="rounded-4 selection p-3"><h5 class="mb-0">Les stages</h5></div></a>
                 <a class="nude" href="admin_animateurs.php"><div class="rounded-4 p-3"><h5 class="mb-0">Les animateurs</h5></div></a>

@@ -1,10 +1,10 @@
 <?php
 require("../config/config.php");
-require("../classes/Animateur.php");
+require("../classes/Reservation.php");
 
 $valide = true;
 
-$attributs = ["nom", "prenom", "age", "telephone", "description", "photo"];
+$attributs = ["nom", "prenom", "age", "telephone", "email", "nom_prenom_RL", "pb_medicaux", "prescriptions", "etat_paiement", "id_stage"];
 
 foreach ($attributs as $attribut) {
     if (isset($_POST[$attribut]) == false) {
@@ -14,17 +14,21 @@ foreach ($attributs as $attribut) {
 }
 
 if ($valide == true) {
-    $animateur = new Animateur(
+    $reservation = new Reservation(
         null,
         $_POST["nom"],
         $_POST["prenom"],
         $_POST["age"],
         $_POST["telephone"],
-        $_POST["description"],
-        $_POST["photo"]
+        $_POST["email"],
+        $_POST["nom_prenom_RL"],
+        $_POST["pb_medicaux"],
+        $_POST["prescriptions"],
+        0,
+        $_POST["id_stage"]
     );
     
-    $animateur->ajouterBDD();
+    $reservation->ajouterBDD();
 }
 else {
     header("Location: ../redirection.php");

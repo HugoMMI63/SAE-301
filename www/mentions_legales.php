@@ -52,6 +52,6 @@
             <p class="mb-5">Tout litige en relation avec l’utilisation de ce site est soumis au droit [français]. En cas de différend, les tribunaux de [Ville] seront seuls compétents.</p>
             </div>
         </main>
-        <?php include("navbars/footer.php");?>
+        <?php include("navbars/footer.php"); ?>
     </body>
 </html>

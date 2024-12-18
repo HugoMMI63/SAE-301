@@ -37,6 +37,6 @@
                 </div>
             </section>
         </main>
-        <?php include("navbars/footer.php");?>
+        <?php include("navbars/footer.php"); ?>
     </body>
 </html>

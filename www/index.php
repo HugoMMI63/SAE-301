@@ -5,8 +5,6 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Accueil</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-
     </head>
     <body>
         <header>
@@ -167,8 +165,6 @@
             </section>
 
         </main>
-        <footer>
-            <?php include("navbars/footer.php"); ?>
-        </footer>
+        <?php include("navbars/footer.php"); ?>
     </body>
 </html>

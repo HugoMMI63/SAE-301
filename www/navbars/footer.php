@@ -7,6 +7,7 @@
                 <a class="nude" href="index.php">Accueil</a>
                 <a class="nude" href="nos_stages.php">Nos stages</a>
                 <a class="nude" href="nos_animateurs.php">Nos animateurs</a>
+                <a class="nude" href="formulaire_inscription.php">S'inscrire à un stage</a>
             </div>
             <div class="col-8 col-lg-2 d-flex flex-column mb-3 align-items-center align-items-lg-start">
                 <h6 class="font">DONNEES</h6>

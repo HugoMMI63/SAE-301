@@ -132,8 +132,6 @@ include("ressources/ressourcesCommunes.php");
                 <a href="nos_stages.php" class="btn btn-yellow">Retour à la liste des stages</a>
             </div>
         </main>
-        <footer>
-            <?php include("navbars/footer.php"); ?>
-        </footer>
+        <?php include("navbars/footer.php"); ?>
     </body>
 </html>

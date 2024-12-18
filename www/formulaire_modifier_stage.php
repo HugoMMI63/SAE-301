@@ -102,13 +102,13 @@ include("ressources/ressourcesCommunes.php"); ?>
                 </div>
                 <br>
                 <div>
-                    <label for="tarif_min">Tarif (minimum) :</label>
-                    <input id="tarif_min" name="tarif_min" type="number" value="<?php echo $stage[0]['tarif_min'] ?>" required="required">
+                    <label for="prix_min">Tarif (minimum) :</label>
+                    <input id="prix_min" name="prix_min" type="number" value="<?php echo $stage[0]['tarif_min'] ?>" required="required">
                 </div>
                 <br>
                 <div>
-                    <label for="tarif_max">Tarif (maximum) :</label>
-                    <input id="tarif_max" name="tarif_max" type="number" value="<?php echo $stage[0]['tarif_max'] ?>" required="required">
+                    <label for="prix_max">Tarif (maximum) :</label>
+                    <input id="prix_max" name="prix_max" type="number" value="<?php echo $stage[0]['tarif_max'] ?>" required="required">
                 </div>
                 <br>
                 <div>

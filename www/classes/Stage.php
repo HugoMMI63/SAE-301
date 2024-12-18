@@ -160,11 +160,17 @@ class Stage {
             // Exécuter la requête de mise à jour du stage
             $etat = $requete_preparee->execute();
             
-            // Redirection après mise à jour réussie
-            header('Location: ../admin_stages.php');
+            // L'administrateur est automatiquement redirigé vers la page "redirection.php" avec un message lié à la raison de la redirection (échec ou réussite)
+
+            if ($etat == 0) {
+                header("Location: ../redirection.php?raison=requete_erreur");
+            }
+            else {
+                header("Location: ../redirection.php?raison=requete_reussie");
+            }
             exit();
-        } else {
-            // Si l'ID est null ou si la taille du tableau ne correspond pas
+        }
+        else {
             header("Location: ../redirection.php?raison=requete_erreur");
             exit();
         }

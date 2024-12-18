@@ -5,60 +5,121 @@ require("config/config.php");
 $bdd_gestion_stages = new PDO($dsn, $identifiant, $mot_de_passe, $options);
 
 $resultats = $bdd_gestion_stages->query("SELECT * FROM `categorie`;");
-$donnees = $resultats->fetchAll(PDO::FETCH_ASSOC);
+$categories = $resultats->fetchAll(PDO::FETCH_ASSOC);
 $resultats->closeCursor();    // On ferme l'exécution de la requête une fois qu'elle est complétement terminée pour libérer une potentielle future requête
-?>
 
+$resultats = $bdd_gestion_stages->query("SELECT id, titre, id_categorie FROM `stage`;");
+$stages = $resultats->fetchAll(PDO::FETCH_ASSOC);
+$resultats->closeCursor();    // On ferme l'exécution de la requête une fois qu'elle est complétement terminée pour libérer une potentielle future requête
+
+include("ressources/ressourcesCommunes.php");
+?>
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulaire d'inscription</title>
-    <?php include("ressources/ressourcesCommunes.php");?>
-</head>
-<body>
-    <header><?php include("navbars/navbarutilisateur.php");?></header>
-    <main class="container d-flex flex-column">
-        <form action="" method="get">
-            <section class="d-flex flex-column col-8 ms-5">
-                <h3 class="font">Responsable Legal</h3>
-                <label for="NomPrenom">Nom/Prenom</label>
-                <input class="m-3" type="text" placeholder="Nom et Prénom" name="NomPrenom" id="NomPrenom">
-                <label for="tel">Téléphone</label>
-                <input class="m-3" type="tel" placeholder="xx xx xx xx xx" name="mail" id="mail">
-                <label for="mail">Mail</label>
-                <input class="m-3" type="email" placeholder="" name="mail" id="mail">
-                <label for="tel">Salaire du foyer net</label>
-                <input class="m-3" type="number" placeholder="" name="" id="">
-                <label for="tel">Nombre d'enfants a inscrire</label>
-                <input class="m-3" type="number" placeholder="1" name="nbenfant" id="nbenfant">
-                <input class="m-3" type="Button" value="Suivant">
-            </section>
-
-            <section class="d-flex flex-column col-8 ms-5">
-                <h3 class="font">L'enfant</h3>
-                <label for="Nom">Nom</label>
-                <input class="m-3" type="text" placeholder="Nom et Prénom" name="Nom" id="Nom">
-                <label for="Prenom">Prenom</label>
-                <input class="m-3" type="text" placeholder="Nom et Prénom" name="Prenom" id="Prenom">
-                <label for="age">Age</label>
-                <input class="m-3" type="number" placeholder="Age" name="age" id="age">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>S'inscrire à un stage</title>
+        <script src="js/selectStagesDynamique.js"></script>
+    </head>
+    <body>
+        <header>
+            <?php include("navbars/navbarUtilisateur.php"); ?>
+        </header>
+        <main>
+            <h1>S'inscrire à un stage</h1>
+            <form method="POST" action="executable/ajouterReservation.php">
+                <fieldset>
+                    <legend>Responsable légal</legend>
+                    <div>
+                        <label for="nom_prenom_RL">Nom et prénom :</label>
+                        <input id="nom_prenom_RL" name="nom_prenom_RL" type="text" required="required">
+                    </div>
+                    <br>
+                    <div>
+                        <label for="email">Adresse e-mail :</label>
+                        <input id="email" name="email" type="email" required="required">
+                    </div>
+                    <br>
+                    <div>
+                        <label for="telephone">Numéro de téléphone :</label>
+                        <input id="telephone" name="telephone" type="text" required="required">
+                    </div>
+                    <br>
+                    <div>
+                        <label for="salaire_foyer">Salaire annuel du foyer (Net) :</label>
+                        <input id="salaire_foyer" name="salaire_foyer" type="number" required="required">
+                    </div>
+                    <br>
+                </fieldset>
+                <br>
+                <fieldset>
+                    <legend>Enfant</legend>
+                    <div>
+                        <label for="nom">Nom :</label>
+                        <input id="nom" name="nom" type="text" required="required">
+                    </div>
+                    <br>
+                    <div>
+                        <label for="prenom">Prénom :</label>
+                        <input id="prenom" name="prenom" type="text" required="required">
+                    </div>
+                    <br>
+                    <div>
+                        <label for="age">Âge :</label>
+                        <input id="age" name="age" type="number" required="required">
+                    </div>
+                    <br>
+                    <div>
+                        <label for="pb_medicaux">Problèmes médicaux :</label>
+                        <textarea id="pb_medicaux" name="pb_medicaux" required="required"></textarea>
+                    </div>
+                    <div>
+                        <label for="prescriptions">Prescriptions :</label>
+                        <textarea id="prescriptions" name="prescriptions" required="required"></textarea>
+                    </div>
+                    <br>
+                </fieldset>
+                <br>
+                <fieldset>
+                    <legend>Stage</legend>
+                    <div>
+                        <label for="id_categorie">Catégorie :</label>
+                        <select id="id_categorie" name="id_categorie" required="required">
+                            <?php
+                            for ($index = 0; $index < count($categories); $index = $index + 1) {
+                                echo("<option value='".$categories[$index]["id"]."'>".$categories[$index]["intitule"]."</option>");
+                            }
+                            ?>
+                        </select>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="id_stage">Intitulé du stage :</label>
+                        <select id="id_stage" name="id_stage" required="required">
+                            <?php
+                            for ($index = 0; $index < count($stages); $index = $index + 1) {
+                                if ($stages[$index]["id_categorie"] == 1) {
+                                    echo("<option class='stages_ados' value='".$stages[$index]["id"]."'>".$stages[$index]["titre"]."</option>");
+                                }
+                                elseif ($stages[$index]["id_categorie"] == 2) {
+                                    echo("<option class='stages_petits d-none' value='".$stages[$index]["id"]."'>".$stages[$index]["titre"]."</option>");
+                                }
+                                else {
+                                    echo("<option value='".$stages[$index]["id"]."'>".$stages[$index]["titre"]."</option>");
+                                }
+                            }
+                            ?>
+                        </select>
+                    </div>
+                    <br>
+                </fieldset>
+                <br>
                 <div>
-                <label for="id_categorie">Catégorie :</label>
-                    <select id="id_categorie" name="id_categorie" required="required">
-                        <?php
-                        for ($index = 0; $index < count($donnees); $index = $index + 1) {
-                            echo("<option value='".$donnees[$index]["id"]."'>".$donnees[$index]["intitule"]."</option>");
-                        }
-                        ?>
-                    </select>
+                    <input type="submit" value="S'inscrire au stage">
                 </div>
-                <label for="mail">Mail</label>
-                <input class="m-3" type="email" placeholder="" name="mail" id="mail">
-            </section>
-        </form>
-    </main>
-    <?php include("navbars/footer.php");?>
-</body>
+            </form>
+        </main>
+        <?php include("navbars/footer.php"); ?>
+    </body>
 </html>

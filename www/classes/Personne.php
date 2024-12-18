@@ -134,16 +134,6 @@ class Personne {
             // On exécute la requête préparée et on stocke l'état de cette-dernière (1 = réussie, 0 = échec)
 
             $etat = $requete_preparee->execute();
-
-            // L'administrateur est automatiquement redirigé vers la page "redirection.php" avec un message lié à la raison de la redirection (échec ou réussite)
-
-            if ($etat == 0) {
-                header("Location: ../redirection.php?raison=requete_erreur");
-            }
-            else {
-                header("Location: ../redirection.php?raison=requete_reussie");
-            }
-            exit();
         }
         else {
             header("Location: ../redirection.php?raison=requete_erreur");

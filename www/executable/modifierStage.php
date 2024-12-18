@@ -1,7 +1,6 @@
 <?php
-// On se connecte à la base de données
-
 require("../config/config.php");
+require("../classes/Stage.php");
 
 try {
     $dbh = new PDO($dsn, $identifiant, $mot_de_passe, $options);
@@ -11,11 +10,20 @@ catch (PDOException $e) {
     echo 'Échec lors de la connexion : '.$e->getMessage();
 }
 
-// Récupérer l'ID de l'animateur depuis l'URL
+$valide = true;
 
-if (isset($_GET['id'])) {
-    $id_stage = $_GET['id'];
-    require_once("../classes/Stage.php");
+$attributs = ["titre", "image", "date", "horaire_debut", "horaire_fin", "nb_place", "lieu", "prix_min", "prix_max", "description", "categorie"];
+
+foreach ($attributs as $attribut) {
+    echo($attribut);
+    if (isset($_POST[$attribut]) == false) {
+        $valide = false;
+        break;
+    }
+}
+
+if ($valide == true && isset($_GET["id"])) {
+    $id_stage = $_GET["id"];
 
     // Création d'un tableau associatif
     
@@ -33,7 +41,7 @@ if (isset($_GET['id'])) {
         'tarif_max' => $_POST['prix_max']
     ];
 
-    // Créez un objet Stage avec l'ID du stage et les autres données du formulaire
+    // Créer une instance de la classe "Stage" avec l'ID du stage et les autres données du formulaire
 
     $stage = new Stage(
         $id_stage, 
@@ -52,14 +60,12 @@ if (isset($_GET['id'])) {
 
     $animateurs_selectionnes = isset($_POST['animateurs']) ? $_POST['animateurs'] : [];
 
-    // Appeler la méthode pour modifier le stage dans la base de données
+    // Appeler la méthode "modifierBDD" pour modifier le stage dans la base de données
     
-    $stage->modifierBDD($tab_stage,$animateurs_selectionnes);
+    $stage->modifierBDD($tab_stage, $animateurs_selectionnes);
 }
 else {
-    // Si l'ID n'existe pas, rediriger vers la page "redirection.php"
-
-    header("Location: redirection.php");
+    header("Location: ../redirection.php");
     exit();
 }
 ?>
