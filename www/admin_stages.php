@@ -1,5 +1,6 @@
 <?php 
 // On se connecte à la base de données
+
 require("config/config.php");
 
 try {
@@ -11,11 +12,13 @@ catch (PDOException $e) {
 }
 
 // Appel de l'API pour récupérer les stages
+
 $api = "http://localhost/www/API/tousStage.php";
 $response = file_get_contents($api);
 $donnees = json_decode($response, true);
 
 // Vérifier que l'API a retourné un statut "OK"
+
 if ($donnees["status"] == "OK" ) {
     $stages_data = $donnees['tousStage'];
     require_once("classes/Stage.php");
@@ -44,7 +47,7 @@ include("ressources/ressourcesCommunes.php"); ?>
             <section id="liste_stage">
                 <a href="formulaire_ajouter_stage.php">Ajouter un stage</a>
                 <!-- Boucle pour afficher tous les stages -->
-                <?php foreach ($stages_data as $stage_data): 
+                <?php foreach ($stages_data as $stage_data){
                     // Créer un objet Stage pour chaque stage
                     
                     $stage = new Stage(
@@ -62,18 +65,18 @@ include("ressources/ressourcesCommunes.php"); ?>
                         $stage_data["id_categorie"]
                     );
                 ?>
-                    <div>
-                        <!-- Récupérer icon croix avec bootstrap -->
-                        <button class="suppr" value=<?php echo $stage->id?>>Supprimer</button>
-                        <a href="formulaire_modifier_stage.php?id=<?php echo $stage->id ?>"><button class="modif" value=<?php echo $stage->id?>>Modifier</button></a>
-                        <h3><?php echo $stage->titre; ?></h3>
-                        <img src="<?php echo $stage->miniature; ?>" alt="Image du stage" style="width: 300px; height: auto;">
-                        <p><?php echo $stage->description; ?></p>
-                        <p>Date : <?php echo $stage->date; ?></p>
-                        <p>Places restantes : <?php echo $stage->nb_places; ?></p>
-                        <a href="details_stage.php?id=<?php echo $stage->id; ?>"><button>Voir détails</button></a>
-                    </div>
-                <?php endforeach; ?>
+                <div>
+                    <!-- Récupérer icon croix avec bootstrap -->
+                    <button class="suppr" value=<?php echo $stage->id?>>Supprimer</button>
+                    <a href="formulaire_modifier_stage.php?id=<?php echo $stage->id ?>"><button class="modif" value=<?php echo $stage->id?>>Modifier</button></a>
+                    <h3><?php echo $stage->titre; ?></h3>
+                    <img src="<?php echo $stage->miniature; ?>" alt="Image du stage" style="width: 300px; height: auto;">
+                    <p><?php echo $stage->description; ?></p>
+                    <p>Date : <?php echo $stage->date; ?></p>
+                    <p>Places restantes : <?php echo $stage->nb_places; ?></p>
+                    <a href="details_stage.php?id=<?php echo $stage->id; ?>"><button>Voir détails</button></a>
+                </div>
+                <?php } ?>
             </section>
         </main>
     </body>

@@ -31,7 +31,6 @@ else {
 
 include("ressources/ressourcesCommunes.php");
 ?>
-
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -63,8 +62,6 @@ include("ressources/ressourcesCommunes.php");
                     $animateur_data["photo"]
                     );
                 ?>
-                <!-- Affichage de chaque animateur -->
-
                 <div>
                     <img src="<?php echo $animateur->photo; ?>" alt="Photo de <?php echo $animateur->prenom; ?>" style="width: 300px; height: auto;">
                     <h3><?php echo $animateur->prenom; ?></h3>

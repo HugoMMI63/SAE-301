@@ -25,7 +25,7 @@ include("ressources/ressourcesCommunes.php");
         <form method="POST" action="executable/ajouterStage.php">
             <div>
                 <label for="miniature">Miniature :</label>
-                <input id="miniature" name="miniature" type="text" required="required">
+                <input id="miniature" name="miniature" type="url" required="required">
             </div>
             <br>
             <div>

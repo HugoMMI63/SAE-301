@@ -18,7 +18,7 @@ if (isset($_GET["id"])) {
     
     // Requête SQL pour récupérer les informations du stage et des animateurs
 
-    $requete = 'SELECT animateur.prenom, animateur.photo, stage.miniature, stage.titre, stage.date, stage.horaire_debut, stage.horaire_fin, stage.description, stage.nb_places, stage.lieu, stage.tarif_min, stage.tarif_max, stage.id_categorie, categorie.intitule 
+    $requete = 'SELECT animateur.prenom, animateur.photo, stage.id, stage.miniature, stage.titre, stage.date, stage.horaire_debut, stage.horaire_fin, stage.description, stage.nb_places, stage.lieu, stage.tarif_min, stage.tarif_max, stage.id_categorie, categorie.intitule 
                FROM `animateur`, `anime`, `stage`, `categorie` 
                WHERE animateur.id=anime.id_animateur AND anime.id_stage=stage.id AND stage.id_categorie=categorie.id AND stage.id='.$_GET["id"];
     

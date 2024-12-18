@@ -16,7 +16,7 @@ if (isset($_GET['id'])) {
 }
 else {
     // Si l'ID n'existe pas, rediriger vers la page "index.php"
-    header("Location: nos_stages.php");
+    header("Location: index.php");
     exit();
 }
 
@@ -45,7 +45,7 @@ include("ressources/ressourcesCommunes.php"); ?>
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Administrateur - Stages</title>
+        <title>Administrateur - Modifier un stage</title>
     </head>
     <body>
         <header>
@@ -53,17 +53,62 @@ include("ressources/ressourcesCommunes.php"); ?>
         </header>
         <main>
             <h1>MODIFIER LE STAGE</h1>
-            <form action="executable/modifierStage.php?id=<?php echo $stage[0]['id']?>" method="POST">
+            <form action="executable/modifierStage.php?id=<?php echo $stage[0]['id']; ?>" method="POST">
                 <!-- Champ caché pour récupérer l'id du stage -->
                 <input type="hidden" name="id" value="<?php echo $stage[0]['id']; ?>" />
                 <div>
-                    <label for="titre">Titre</label>
-                    <input type="text" id="titre" name="titre" value="<?php echo $stage[0]['titre'] ?>">
+                    <label for="image">Miniature :</label>
+                    <input type="url" id="image" name="image" value="<?php echo $stage[0]['miniature'] ?>" required="required">
                 </div>
-
+                <br>
                 <div>
-                    <label for="categorie">Catégorie</label>
-                    <select id="categorie" name="categorie">
+                    <label for="titre">Titre :</label>
+                    <input type="text" id="titre" name="titre" value="<?php echo $stage[0]['titre'] ?>" required="required">
+                </div>
+                <br>
+                <div>
+                    <label for="date">Date :</label>
+                    <input type="date" id="date" name="date" value="<?php echo $stage[0]['date'] ?>" required="required">
+                </div>
+                <br>
+                <div>
+                    <label for="horaire_debut">Horaire (Début) :</label>
+                    <input id="horaire_debut" name="horaire_debut" type="time" value="<?php echo $stage[0]['horaire_debut'] ?>" required="required">
+                </div>
+                <br>
+                <div>
+                    <label for="horaire_fin">Horaire (Fin) :</label>
+                    <input id="horaire_fin" name="horaire_fin" type="time" value="<?php echo $stage[0]['horaire_fin'] ?>" required="required">
+                </div>
+                <br>
+                <div>
+                    <label for="description">Description :</label>
+                    <textarea id="description" name="description" value="<?php echo $stage[0]['description'] ?>" required="required"></textarea>
+                </div>
+                <br>
+                <div>
+                    <label for="nb_place">Nombre de places :</label>
+                    <input type="number" id="nb_place" name="nb_place" value="<?php echo $stage[0]['nb_places'] ?>" required="required">
+                </div>
+                <br>
+                <div>
+                    <label for="lieu">Lieu :</label>
+                    <input type="text" id="lieu" name="lieu" value="<?php echo $stage[0]['lieu'] ?>" required="required">
+                </div>
+                <br>
+                <div>
+                    <label for="tarif_min">Tarif (minimum) :</label>
+                    <input id="tarif_min" name="tarif_min" type="number" value="<?php echo $stage[0]['tarif_min'] ?>" required="required">
+                </div>
+                <br>
+                <div>
+                    <label for="tarif_max">Tarif (maximum) :</label>
+                    <input id="tarif_max" name="tarif_max" type="number" value="<?php echo $stage[0]['tarif_max'] ?>" required="required">
+                </div>
+                <br>
+                <div>
+                    <label for="categorie">Catégorie :</label>
+                    <select id="categorie" name="categorie" required="required">
                     <?php
                         // Boucle à travers toutes les catégories
                         for ($i = 0; $i < count($categorie); $i++) {
@@ -79,46 +124,8 @@ include("ressources/ressourcesCommunes.php"); ?>
                         ?>
                     </select> 
                 </div>
-                
                 <div>
-                    <label for="image">Image</label>
-                    <input type="text" id="image" name="image" value="<?php echo $stage[0]['miniature'] ?>">
-                </div>
-
-                <div>
-                    <label for="date">Date</label>
-                    <input type="text" id="date" name="date" value="<?php echo $stage[0]['date'] ?>">
-                </div>
-
-                <div>
-                    <label for="lieu">Lieu</label>
-                    <input type="text" id="lieu" name="lieu" value="<?php echo $stage[0]['lieu'] ?>">
-                </div>
-
-                <div>
-                    <label for="horaires">Horaires</label>
-                    Horaire début :<input type="time" id="horaire_debut" name="horaire_debut" value="<?php echo $stage[0]['horaire_debut'] ?>">
-                    Horaire fin :<input type="time" id="horaire_fin" name="horaire_fin" value="<?php echo $stage[0]['horaire_fin'] ?>">
-                </div>
-
-                <div>
-                    <label for="nb_place">Nombre de places</label>
-                    <input type="number" id="nb_place" name="nb_place" value="<?php echo $stage[0]['nb_places'] ?>">
-                </div>
-
-                <div>
-                    <label for="description">Description</label>
-                    <input type="text" id="description" name="description" value="<?php echo $stage[0]['description'] ?>">
-                </div>
-                
-                <div>
-                    <label for="prix">Prix</label>
-                    Tarif minimum :<input type="text" id="prix_min" name="prix_min" value="<?php echo $stage[0]['tarif_min'] ?>">
-                    Tarif maximum :<input type="text" id="prix_max" name="prix_max" value="<?php echo $stage[0]['tarif_max'] ?>">
-                </div>
-
-                <div>
-                    <label for="animateurs">Animateurs</label><br>
+                    <label for="animateurs">Animateurs :</label><br>
                     <?php
                     $requete='SELECT * FROM categorie;';
                     $res=$dbh->query($requete);
@@ -147,10 +154,11 @@ include("ressources/ressourcesCommunes.php"); ?>
                     }
                     ?>
                 </div>
-                
-                <button type="submit">VALIDER</button>
+                <br>
+                <div>
+                    <input type="submit" value="Modifier le stage">
+                </div>
             </form>
-            
         </main>
     </body>
 </html>
