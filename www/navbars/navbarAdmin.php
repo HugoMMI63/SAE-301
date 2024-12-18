@@ -30,6 +30,7 @@ $fileName = basename($Url);
         <ul>
             <li><a class="nude" href="admin_stages.php"><div class="rounded-4 selection p-3"><h5 class="mb-0">Les stages</h5></div></a></li>
             <li><a class="nude" href="admin_animateurs.php"><div class="rounded-4 p-3"><h5 class="mb-0">Les animateurs</h5></div></a></li>
+            
         </ul>
     <?php
     }

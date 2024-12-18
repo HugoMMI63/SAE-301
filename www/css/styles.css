@@ -1,10 +1,13 @@
-/*imported font family*/
+body { color: #333;}
+/*imported font family & class font*/
 .jua-regular {font-family: "Jua", serif;font-weight: 400;font-style: normal;}
+.font{font-family: "Jua", serif;}
+.colorB{color: #5FB3E4;}
+.colorR{color:#F16560}
 /*CSS custom pour menu client lien a formulaire*/
 .fondJaune{background-color: #FFE41B;}
 /*CSS custom pour menu web admin/client*/
-.font{font-family: "Jua", serif;}
-.nude{text-decoration: none; color: black;}
+.nude{text-decoration: none; color: black; border-color: white; background-color: white;}
 .selection{background-color: #FF6D6D; font-size: 1rem; color: white;}
 /*CSS custom pour menu Burger*/
 li{list-style: none;}
@@ -122,11 +125,6 @@ section p {
     text-align: left;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    color: #333;
-}
-
 .text-stage {
     color: #5FB3E4;
     font-size: 2rem;
@@ -178,14 +176,6 @@ p {
     font-size: 1rem;
     line-height: 1.6;
     color: #555;
-}
-
-.row div {
-    transition: transform 0.3s ease-in-out;
-}
-
-.row div:hover {
-    transform: translateY(-5px);
 }
 
 .carousel-caption {
