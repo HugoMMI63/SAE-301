@@ -65,6 +65,7 @@ include("ressources/ressourcesCommunes.php"); ?>
                     <div>
                         <!-- Récupérer icon croix avec bootstrap -->
                         <button class="suppr" value=<?php echo $stage->id?>>Supprimer</button>
+                        <a href="formulaire_modifier_stage.php?id=<?php echo $stage->id ?>"><button class="modif" value=<?php echo $stage->id?>>Modifier</button></a>
                         <h3><?php echo $stage->titre; ?></h3>
                         <img src="<?php echo $stage->miniature; ?>" alt="Image du stage" style="width: 300px; height: auto;">
                         <p><?php echo $stage->description; ?></p>
