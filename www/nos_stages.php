@@ -37,13 +37,14 @@ include("ressources/ressourcesCommunes.php");
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Nos stages</title>
+        <title>Ka'fête ô mômes - Nos stages</title>
+        <meta name="description" content="La Ka'fête ô mômes organise des stages de vacances scolaires diversifiés pendant toute l'année !">
+        <meta name="keywords" content="Ka'fête ô mômes, association, stages, vacances scolaires, vacances, activités, enfants, parents, familles, Lyon">
     </head>
     <body>
         <header>
             <?php include("navbars/navbarUtilisateur.php"); ?>
         </header>
-
         <main>
             <h1 class="font colorB text-center">NOS STAGES</h1>
             <section class="container">

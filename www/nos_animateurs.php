@@ -36,11 +36,11 @@ include("ressources/ressourcesCommunes.php");
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Nos animateurs</title>
+        <title>Ka'fête ô mômes - Nos animateurs</title>
+        <meta name="description" content="L'équipe de la Ka'fête ô mômes est composée de personnes passionées, toutes avec un objectif commun : accompagner le développement personnel de vos enfants !">
+        <meta name="keywords" content="Ka'fête ô mômes, association, enfants, parents, familles, équipe, animateurs, passion, Lyon">
     </head>
     <body>
-        <!-- Ajout de la nav -->
-
         <header>
             <?php include("navbars/navbarUtilisateur.php"); ?>
         </header>

@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Mentions Legales</title>
+        <title>Ka'fête ô mômes - Mentions légales</title>
         <?php include("ressources/ressourcesCommunes.php");?>
     </head>
     <body>

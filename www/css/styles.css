@@ -1,13 +1,13 @@
-body { color: #333;}
+body{color: #333;}
 /*imported font family & class font*/
-.jua-regular {font-family: "Jua", serif;font-weight: 400;font-style: normal;}
+.jua-regular{font-family: "Jua", serif;font-weight: 400;font-style: normal;}
 .font{font-family: "Jua", serif;}
 .colorB{color: #5FB3E4;}
-.colorR{color:#F16560}
+.colorR{color:#F16560;}
 /*CSS custom pour menu client lien a formulaire*/
 .fondJaune{background-color: #FFE41B;}
 /*CSS custom pour menu web admin/client*/
-.nude{text-decoration: none; color: black; border-color: white; background-color: white;}
+.nude{text-decoration: none; color: black;}
 .selection{background-color: #FF6D6D; font-size: 1rem; color: white;}
 /*CSS custom pour menu Burger*/
 li{list-style: none;}
@@ -211,11 +211,6 @@ p {
     width: 100%;
 }
 
-.py-5.bg-light {
-    padding-top: 0% !important;
-    padding-bottom: 0% !important;
-}
-
 
 
 /* Style personnalisé pour les boutons de navigation du carrousel */
@@ -278,4 +273,3 @@ p {
     margin-bottom: 4px;
     color: #6c757d; /* Gris Bootstrap */
 }
-

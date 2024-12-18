@@ -19,7 +19,7 @@ include("ressources/ressourcesCommunes.php");
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>S'inscrire à un stage</title>
+        <title>Ka'fête ô mômes - Inscription à un stage</title>
         <script src="js/selectStagesDynamique.js"></script>
     </head>
     <body>
@@ -114,6 +114,11 @@ include("ressources/ressourcesCommunes.php");
                     </div>
                     <br>
                 </fieldset>
+                <br>
+                <div>
+                    <input id="checkbox" name="checkbox" type="checkbox" required="required">
+                    <label for="checkbox">En soumettant ce formulaire, j'accepte que les informations saisies soient exploitées dans le cadre de la gestion des stages de notre association.</label>
+                </div>
                 <br>
                 <div>
                     <input type="submit" value="S'inscrire au stage">

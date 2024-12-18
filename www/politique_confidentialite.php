@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Politique de confidentialité</title>
+        <title>Ka'fête ô mômes - Politique de confidentialité</title>
         <?php include("ressources/ressourcesCommunes.php");?>
     </head>
     <body>

@@ -59,7 +59,7 @@ include("ressources/ressourcesCommunes.php");
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Stage - <?php echo $stage[0]['titre']; ?></title>
+        <title>Ka'fête ô mômes - Stage - <?php echo $stage[0]['titre']; ?></title>
         <script src="js/afficherDetailsStage.js"></script>
     </head>
     <body>

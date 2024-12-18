@@ -35,7 +35,7 @@ include("ressources/ressourcesCommunes.php"); ?>
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Administrateur - Stages</title>
+        <title>Administration - Stages</title>
         <script src="js/supprimerStage.js"></script>
     </head>
     <body>
