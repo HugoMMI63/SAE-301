@@ -97,6 +97,7 @@
         </section>
 
             <!-- Section 2-stages -->
+
             <section class="container my-5">
                 <div class="row align-items-center">
                     <div class="col-md-6 text-start">
@@ -134,6 +135,7 @@
 
                 <div class="row justify-content-center gy-4">
                     <!-- E-mail -->
+
                     <div class="col-md-4 d-flex flex-column align-items-center">
                         <div class="mb-2">
                             <i class="bi bi-envelope-fill" style="font-size: 50px;"></i>
@@ -142,6 +144,7 @@
                         <p class="text-muted">kafeteomomes@gmail.com</p>
                     </div>
                     <!-- Téléphone -->
+
                     <div class="col-md-4 d-flex flex-column align-items-center">
                         <div class="mb-2">
                             <i class="bi bi-telephone-fill" style="font-size: 50px;"></i>
@@ -150,8 +153,10 @@
                         <p class="text-muted">04.78.61.21.79</p>
                     </div>
                     <!-- Adresse -->
+
                     <div class="col-md-4 d-flex flex-column align-items-center">
                         <!-- Icône pour l'adresse -->
+                        
                         <div class="mb-2">
                             <i class="bi bi-geo-alt-fill" style="font-size: 50px;"></i>
                         </div>

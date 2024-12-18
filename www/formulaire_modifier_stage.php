@@ -1,5 +1,6 @@
 <?php
 // On se connecte à la base de données
+
 require("config/config.php");
 
 try {
@@ -11,22 +12,25 @@ catch (PDOException $e) {
 }
 
 // Récupérer l'ID du stage depuis l'URL
+
 if (isset($_GET['id'])) {
     $stageId = $_GET['id'];
 }
 else {
     // Si l'ID n'existe pas, rediriger vers la page "index.php"
+
     header("Location: index.php");
     exit();
 }
 
-
 // Récupérer les détails du stage via l'API
+
 $apiUrl = "http://localhost/www/API/remplacerContenuStage.php?id=".$stageId;
 $response = file_get_contents($apiUrl);
 $data = json_decode($response, true);
 
 // Vérifier si les données sont disponibles
+
 if ($data['status'] != 'OK') {
     echo "Stage non trouvé";
     exit();
@@ -55,6 +59,7 @@ include("ressources/ressourcesCommunes.php"); ?>
             <h1>MODIFIER LE STAGE</h1>
             <form action="executable/modifierStage.php?id=<?php echo $stage[0]['id']; ?>" method="POST">
                 <!-- Champ caché pour récupérer l'id du stage -->
+
                 <input type="hidden" name="id" value="<?php echo $stage[0]['id']; ?>" />
                 <div>
                     <label for="image">Miniature :</label>
@@ -83,7 +88,7 @@ include("ressources/ressourcesCommunes.php"); ?>
                 <br>
                 <div>
                     <label for="description">Description :</label>
-                    <textarea id="description" name="description" value="<?php echo $stage[0]['description'] ?>" required="required"></textarea>
+                    <textarea id="description" name="description" required="required"><?php echo $stage[0]['description'] ?></textarea>
                 </div>
                 <br>
                 <div>
@@ -111,6 +116,7 @@ include("ressources/ressourcesCommunes.php"); ?>
                     <select id="categorie" name="categorie" required="required">
                     <?php
                         // Boucle à travers toutes les catégories
+
                         for ($i = 0; $i < count($categorie); $i++) {
                             if($categorie[$i]['id']==$stage[0]['id_categorie']){
                                 $selected="selected";
@@ -118,7 +124,9 @@ include("ressources/ressourcesCommunes.php"); ?>
                             else{
                                 $selected="";
                             }
-                            // Afficher l'option avec la catégorie et vérifier si elle doit être sélectionnée
+                            
+                            // Afficher l'option avec la catégorie et vérifier si elle doit être 
+                            
                             echo("<option value='".$categorie[$i]['id']."'".$selected.">".$categorie[$i]['intitule']."</option>");
                         }
                         ?>
@@ -133,12 +141,14 @@ include("ressources/ressourcesCommunes.php"); ?>
                     $res->closeCursor();
                     
                     // Récupérer tous les animateurs
+
                     $requete = "SELECT prenom, id FROM animateur";
                     $res = $dbh->query($requete);
                     $animateurs=$res->fetchALL(PDO::FETCH_ASSOC); 
                     $res->closeCursor();
 
                     // Récupérer les animateurs associés au stage
+
                     $requete = "SELECT id_animateur FROM anime WHERE id_stage = :stageId";
                     $res = $dbh->prepare($requete);
                     $res->bindParam(':stageId', $stageId, PDO::PARAM_INT);
@@ -147,8 +157,10 @@ include("ressources/ressourcesCommunes.php"); ?>
                     $res->closeCursor();
 
                     // Afficher des cases à cocher pour chaque animateur
+
                     foreach ($animateurs as $animateur) {
                         // Vérifier si l'ID de l'animateur est dans la liste des animateurs associés, si oui checked la case
+                        
                         $checked = in_array($animateur['id'], $animateurs_associés) ? 'checked' : '';
                         echo "<input type='checkbox' name='animateurs[]' value='".$animateur['id']."' ".$checked."> ".$animateur['prenom']."<br>";
                     }

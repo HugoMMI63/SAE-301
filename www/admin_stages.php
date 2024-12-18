@@ -48,6 +48,7 @@ include("ressources/ressourcesCommunes.php"); ?>
                 <a href="formulaire_ajouter_stage.php">Ajouter un stage</a>
                 <!-- Boucle pour afficher tous les stages -->
                 <?php foreach ($stages_data as $stage_data){
+
                     // Créer un objet Stage pour chaque stage
                     
                     $stage = new Stage(
@@ -67,6 +68,7 @@ include("ressources/ressourcesCommunes.php"); ?>
                 ?>
                 <div>
                     <!-- Récupérer icon croix avec bootstrap -->
+                    
                     <button class="suppr" value=<?php echo $stage->id?>>Supprimer</button>
                     <a href="formulaire_modifier_stage.php?id=<?php echo $stage->id ?>"><button class="modif" value=<?php echo $stage->id?>>Modifier</button></a>
                     <h3><?php echo $stage->titre; ?></h3>
