@@ -97,40 +97,74 @@ class Stage {
         }
     }
 
-    public function modifierBDD($tab_valeurs) {
-        /* On réalise une requête préparée (en utilisant la variable globale "$bdd_gestion_stages") mais uniquement si :
-        - L'attribut "id" est différent de "null"
-        - L'attribut "requete_modifier" contient une chaîne de caractères
-        - La taille de la liste rentrée en paramètre est égale à celle du nombre de valeurs attendu
-        */
-
-        if ($this->id != null && count($tab_valeurs) == count($this->attributs)) {
-            $requete_preparee = $GLOBALS["bdd_gestion_stages"]->prepare("UPDATE `stage` SET miniature = :miniature, titre = :titre, date = :date, horaire_debut = :horaire_debut, horaire_fin = :horaire_fin, description = :description, nb_places = :nb_places, lieu = :lieu, tarif_min = :tarif_min, tarif_max = :tarif_max, id_categorie = :id_categorie WHERE id = ".$this->id.";");
-
-            for ($index = 0; $index < count($this->attributs); $index = $index + 1) {
-                if ($this->attributs[$index] == "nb_places" || $this->attributs[$index] == "tarif_min" || $this->attributs[$index] == "tarif_max" || $this->attributs[$index] == "id_categorie") {
-                    $requete_preparee->bindValue(":".$this->attributs[$index], $tab_valeurs[$index], PDO::PARAM_INT);
-                }
-                else {
-                    $requete_preparee->bindValue(":".$this->attributs[$index], $tab_valeurs[$index], PDO::PARAM_STR);
-                }
-            }
-
-            // On exécute la requête préparée et on stocke l'état de cette-dernière (1 = réussie, 0 = échec)
-
-            $etat = $requete_preparee->execute();
-
-            // L'administrateur est automatiquement redirigé vers la page "redirection.php" avec un message lié à la raison de la redirection (échec ou réussite)
-
-            /*if ($etat == 0) {
-                header("Location: ../redirection.php?raison=requete_erreur");
-            }
-            else {
-                header("Location: ../redirection.php?raison=requete_reussie");
-            }
-            exit();*/
+    public function modifierBDD($tab_valeurs, $animateurs_selectionnes) {
+        // Inclusion du fichier de configuration
+        include_once('../config/config.php'); 
+    
+        global $dbh;
+    
+        if (!$dbh) {
+            echo 'Échec lors de la connexion à la base de données';
+            return;
         }
-        else {
+    
+        // Vérifie si l'attribut "id" n'est pas null et si le nombre d'éléments dans $tab_valeurs correspond à celui attendu
+        if ($this->id != null && count($tab_valeurs) == count($this->attributs)) {
+    
+            // Crée la requête SQL préparée pour la mise à jour des informations du stage
+            $requete_preparee = $dbh->prepare("
+                UPDATE `stage` 
+                SET miniature = :miniature, 
+                    titre = :titre, 
+                    date = :date, 
+                    horaire_debut = :horaire_debut, 
+                    horaire_fin = :horaire_fin, 
+                    description = :description, 
+                    nb_places = :nb_places, 
+                    lieu = :lieu, 
+                    tarif_min = :tarif_min, 
+                    tarif_max = :tarif_max, 
+                    id_categorie = :id_categorie 
+                WHERE id = :id
+            ");
+    
+            // Lier les paramètres à partir du tableau associatif
+            $requete_preparee->bindValue(":id", $this->id, PDO::PARAM_INT);
+            $requete_preparee->bindValue(":id_categorie", $tab_valeurs['id_categorie'], PDO::PARAM_INT);
+            $requete_preparee->bindValue(":miniature", $tab_valeurs['miniature'], PDO::PARAM_STR);
+            $requete_preparee->bindValue(":titre", $tab_valeurs['titre'], PDO::PARAM_STR);
+            $requete_preparee->bindValue(":date", $tab_valeurs['date'], PDO::PARAM_STR);
+            $requete_preparee->bindValue(":horaire_debut", $tab_valeurs['horaire_debut'], PDO::PARAM_STR);
+            $requete_preparee->bindValue(":horaire_fin", $tab_valeurs['horaire_fin'], PDO::PARAM_STR);
+            $requete_preparee->bindValue(":description", $tab_valeurs['description'], PDO::PARAM_STR);
+            $requete_preparee->bindValue(":nb_places", $tab_valeurs['nb_places'], PDO::PARAM_INT);
+            $requete_preparee->bindValue(":lieu", $tab_valeurs['lieu'], PDO::PARAM_STR);
+            $requete_preparee->bindValue(":tarif_min", $tab_valeurs['tarif_min'], PDO::PARAM_INT);
+            $requete_preparee->bindValue(":tarif_max", $tab_valeurs['tarif_max'], PDO::PARAM_INT);
+    
+            // Supprimer les anciennes associations d'animateurs
+            $requete_delete = "DELETE FROM anime WHERE id_stage = :id_stage";
+            $stmt = $dbh->prepare($requete_delete);
+            $stmt->bindParam(':id_stage', $this->id, PDO::PARAM_INT);
+            $stmt->execute();
+    
+            // Insérer les nouveaux animateurs associés au stage
+            foreach ($animateurs_selectionnes as $id_animateur) {
+                $requete_insert = "INSERT INTO anime (id_stage, id_animateur) VALUES (:id_stage, :id_animateur)";
+                $stmt = $dbh->prepare($requete_insert);
+                $stmt->bindParam(':id_stage', $this->id, PDO::PARAM_INT);
+                $stmt->bindParam(':id_animateur', $id_animateur, PDO::PARAM_INT);
+                $stmt->execute();
+            }
+    
+            // Exécuter la requête de mise à jour du stage
+            $etat = $requete_preparee->execute();
+            
+            // Redirection après mise à jour réussie
+            header('Location: ../admin_stages.php');
+            exit();
+        } else {
+            // Si l'ID est null ou si la taille du tableau ne correspond pas
             header("Location: ../redirection.php?raison=requete_erreur");
             exit();
         }
