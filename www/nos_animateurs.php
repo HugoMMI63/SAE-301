@@ -44,34 +44,50 @@ include("ressources/ressourcesCommunes.php");
         <header>
             <?php include("navbars/navbarUtilisateur.php"); ?>
         </header>
-        <main>
-            <h1>NOS ANIMATEURS</h1>
-            <section>
-                <!-- Boucle pour afficher tous les animateurs -->
-
-                <?php foreach ($animateurs_data as $animateur_data){
-                    // Créer un objet Animateur pour chaque Animateur
-
-                    $animateur = new Animateur(
-                    $animateur_data["id"],
-                    $animateur_data["nom"],
-                    $animateur_data["prenom"],
-                    $animateur_data["age"],
-                    $animateur_data["telephone"],
-                    $animateur_data["description"],
-                    $animateur_data["photo"]
-                    );
-                ?>
-                <div>
-                    <img src="<?php echo $animateur->photo; ?>" alt="Photo de <?php echo $animateur->prenom; ?>" style="width: 300px; height: auto;">
-                    <h3><?php echo $animateur->prenom; ?></h3>
-                    <p><?php echo $animateur->description; ?></p>
+        <main class="container py-5">
+        <h1 class="text-center text-primary fw-bold mb-2">NOS ANIMATEURS</h1>
+        
+        </div>
+<main>
+    <section class="row justify-content-center">
+        <!-- Boucle pour afficher tous les animateurs -->
+        <?php foreach ($animateurs_data as $animateur_data) {
+            // Créer un objet Animateur pour chaque Animateur
+            $animateur = new Animateur(
+                $animateur_data["id"],
+                $animateur_data["nom"],
+                $animateur_data["prenom"],
+                $animateur_data["age"],
+                $animateur_data["telephone"],
+                $animateur_data["description"],
+                $animateur_data["photo"]
+            );
+        ?>
+        <!-- Affichage de chaque animateur -->
+        <div class="col-12 col-md-8 mb-4">
+            <div class="d-flex align-items-start p-4 bg-light rounded shadow animateur-card">
+                <img src="<?php echo $animateur->photo; ?>" 
+                     alt="Photo de <?php echo $animateur->prenom; ?>" class="rounded-circle me-4 animateur-photo" style="width: 150px; height: 150px; object-fit: cover; flex-shrink: 0;">
+                <div class="flex-grow-1">
+                    <h3 class="fw-bold text-danger mb-1">
+                        <?php echo $animateur->prenom; ?>
+                    </h3>
+                    <p class="text-muted mb-2">
+                        <?php echo $animateur->age; ?> ans
+                    </p>
+                    <p class="mb-0">
+                        <?php echo $animateur->description; ?>
+                    </p>
                 </div>
-             <?php } ?>
-            </section>
-        </main>
-        <footer>
-            <?php include("navbars/footer.php"); ?>
-        </footer>
+            </div>
+        </div>
+        <?php } ?>
+    </section>
+</main>
+<footer>
+    <?php include("navbars/footer.php"); ?>
+</footer>
+
     </body>
+
 </html>
