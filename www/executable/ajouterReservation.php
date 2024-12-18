@@ -4,7 +4,7 @@ require("../classes/Reservation.php");
 
 $valide = true;
 
-$attributs = ["nom", "prenom", "age", "telephone", "email", "nom_prenom_RL", "pb_medicaux", "prescriptions", "etat_paiement", "id_stage"];
+$attributs = ["nom", "prenom", "age", "telephone", "email", "nom_prenom_RL", "pb_medicaux", "prescriptions", "id_stage"];
 
 foreach ($attributs as $attribut) {
     if (isset($_POST[$attribut]) == false) {
