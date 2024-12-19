@@ -110,8 +110,8 @@ include("ressources/ressourcesCommunes.php");
                 <h2 class="text-center mb-4 colorB">D'AUTRES STAGES</h2>
                 <div id="autresStages" class="row justify-content-center gap-4">
                     <?php
-                    for ($i=0;$i<3;$i++) {
-                        echo "<div class='col-lg-3 col-12'>";
+                    for ($i=0;$i<count($stagesAleatoires);$i++) {
+                        echo "<div class='col-md-4'>";
                         echo "<div class='card shadow-sm h-100'>"; 
                         echo "<img src=".$stagesAleatoires[$i]['miniature']." alt='Image du stage' class='card-img-top' style='height: 200px; object-fit: cover;'>"; 
                         echo "<div class='card-body d-flex flex-column'>";
