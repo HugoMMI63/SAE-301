@@ -26,7 +26,7 @@ else {
 
 // Récupérer les détails du stage via l'API
 
-$apiUrl = "http://localhost/MMI2/SAE303-GIT/SAE-301-Association/www/API/remplacerContenuStage.php?id=".$stageId;
+$apiUrl = "http://localhost/www/API/remplacerContenuStage.php?id=".$stageId;
 $response = file_get_contents($apiUrl);
 $data = json_decode($response, true);
 
@@ -40,7 +40,7 @@ $stage = $data['stage'];
 
 // Récupérer 3 stages aléatoires via l'API
 
-$apiUrl = "http://localhost/MMI2/SAE303-GIT/SAE-301-Association/www/API/stagesAleatoires.php?id=".$stageId;
+$apiUrl = "http://localhost/www/API/stagesAleatoires.php?id=".$stageId;
 $response = file_get_contents($apiUrl);
 $data = json_decode($response, true);
 
