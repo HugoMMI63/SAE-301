@@ -99,7 +99,7 @@ include("ressources/ressourcesCommunes.php"); ?>
                         <p><?php echo $stage->description; ?></p>
                         <a class="nude" href="admin_details_stage.php?id=<?php echo $stage->id; ?>">
                             <div class="mb-3 ms-3 me-3 mt-auto rounded-pill d-flex align-items-center justify-content-center fondJaune pe-2 ps-2 pt-3 pb-3">
-                                <h6 class="mb-0 ms-3">DECOUVRIR LE STAGE</h6>
+                                <h6 class="mb-0 ms-3">DETAILS DU STAGE</h6>
                                 <i class="iconNoir bi bi-chevron-right"></i>
                             </div>
                         </a>
