@@ -34,13 +34,13 @@ include("ressources/ressourcesCommunes.php");
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Administration - Ajouter un animateur</title>
+        <title>Administration - Modifier un animateur</title>
     </head>
     <body>
         <header>
             <?php include("navbars/navbarAdmin.php"); ?>
         </header>
-        <h1>Ajouter un animateur</h1>
+        <h1>Modifier l'animateur</h1>
         <form method="POST" action="executable/modifierAnimateur.php?id=<?php echo $animateurId; ?>">
             <!-- Champ caché pour récupérer l'id du stage -->
 

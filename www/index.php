@@ -65,7 +65,7 @@
                     <div class="col-md-6 d-flex align-items-center text-center">
                         <img src="img/encadre.png" alt="Icône montrant un groupe d'adultes" class="img-fluid me-3" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover;">
                         <div>
-                            <h4 class="text-primary fw-bold">Encadré</h4>
+                            <h4>Encadré</h4>
                             <p>Nos stages sont dirigés par des professionnels qualifiés, assurant un suivi personnalisé et un accompagnement de qualité pour vos enfants !</p>
                         </div>
                     </div>
@@ -73,7 +73,7 @@
                     <div class="col-md-6 d-flex align-items-center text-center">
                         <img src="img/pedagogique.png" alt="Icône montrant une ampoule" class="img-fluid me-3" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover;">
                         <div>
-                            <h4 class="text-primary fw-bold">Pédagogique</h4>
+                            <h4>Pédagogique</h4>
                             <p>Chaque activité est conçue pour stimuler la créativité et l'apprentissage des enfants, tout en respectant leur rythme et leurs besoins.</p>
                         </div>
                     </div>
@@ -81,7 +81,7 @@
                     <div class="col-md-6 d-flex align-items-center text-center">
                         <img src="img/securise.png" alt="Icône montrant un bouclier" class="img-fluid me-3" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover;">
                         <div>
-                            <h4 class="text-primary fw-bold">Sécurisé</h4>
+                            <h4>Sécurisé</h4>
                             <p>La sécurité de vos enfants est notre priorité. Nos lieux d'activités sont sécurisés et nous veillons à une surveillance constante pour garantir leur bien-être.</p>
                         </div>
                     </div>
@@ -89,7 +89,7 @@
                     <div class="col-md-6 d-flex align-items-center text-center">
                         <img src="img/ludique.png" alt="Icône montrant un ballon" class="img-fluid me-3" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover;">
                         <div>
-                            <h4 class="text-primary fw-bold">Ludique</h4>
+                            <h4>Ludique</h4>
                             <p>Les stages sont avant tout des moments de plaisir, où les enfants apprennent en s'amusant, dans une ambiance dynamique et conviviale.</p>
                         </div>
                     </div>
