@@ -82,7 +82,19 @@ include("ressources/ressourcesCommunes.php"); ?>
                         <img class="w-100 rounded-4" src="<?php echo $stage->miniature; ?>" alt="Image du stage" style="width: 300px; height: auto;">
                         <div class="d-flex justify-content-between my-3">
                             <strong>Date : <?php echo $stage->date; ?></strong>
-                            <strong>Places restantes : <?php echo $stage->nb_places; ?></strong>
+                            <?php
+                                // Récupérer le nombre de participants pour ce stage
+                                $requete = 'SELECT COUNT(*) FROM reservation WHERE id_stage = ' . $stage->id;
+                                $resultats = $dbh->query($requete);
+        
+                                // Utiliser fetchColumn() pour obtenir directement la valeur du comptage
+                                $nbparticipant = $resultats->fetchColumn();
+        
+                                // Calculer les places restantes
+                                $places_restantes = $stage->nb_places - $nbparticipant;
+                            ?>
+                    
+                            <strong>Places restantes : <?php echo $places_restantes; ?></strong>
                         </div>
                         <p><?php echo $stage->description; ?></p>
                         <a class="nude" href="details_stage.php?id=<?php echo $stage->id; ?>">
