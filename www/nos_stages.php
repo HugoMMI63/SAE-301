@@ -46,9 +46,10 @@ include("ressources/ressourcesCommunes.php");
             <?php include("navbars/navbarUtilisateur.php"); ?>
         </header>
         <main>
-            <h1 class="font colorB text-center">NOS STAGES</h1>
-            <section class="container">
-                <div class="row justify-content-between">
+            <section class="container text-center my-5">
+                <h1 class="colorB">Nos stages</h1>
+                <img src="img/barre_separation.png" alt="Barre de séparation" class="img-fluid my-4" style="max-width: 150px;">
+                <div class="row justify-content-center justify-content-lg-between">
                     <!-- Boucle pour afficher tous les stages -->
 
                     <?php foreach ($stages_data as $stage_data): 
@@ -73,16 +74,19 @@ include("ressources/ressourcesCommunes.php");
                         <h3 class="colorR my-3"><?php echo $stage->titre; ?></h3>
                         <img class="w-100 rounded-4" src="<?php echo $stage->miniature; ?>" alt="Image du stage" style=" height: auto;">
                         <div class="d-flex justify-content-between my-3">
-                            <strong >Date : <?php echo $stage->date; ?></strong>
+                            <strong><?php echo $stage->date; ?></strong>
                             <?php
                                 // Récupérer le nombre de participants pour ce stage
-                                $requete = 'SELECT COUNT(*) FROM reservation WHERE id_stage = ' . $stage->id;
+
+                                $requete = 'SELECT COUNT(*) FROM reservation WHERE id_stage = '.$stage->id;
                                 $resultats = $dbh->query($requete);
         
                                 // Utiliser fetchColumn() pour obtenir directement la valeur du comptage
+
                                 $nbparticipant = $resultats->fetchColumn();
         
                                 // Calculer les places restantes
+
                                 $places_restantes = $stage->nb_places - $nbparticipant;
                             ?>
                             <strong>Places restantes : <?php echo $places_restantes; ?></strong>
