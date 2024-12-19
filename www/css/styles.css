@@ -71,25 +71,6 @@ nav{display: flex;padding: 1rem;}
 }
 
 /* Autres sections */
-
-.info {
-    text-align: center;
-}
-
-#descriptionStage {
-    padding-right: 15%;
-    padding-left: 15%;
-    padding-top: 2%;
-    padding-bottom: 2%;
-    text-align: justify;
-}
-
-.h2-custom {
-    color: #5FB3E4;
-    font-weight: bold;
-    font-size: 1.8rem;
-}
-
 .btn-yellow {
     background-color: #FFE41B;
     color: #000;
@@ -98,70 +79,11 @@ nav{display: flex;padding: 1rem;}
     border-radius: 30px;
     padding: 10px 20px;
     font-size: 16px;
-    cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .btn-yellow:hover {
     background-color: #CEB70B;
-    color: #000;
-}
-
-#autresStages img {
-    height: 200px;
-    object-fit: cover;
-}
-
-#autresStages {
-    margin-left: 8%;
-    margin-right: 8%;
-}
-
-#autresStages .card {
-    margin: 10px auto;
-}
-
-.text-center .btn-yellow {
-    margin-top: 4%;
-    margin-bottom: 4%;
-}
-
-.info ul li {
-    line-height: 2.8;
-}
-#animateurs .col-md-4 {
-    margin-bottom: 40px; 
-}
-
-#animateurs {
-    justify-content: center;
-    margin-left: auto; 
-    margin-right: auto;
-    margin-bottom: 80px;
-    margin-bottom: 80px;
-}
-
-section img {
-    object-fit: cover;
-}
-
-section h4 {
-    color: #000000;
-    font-weight: bold;
-    margin-bottom: 10px;
-    text-align: left;
-}
-
-section p {
-    font-size: 1rem;
-    line-height: 1.5;
-    color: #555;
-    text-align: left;
-}
-
-.text-stage {
-    color: #5FB3E4;
-    font-size: 2rem;
 }
 
 .btn-warning {
@@ -178,23 +100,7 @@ section p {
     color: #000;
 }
 
-.img-custom {
-    max-height: 400px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-.text-stage {
-    color: #5FB3E4;
-    font-size: 2rem;
-    font-weight: bold;
-    padding-top: 2%;
-    padding-bottom: 2.5%;
-}
-
-.img-fluid {
-    padding-bottom: 2.5%;
-}
+.img-custom {max-height: 400px; object-fit: cover;}
 
 .container.my-5 {
     padding-top: 2.5%;

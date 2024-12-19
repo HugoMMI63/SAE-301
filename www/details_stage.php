@@ -26,7 +26,7 @@ else {
 
 // Récupérer les détails du stage via l'API
 
-$apiUrl = "http://localhost/www/API/remplacerContenuStage.php?id=".$stageId;
+$apiUrl = "http://localhost/MMI2/SAE303-GIT/SAE-301-Association/www/API/remplacerContenuStage.php?id=".$stageId;
 $response = file_get_contents($apiUrl);
 $data = json_decode($response, true);
 
@@ -40,7 +40,7 @@ $stage = $data['stage'];
 
 // Récupérer 3 stages aléatoires via l'API
 
-$apiUrl = "http://localhost/www/API/stagesAleatoires.php?id=".$stageId;
+$apiUrl = "http://localhost/MMI2/SAE303-GIT/SAE-301-Association/www/API/stagesAleatoires.php?id=".$stageId;
 $response = file_get_contents($apiUrl);
 $data = json_decode($response, true);
 
@@ -70,7 +70,7 @@ include("ressources/ressourcesCommunes.php");
         <!-- Informations du stage -->
 
             <section class="bg-light p-4 rounded shadow-sm mb-5 container-fluid text-center">
-                <h1 id="titreStage" class="text-primary text-center mb-4"><?php echo $stage[0]['titre']; ?></h1>
+                <h1 class="colorB text-center mb-4"><?php echo $stage[0]['titre']; ?></h1>
                 <img src="img/barre_separation.png" alt="Barre de séparation" class="d-block mx-auto my-3">
                 <ul class="list-unstyled">
                     <li id="categorieStage" class="mb-2"><strong>Catégorie :</strong> <?php echo $stage[0]['intitule']; ?></li>
@@ -80,8 +80,8 @@ include("ressources/ressourcesCommunes.php");
                     <li id="nbplaceStage" class="mb-2"><strong>Nombre de places :</strong> <?php echo $stage[0]['nb_places']; ?></li>
                     <li id="tarifStage" class="mb-2"><strong>Tarif :</strong> <?php echo $stage[0]['tarif_min']; ?> à <?php echo $stage[0]['tarif_max']; ?>€ selon le quotient familial</li>
                 </ul>
-                <img id="miniatureStage" src="<?php echo $stage[0]['miniature']; ?>" alt="Image du stage" class="col-6 d-block mx-auto my-4">
-                <p id="descriptionStage"><strong>Description :</strong> <?php echo $stage[0]['description']; ?></p>
+                <img src="<?php echo $stage[0]['miniature']; ?>" alt="Image du stage" class="col-6 mx-auto my-4">
+                <p class="col-6 text-center mx-auto my-4"><strong>Description :</strong> <?php echo $stage[0]['description']; ?></p>
                 <div class="text-center">
                     <a href="" class="btn btn-yellow px-4 py-2">S'INSCRIRE AU STAGE ></a>
                 </div>
@@ -90,8 +90,8 @@ include("ressources/ressourcesCommunes.php");
             <!-- Les animateurs -->
 
             <section>
-                <h2 class="text-center mb-4 h2-custom">LES ANIMATEURS</h2>
-                <div id="animateurs" class="row g-3">
+                <h2 class="text-center mb-4 colorB">LES ANIMATEURS</h2>
+                <div class="row gap-3 justify-content-center">
                     <?php
                     $nbAnimateur=count($stage);
                     for ($i = 0; $i < $nbAnimateur; $i++) {
@@ -107,11 +107,11 @@ include("ressources/ressourcesCommunes.php");
             <!-- Affichage de 3 stages aléatoires -->
 
             <section class="mt-5">
-                <h2 class="text-center mb-4 h2-custom">D'AUTRES STAGES</h2>
-                <div id="autresStages" class="row g-4">
+                <h2 class="text-center mb-4 colorB">D'AUTRES STAGES</h2>
+                <div class="row justify-content-center gap-4">
                     <?php
                     for ($i=0;$i<3;$i++) {
-                        echo "<div class='col-md-4'>";
+                        echo "<div class='col-lg-3 col-12'>";
                         echo "<div class='card shadow-sm h-100'>"; 
                         echo "<img src=".$stagesAleatoires[$i]['miniature']." alt='Image du stage' class='card-img-top' style='height: 200px; object-fit: cover;'>"; 
                         echo "<div class='card-body d-flex flex-column'>";
