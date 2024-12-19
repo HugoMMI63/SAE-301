@@ -28,8 +28,6 @@ else {
     echo "Erreur lors de la récupération des données.";
     exit();
 }
-
-include("ressources/ressourcesCommunes.php");
 ?>
 
 <!DOCTYPE html>
@@ -40,6 +38,7 @@ include("ressources/ressourcesCommunes.php");
         <title>Ka'fête ô mômes - Nos stages</title>
         <meta name="description" content="La Ka'fête ô mômes organise des stages de vacances scolaires diversifiés pendant toute l'année !">
         <meta name="keywords" content="Ka'fête ô mômes, association, stages, vacances scolaires, vacances, activités, enfants, parents, familles, Lyon">
+        <?php include("ressources/ressourcesCommunes.php"); ?>
     </head>
     <body>
         <header>

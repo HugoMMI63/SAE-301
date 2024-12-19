@@ -1,4 +1,3 @@
-<?php include("ressources/ressourcesCommunes.php"); ?>
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -7,6 +6,7 @@
         <title>Ka'fête ô mômes - Stages</title>
         <meta name="description" content="La Ka'fête ô mômes propose des stages de vacances scolaires pour vos enfants ! Située à Lyon, notre équipe s'engage à apporter de la joie et de la bonne humeur à chaque instant !">
         <meta name="keywords" content="Ka'fête ô mômes, association, stages, vacances scolaires, vacances, enfants, parents, familles, Lyon, équipe, animateurs">
+        <?php include("ressources/ressourcesCommunes.php"); ?>
     </head>
     <body>
         <header>
@@ -24,7 +24,7 @@
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="https://www.zupimages.net/up/24/51/od2a.jpg" class="d-block w-100 img-fluid" alt="Bannière 1">
+                        <img src="https://www.zupimages.net/up/24/51/od2a.jpg" class="d-block w-100 img-fluid object-fit-cover" alt="Bannière 1">
                         <div class="carousel-caption bg-dark bg-opacity-50 rounded p-3 d-flex flex-column justify-content-center">
                             <h2 class="text-uppercase text-warning">Vacances d'automne 2025 - Théâtre d'improvisation</h2>
                             <p class="lead d-none d-xl-block">Plonge dans l'univers captivant du théâtre improvisé cet automne et libère ta créativité sur scène. Découvre des jeux scéniques drôles, dynamiques et pleins de surprises durant ce stage unique !</p>
@@ -32,7 +32,7 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="https://www.zupimages.net/up/24/51/qwd4.jpg" class="d-block w-100 img-fluid" alt="Bannière 2">
+                    <img src="https://www.zupimages.net/up/24/51/qwd4.jpg" class="d-block w-100 img-fluid object-fit-cover" alt="Bannière 2">
                     <div class="carousel-caption bg-dark bg-opacity-50 rounded p-3 d-flex flex-column justify-content-center">
                         <h2 class="text-uppercase text-warning">Vacances d'automne 2025 - Découverte de la sérigraphie</h2>
                         <p class="lead d-none d-xl-block">Découvre l'art fascinant de la sérigraphie cet automne et crée des œuvres uniques avec tes propres mains ! Laisse libre cours à ton imagination lors de ce stage créatif !</p>
@@ -40,7 +40,7 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="https://www.zupimages.net/up/24/51/h4zo.png" class="d-block w-100 img-fluid" alt="Bannière 3">
+                    <img src="https://www.zupimages.net/up/24/51/h4zo.png" class="d-block w-100 img-fluid object-fit-cover" alt="Bannière 3">
                     <div class="carousel-caption bg-dark bg-opacity-50 rounded p-3 d-flex flex-column justify-content-center">
                         <h2 class="text-uppercase text-warning">Vacances d'été 2025 - Cuisine</h2>
                         <p class="lead d-none d-xl-block">La Ka'fête ô mômes ouvre ses portes aux gourmands ! Cet été, mets la main à la pâte et explore l'art de la cuisine dans un stage gourmand et plein de saveurs ! Rejoins nous vite !</p>
@@ -59,10 +59,10 @@
         </section>
         <main>
             
-        <!-- Section 1-adjectifs -->
+        <!-- Section 1 - Adjectifs -->
         <section class="container my-5">
             <div class="row gap-4 justify-content-center">
-                    <div class="col-lg-5 col-12 d-flex align-items-center text-center">
+                    <div class="col-lg-5 col-12 d-flex align-items-center">
                         <img src="img/encadre.png" alt="Icône montrant un groupe d'adultes" class="img-fluid me-3" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover;">
                         <div>
                             <h4 class="text-start">Encadré</h4>
@@ -70,7 +70,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-5 col-12 d-flex align-items-center text-center">
+                    <div class="col-lg-5 col-12 d-flex align-items-center">
                         <img src="img/pedagogique.png" alt="Icône montrant une ampoule" class="img-fluid me-3" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover;">
                         <div>
                             <h4 class="text-start">Pédagogique</h4>
@@ -78,7 +78,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-5 col-12 d-flex align-items-center text-center">
+                    <div class="col-lg-5 col-12 d-flex align-items-center">
                         <img src="img/securise.png" alt="Icône montrant un bouclier" class="img-fluid me-3" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover;">
                         <div>
                             <h4 class="text-start">Sécurisé</h4>
@@ -86,7 +86,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-5 col-12 d-flex align-items-center text-center">
+                    <div class="col-lg-5 col-12 d-flex align-items-center">
                         <img src="img/ludique.png" alt="Icône montrant un ballon" class="img-fluid me-3" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover;">
                         <div>
                             <h4 class="text-start">Ludique</h4>
@@ -96,7 +96,7 @@
             </div>
         </section>
 
-            <!-- Section 2-stages -->
+            <!-- Section 2 - Présentation des stages -->
 
             <section class="container my-5">
                 <div class="row align-items-center flex-row-reverse">
@@ -112,7 +112,7 @@
                 </div>
             </section>
 
-            <!-- Section 3-Animateurs -->
+            <!-- Section 3 - Présentation de l'équipe -->
 
             <section class="container my-5">
                 <div class="row align-items-center">
@@ -127,41 +127,39 @@
                 </div>
             </section>
 
-            <!-- Section 4-Nous contacter -->
+            <!-- Section 4 - Nous contacter -->
 
             <section class="container text-center my-5">
                 <h2 class="colorB mb-3">NOUS CONTACTER</h2>
-                <img src="img/barre_separation.png" alt="Barre de séparation" class="img-fluid mb-4" style="max-width: 150px;">
+                <img src="img/barre_separation.png" alt="Barre de séparation" class="img-fluid my-4" style="max-width: 150px;">
 
-                <div class="row justify-content-center gy-4">
+                <div class="row">
                     <!-- E-mail -->
 
-                    <div class="col-md-4 d-flex flex-column align-items-center">
+                    <div class="col-md-4 d-flex flex-column align-items-center mt-4">
                         <div class="mb-2">
-                            <i class="colorR bi bi-envelope-fill" style="font-size: 50px;"></i>
+                            <i class="colorR bi bi-envelope" style="font-size: 50px;"></i>
                         </div>
                         <h4>E-mail</h4>
-                        <p class="text-muted">kafeteomomes@gmail.com</p>
+                        <a href="mailto:kafeteomomes@gmail.com" class="text-muted">kafeteomomes@gmail.com</a>
                     </div>
                     <!-- Téléphone -->
 
-                    <div class=" col-md-4 d-flex flex-column align-items-center">
+                    <div class=" col-md-4 d-flex flex-column align-items-center mt-4">
                         <div class="mb-2">
-                            <i class="colorR bi bi-telephone-fill" style="font-size: 50px;"></i>
+                            <i class="colorR bi bi-telephone" style="font-size: 50px;"></i>
                         </div>
                         <h4>Téléphone</h4>
-                        <p class="text-muted">04.78.61.21.79</p>
+                        <a href="tel:0478612179" class="text-muted">04.78.61.21.79</a>
                     </div>
                     <!-- Adresse -->
 
-                    <div class="col-md-4 d-flex flex-column align-items-center">
-                        <!-- Icône pour l'adresse -->
-                        
+                    <div class="col-md-4 d-flex flex-column align-items-center mt-4">
                         <div class="mb-2">
-                            <i class="colorR bi bi-geo-alt-fill" style="font-size: 50px;"></i>
+                            <i class="colorR bi bi-geo-alt" style="font-size: 50px;"></i>
                         </div>
                         <h4>Adresse</h4>
-                        <p class="text-muted">53 Montée de la Grande Côte<br>69001, Lyon</p>
+                        <a href="https://maps.app.goo.gl/ASQirf1PzVUHxMAa9" class="text-muted">53 Montée de la Grande Côte<br>69001, Lyon</a>
                     </div>
                 </div>
             </section>

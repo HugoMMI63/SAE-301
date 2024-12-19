@@ -7,8 +7,6 @@ $bdd_gestion_stages = new PDO($dsn, $identifiant, $mot_de_passe, $options);
 $resultats = $bdd_gestion_stages->query("SELECT * FROM `categorie`;");
 $donnees = $resultats->fetchAll(PDO::FETCH_ASSOC);
 $resultats->closeCursor();    // On ferme l'exécution de la requête une fois qu'elle est complétement terminée pour libérer une potentielle future requête
-
-include("ressources/ressourcesCommunes.php");
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -16,6 +14,7 @@ include("ressources/ressourcesCommunes.php");
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Administration - Ajouter un animateur</title>
+        <?php include("ressources/ressourcesCommunes.php"); ?>
     </head>
     <body>
         <header>

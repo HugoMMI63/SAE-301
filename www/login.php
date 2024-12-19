@@ -1,16 +1,16 @@
-<?php include("ressources/ressourcesCommunes.php"); ?>
 <!DOCTYPE html>
 <html lang="fr">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Connexion</title>
+        <title>Ka'fête ô mômes - Connexion</title>
+        <?php include("ressources/ressourcesCommunes.php"); ?>
     </head>
     <body>
         <div class="d-flex flex-column vh-100 justify-content-center">
             <div class="container text-center">
                 <div class="row justify-content-center">
-                    <img class="col-2" src="https://www.kafeteomomes.fr/uploads/2016/10/logo.png" alt="Logo de l'association">
+                    <img class="col-2" src="img/logo.png" alt="Logo de l'association">
                 </div>
                 <div class="row justify-content-center">
                     <form action="executable/verificationLogin.php" method="POST" class="d-flex flex-column col-6">

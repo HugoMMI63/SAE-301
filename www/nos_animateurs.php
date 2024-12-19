@@ -28,8 +28,6 @@ else {
     echo "Erreur lors de la récupération des données.";
     exit();
 }
-
-include("ressources/ressourcesCommunes.php");
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -39,6 +37,7 @@ include("ressources/ressourcesCommunes.php");
         <title>Ka'fête ô mômes - Nos animateurs</title>
         <meta name="description" content="L'équipe de la Ka'fête ô mômes est composée de personnes passionées, toutes avec un objectif commun : accompagner le développement personnel de vos enfants !">
         <meta name="keywords" content="Ka'fête ô mômes, association, enfants, parents, familles, équipe, animateurs, passion, Lyon">
+        <?php include("ressources/ressourcesCommunes.php"); ?>
     </head>
     <body>
         <header>
@@ -48,7 +47,7 @@ include("ressources/ressourcesCommunes.php");
             <section class="container text-center my-5">
                 <h1 class="colorB">Nos animateurs</h1>
                 <img src="img/barre_separation.png" alt="Barre de séparation" class="img-fluid my-4" style="max-width: 150px;">
-                <div class="row justify-content-center">
+                <div class="row justify-content-center text-start">
                     <!-- Boucle pour afficher tous les animateurs -->
 
                     <?php foreach ($animateurs_data as $animateur_data) {

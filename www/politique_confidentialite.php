@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Ka'fête ô mômes - Politique de confidentialité</title>
-        <?php include("ressources/ressourcesCommunes.php");?>
+        <?php include("ressources/ressourcesCommunes.php"); ?>
     </head>
     <body>
         <header><?php include("navbars/navbarutilisateur.php");?></header>

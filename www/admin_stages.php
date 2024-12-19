@@ -28,8 +28,7 @@ else {
     echo "Erreur lors de la récupération des données.";
     exit();
 }
-
-include("ressources/ressourcesCommunes.php"); ?>
+?>
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -37,6 +36,7 @@ include("ressources/ressourcesCommunes.php"); ?>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Administration - Stages</title>
         <script src="js/supprimerStage.js"></script>
+        <?php include("ressources/ressourcesCommunes.php"); ?>
     </head>
     <body>
 <!--Navbar-->

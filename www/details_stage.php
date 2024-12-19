@@ -51,8 +51,6 @@ if ($data['status'] != 'OK') {
     exit();
 }
 $stagesAleatoires = $data['randStage'];
-
-include("ressources/ressourcesCommunes.php");
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -61,6 +59,7 @@ include("ressources/ressourcesCommunes.php");
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Ka'fête ô mômes - Stage - <?php echo $stage[0]['titre']; ?></title>
         <script src="js/afficherDetailsStage.js"></script>
+        <?php include("ressources/ressourcesCommunes.php"); ?>
     </head>
     <body>
         <header>

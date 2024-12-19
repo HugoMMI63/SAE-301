@@ -6,4 +6,8 @@
 
 <!-- Lien avec la feuille de styles CSS -->
 
-<link href="css/styles.css" rel="stylesheet">
+<link href="css/styles.css" rel="stylesheet" type="text/css">
+
+<!-- Lien avec le favicon -->
+
+<link href="img/favicon.png" rel="icon" type="image/png">

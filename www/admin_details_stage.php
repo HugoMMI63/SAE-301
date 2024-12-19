@@ -37,8 +37,6 @@ $requete='SELECT * FROM `reservation` WHERE id_stage='.$stageId;
 $res=$dbh->query($requete);
 $reservations=$res->fetchALL(PDO::FETCH_ASSOC);
 $res->closeCursor();
-
-include("ressources/ressourcesCommunes.php");
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -47,6 +45,7 @@ include("ressources/ressourcesCommunes.php");
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Stage - <?php echo $stage[0]['titre']; ?></title>
         <script src='js/adminChangerStage.js'></script>
+        <?php include("ressources/ressourcesCommunes.php"); ?>
     </head>
     <body>
         <header>

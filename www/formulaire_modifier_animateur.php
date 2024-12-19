@@ -26,8 +26,6 @@ else {
 $resultats = $dbh->query("SELECT * FROM `animateur` WHERE id=".$animateurId.";");
 $animateur = $resultats->fetch(PDO::FETCH_ASSOC);
 $resultats->closeCursor();    // On ferme l'exécution de la requête une fois qu'elle est complétement terminée pour libérer une potentielle future requête
-
-include("ressources/ressourcesCommunes.php");
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -35,6 +33,7 @@ include("ressources/ressourcesCommunes.php");
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Administration - Modifier un animateur</title>
+        <?php include("ressources/ressourcesCommunes.php"); ?>
     </head>
     <body>
         <header>
