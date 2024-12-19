@@ -16,15 +16,28 @@ $donnees = array();
 if (isset($_GET["id"])) {
     $donnees["status"] = "OK";
     
-    // Requête SQL pour récupérer les informations du stage et des animateurs
+    $requete = 'SELECT COUNT(*) FROM stage WHERE id!='.$_GET["id"];
+    $resultats = $dbh->query($requete);
+    $nbStage = $resultats->fetchAll(PDO::FETCH_ASSOC);
+    $resultats->closeCursor();
 
+    if($nbStage>3){
+    // Requête SQL pour récupérer les informations du stage et des animateurs
     $requete = 'SELECT id,titre, miniature, description, date FROM `stage` WHERE id !='.$_GET["id"].' ORDER BY RAND() LIMIT 3';
     $resultats = $dbh->query($requete);
 
     // Ajouter les données sous "randStage"
-
     $donnees['randStage'] = $resultats->fetchAll(PDO::FETCH_ASSOC);
     $resultats->closeCursor();
+    }
+    else{
+        // Requête SQL pour récupérer les informations du stage et des animateurs
+        $requete = 'SELECT id,titre, miniature, description, date FROM `stage` WHERE id !='.$_GET["id"].' ORDER BY RAND() LIMIT '.$nbStage;
+        $resultats = $dbh->query($requete);
+        // Ajouter les données sous "randStage"
+        $donnees['randStage'] = $resultats->fetchAll(PDO::FETCH_ASSOC);
+        $resultats->closeCursor();
+    }
 }
 else {
     $donnees["status"] = "Pas d'identifiant";
