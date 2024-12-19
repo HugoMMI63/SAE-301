@@ -7,9 +7,3 @@
 <!-- Lien avec la feuille de styles CSS -->
 
 <link href="css/styles.css" rel="stylesheet">
-
-<!-- Importation des polices d'écriture -->
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jua&display=swap" rel="stylesheet">
