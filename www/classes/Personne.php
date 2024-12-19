@@ -111,10 +111,10 @@ class Personne {
             if ($etat == 0) {
                 header("Location: ../redirection.php?raison=requete_erreur");
             }
-            else {
-                header("Location: ../redirection.php?raison=requete_reussie");
-            }
-            exit();
+            // else {
+            //     header("Location: ../redirection.php?raison=requete_reussie");
+            // }
+            // exit();
         }
         else {
             header("Location: ../redirection.php?raison=requete_erreur");
