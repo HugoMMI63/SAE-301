@@ -272,3 +272,55 @@ p {
     margin-bottom: 4px;
     color: #6c757d; /* Gris Bootstrap */
 }
+
+.suppr {
+    background-color: #FFE41B;
+    border: none;
+    border-radius: 30px;
+    color: #000;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.suppr:hover {
+    background-color: #CEB70B;
+    transform: translateY(-3px);
+    color: #000;
+}
+
+.modif {
+    background-color: #FFE41B;
+    border: none;
+    border-radius: 30px;
+    color: #000;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.modif:hover {
+    background-color: #CEB70B;
+    transform: translateY(-3px);
+    color: #000;
+}
+
+.ajouter {
+    display: inline-block; /* Garde le bouton compact */
+    padding: 5px 10px; /* Dimensions réduites pour un bouton plus petit */
+    background-color: #dc3545;
+    border: none;
+    border-radius: 20px; /* Forme légèrement arrondie */
+    color: #ffffff;
+    text-decoration: none; /* Supprime le soulignement */
+    font-size: 16px; /* Taille de texte réduite */
+    font-weight: bold; /* Texte en gras */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-bottom: 20px;
+    cursor: pointer;
+    width: auto; /* Garde la largeur ajustée au texte */
+    text-align: center;
+}
+
+#liste_animateur {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    flex-direction: column; 
+}
