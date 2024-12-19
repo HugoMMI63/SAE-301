@@ -108,7 +108,7 @@ include("ressources/ressourcesCommunes.php");
 
             <section class="mt-5">
                 <h2 class="text-center mb-4 colorB">D'AUTRES STAGES</h2>
-                <div class="row justify-content-center gap-4">
+                <div id="autresStages" class="row justify-content-center gap-4">
                     <?php
                     for ($i=0;$i<3;$i++) {
                         echo "<div class='col-lg-3 col-12'>";
