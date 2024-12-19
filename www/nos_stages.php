@@ -74,15 +74,30 @@ include("ressources/ressourcesCommunes.php");
                         <img class="w-100 rounded-4" src="<?php echo $stage->miniature; ?>" alt="Image du stage" style=" height: auto;">
                         <div class="d-flex justify-content-between my-3">
                             <strong >Date : <?php echo $stage->date; ?></strong>
-                            <strong>Places restantes : <?php echo $stage->nb_places; ?></strong>
+                            <?php
+                                // Récupérer le nombre de participants pour ce stage
+                                $requete = 'SELECT COUNT(*) FROM reservation WHERE id_stage = ' . $stage->id;
+                                $resultats = $dbh->query($requete);
+        
+                                // Utiliser fetchColumn() pour obtenir directement la valeur du comptage
+                                $nbparticipant = $resultats->fetchColumn();
+        
+                                // Calculer les places restantes
+                                $places_restantes = $stage->nb_places - $nbparticipant;
+                            ?>
+                            <strong>Places restantes : <?php echo $places_restantes; ?></strong>
                         </div>
                         <p><?php echo $stage->description; ?></p>
-                        <a class="nude" href="details_stage.php?id=<?php echo $stage->id; ?>">
-                            <div class="mb-3 ms-3 me-3 mt-auto rounded-pill d-flex align-items-center justify-content-center fondJaune pe-2 ps-2 pt-3 pb-3">
-                                <h6 class="mb-0 ms-3">DECOUVRIR LE STAGE</h6>
-                                <img width="25" height="25" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAACXBIWXMAAAsTAAALEwEAmpwYAAABvUlEQVR4nO3du0okURRG4d/LmwijmbA3UvPMJgYihvoywiReMFAbgxahTUSxReyzhlofVL7pRZ2qZFcnkiRJP7Dlr8dwmOQ8yWOSRZLTJAejh5pzjPsky3fXbZJp9HBzdP5BjLfrziibtb06pj4LYpQBHr4IsvRO2ayTNYIsjbI5e6sHuFFAKsn1N6L8HT3wHBgFyChARgEyCpBRgIwCVL4S85RReMooPGUUnjIKTxmFp4zCU0bhKaPwlFF4yig8ZRSeMgpPGYWnjMJTRuEpo/CUUXjKKDxlFJ4yCk8ZhaeMwlNG4Smj8JRReMooPNNqQ2udTa7XNbw/oweeg+kbUY5HDzsXtebx9W/0oHPRSW7WCHI1etA5mDyyOCYf6v/fMbX0qxK/zxgg7Z3B0cbgaGNwtDE42hgcbQyONgZHG4OjjcHRxuBoY3C0MTjaGBxtDI42Bkcbg6ONwdHG4GhjcLQxONoYHG0MjjYGRxuDo43BYQwQY4AYA8QYIMYAMQaIMUD2/etVljPXyDh2kizc6ePYTfLsgiXLpduuLEdJHj/5uMvr3rgGRblYHV9PSU790g7nIb89eghJkqT8lhfcmbLovD1dtwAAAABJRU5ErkJggg==" alt="forward--v1">
-                            </div>
-                        </a>
+                        <?php if ($places_restantes > 0) {
+                            echo "<a class='nude' href='details_stage.php?id=".$stage->id."'>";
+                            echo "<div class='mb-3 ms-3 me-3 mt-auto rounded-pill d-flex align-items-center justify-content-center fondJaune pe-2 ps-2 pt-3 pb-3'>";
+                            echo "<h6 class='mb-0 ms-3'>DECOUVRIR LE STAGE</h6>";
+                            echo "<img width='25' height='25' src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAACXBIWXMAAAsTAAALEwEAmpwYAAABvUlEQVR4nO3du0okURRG4d/LmwijmbA3UvPMJgYihvoywiReMFAbgxahTUSxReyzhlofVL7pRZ2qZFcnkiRJP7Dlr8dwmOQ8yWOSRZLTJAejh5pzjPsky3fXbZJp9HBzdP5BjLfrziibtb06pj4LYpQBHr4IsvRO2ayTNYIsjbI5e6sHuFFAKsn1N6L8HT3wHBgFyChARgEyCpBRgIwCVL4S85RReMooPGUUnjIKTxmFp4zCU0bhKaPwlFF4yig8ZRSeMgpPGYWnjMJTRuEpo/CUUXjKKDxlFJ4yCk8ZhaeMwlNG4Smj8JRReMooPNNqQ2udTa7XNbw/oweeg+kbUY5HDzsXtebx9W/0oHPRSW7WCHI1etA5mDyyOCYf6v/fMbX0qxK/zxgg7Z3B0cbgaGNwtDE42hgcbQyONgZHG4OjjcHRxuBoY3C0MTjaGBxtDI42Bkcbg6ONwdHG4GhjcLQxONoYHG0MjjYGRxuDo43BYQwQY4AYA8QYIMYAMQaIMUD2/etVljPXyDh2kizc6ePYTfLsgiXLpduuLEdJHj/5uMvr3rgGRblYHV9PSU790g7nIb89eghJkqT8lhfcmbLovD1dtwAAAABJRU5ErkJggg==' alt='forward--v1'>";
+                            echo "</div>";
+                            echo "</a>";
+                            } else { 
+                            echo "<p>Ce stage est complet.</p>";
+                        }?>
                     </div>
                     <?php endforeach; ?>
                 </div>
