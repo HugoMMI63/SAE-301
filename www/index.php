@@ -25,25 +25,26 @@
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <img src="https://www.zupimages.net/up/24/51/od2a.jpg" class="d-block w-100 img-fluid" alt="Bannière 1">
-                        <div class="carousel-caption d-md-block bg-dark bg-opacity-50 rounded p-3">
-                        <h2 class="text-uppercase fw-bold text-warning">Vacances d'automne 2025 - Théâtre d'improvisation</h2>
-                        <p class="lead">Plonge dans l'univers captivant du théâtre improvisé cet automne et libère ta créativité sur scène. Découvre des jeux scéniques drôles, dynamiques et pleins de surprises durant ce stage unique !</p>
-                        <a href="details_stage.php?id=1" class="btn btn-warning fw-bold px-4 py-2">DÉCOUVRIR LE STAGE</a>
+                        <div class="carousel-caption bg-dark bg-opacity-50 rounded p-3 d-flex flex-column justify-content-center">
+                            <h2 class="text-uppercase fw-bold text-warning">Vacances d'automne 2025 - Théâtre d'improvisation</h2>
+                            <p class="lead d-none d-xl-block">Plonge dans l'univers captivant du théâtre improvisé cet automne et libère ta créativité sur scène. Découvre des jeux scéniques drôles, dynamiques et pleins de surprises durant ce stage unique !</p>
+                            <a href="details_stage.php?id=1" class="btn btn-warning fw-bold px-4 py-2">DÉCOUVRIR LE STAGE</a>
+                        </div>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <img src="https://www.zupimages.net/up/24/51/qwd4.jpg" class="d-block w-100 img-fluid" alt="Bannière 2">
-                    <div class="carousel-caption d-md-block bg-dark bg-opacity-50 rounded p-3">
+                    <div class="carousel-caption bg-dark bg-opacity-50 rounded p-3 d-flex flex-column justify-content-center">
                         <h2 class="text-uppercase fw-bold text-warning">Vacances d'automne 2025 - Découverte de la sérigraphie</h2>
-                        <p class="lead">Découvre l'art fascinant de la sérigraphie cet automne et crée des œuvres uniques avec tes propres mains ! Laisse libre cours à ton imagination lors de ce stage créatif !</p>
+                        <p class="lead d-none d-xl-block">Découvre l'art fascinant de la sérigraphie cet automne et crée des œuvres uniques avec tes propres mains ! Laisse libre cours à ton imagination lors de ce stage créatif !</p>
                         <a href="details_stage.php?id=3" class="btn btn-warning fw-bold px-4 py-2"><button value="3" type="button" class="btn-yellow">DÉCOUVRIR LE STAGE</button></a>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <img src="https://www.zupimages.net/up/24/51/h4zo.png" class="d-block w-100 img-fluid" alt="Bannière 3">
-                    <div class="carousel-caption d-md-block bg-dark bg-opacity-50 rounded p-3">
+                    <div class="carousel-caption bg-dark bg-opacity-50 rounded p-3 d-flex flex-column justify-content-center">
                         <h2 class="text-uppercase fw-bold text-warning">Vacances d'été 2025 - Cuisine</h2>
-                        <p class="lead">La Ka'fête ô mômes ouvre ses portes aux gourmands ! Cet été, mets la main à la pâte et explore l'art de la cuisine dans un stage gourmand et plein de saveurs ! Rejoins nous vite !</p>
+                        <p class="lead d-none d-xl-block">La Ka'fête ô mômes ouvre ses portes aux gourmands ! Cet été, mets la main à la pâte et explore l'art de la cuisine dans un stage gourmand et plein de saveurs ! Rejoins nous vite !</p>
                         <a href="details_stage.php?id=4" class="btn btn-warning fw-bold px-4 py-2"><button value="4" type="button" class="btn-yellow">DÉCOUVRIR LE STAGE</button></a>
                     </div>
                 </div>
@@ -138,16 +139,16 @@
 
                     <div class="col-md-4 d-flex flex-column align-items-center">
                         <div class="mb-2">
-                            <i class="bi bi-envelope-fill" style="font-size: 50px;"></i>
+                            <i class="colorR bi bi-envelope-fill" style="font-size: 50px;"></i>
                         </div>
                         <h4 class="fw-bold">E-mail</h4>
                         <p class="text-muted">kafeteomomes@gmail.com</p>
                     </div>
                     <!-- Téléphone -->
 
-                    <div class="col-md-4 d-flex flex-column align-items-center">
+                    <div class=" col-md-4 d-flex flex-column align-items-center">
                         <div class="mb-2">
-                            <i class="bi bi-telephone-fill" style="font-size: 50px;"></i>
+                            <i class="colorR bi bi-telephone-fill" style="font-size: 50px;"></i>
                         </div>
                         <h4 class="fw-bold">Téléphone</h4>
                         <p class="text-muted">04.78.61.21.79</p>
@@ -158,7 +159,7 @@
                         <!-- Icône pour l'adresse -->
                         
                         <div class="mb-2">
-                            <i class="bi bi-geo-alt-fill" style="font-size: 50px;"></i>
+                            <i class="colorR bi bi-geo-alt-fill" style="font-size: 50px;"></i>
                         </div>
                         <h4 class="fw-bold">Adresse</h4>
                         <p class="text-muted">53 Montée de la Grande Côte<br>69001, Lyon</p>
