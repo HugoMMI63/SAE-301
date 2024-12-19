@@ -49,7 +49,7 @@ include("ressources/ressourcesCommunes.php"); ?>
             <section id="liste_stage" class="container">
                 <div class="row justify-content-between">
                     <a href="formulaire_ajouter_stage.php" class="col-12 col-lg-5 d-flex align-items-center justify-content-center border border-2 border-black rounded-4 m-4 mb-5 mt-5 text-center p-4">
-                        <i class="bi bi-plus-circle"></i>
+                        <i class="iconPlus bi bi-plus-circle"></i>
                     </a>
                     <!-- Boucle pour afficher tous les stages -->
                     <?php foreach ($stages_data as $stage_data){

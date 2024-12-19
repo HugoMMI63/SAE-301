@@ -4,6 +4,10 @@ body{color: #333;}
 .font{font-family: "Jua", serif;}
 .colorB{color: #5FB3E4;}
 .colorR{color:#F16560;}
+/*CSS pour les icon*/
+.iconPlus{font-size: 8rem;color: #000;}
+.iconChevron{font-size: 1.5rem;color: #000;}
+.iconFleche{font-size: 1.3rem;color: #000;}
 /*CSS custom pour menu client lien a formulaire*/
 .fondJaune{background-color: #FFE41B;}
 /*CSS custom pour menu web admin/client*/
@@ -165,11 +169,6 @@ section p {
 .container.my-5 {
     padding-top: 2.5%;
     padding-bottom: 2.5%;
-}
-
-.bi {
-    font-size: 50px;
-    color: #F16560;
 }
 
 p {
