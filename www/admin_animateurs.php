@@ -43,10 +43,10 @@ include("ressources/ressourcesCommunes.php");
         <header>
             <?php include("navbars/navbarAdmin.php"); ?>
         </header>
-        <main>
-            <h1>NOS ANIMATEURS</h1>
-            <section id="liste_animateur">
-                <a href="formulaire_ajouter_animateur.php">Ajouter un animateur</a>
+        <main class="container py-5">
+            <h1 class="text-center text-primary fw-bold mb-2">NOS ANIMATEURS</h1>
+            <section class="row justify-content-center" id="liste_animateur">
+                <a href="formulaire_ajouter_animateur.php" class="ajouter">Ajouter un animateur</a>
                 <!-- Boucle pour afficher tous les animateurs -->
 
                 <?php foreach ($animateurs_data as $animateur_data){
@@ -62,17 +62,22 @@ include("ressources/ressourcesCommunes.php");
                     $animateur_data["photo"]
                     );
                 ?>
-                <div>
+                <div class="col-12 col-md-8 mb-4">
                     <button class="suppr" value=<?php echo $animateur->id?>>Supprimer</button>
                     <a href="formulaire_modifier_animateur.php?id=<?php echo $animateur->id ?>"><button class="modif" value=<?php echo $animateur->id?>>Modifier</button></a>
-                    <img src="<?php echo $animateur->photo; ?>" alt="Photo de <?php echo $animateur->prenom; ?>" style="width: 300px; height: auto;">
-                    <h3><?php echo $animateur->prenom." ".$animateur->nom; ?></h3>
-                    <p><?php echo $animateur->age." ans"; ?></p>
-                    <p><?php echo $animateur->telephone; ?></p>
+                    <div class="d-flex align-items-start p-4 bg-light rounded shadow animateur-card">
+                    <img src="<?php echo $animateur->photo; ?>" alt="Photo de <?php echo $animateur->prenom; ?>" class="rounded-circle me-4 animateur-photo" style="width: 150px; height: 150px; object-fit: cover; flex-shrink: 0;">
+                    <div class="flex-grow-1">
+                    <h3 class="fw-bold text-danger mb-1"><?php echo $animateur->prenom." ".$animateur->nom; ?></h3>
+                    <p class="text-muted mb-2"><?php echo $animateur->age." ans"; ?></p>
+                    <p class="mb-0"><?php echo $animateur->telephone; ?></p>
                     <p><?php echo $animateur->description; ?></p>
                 </div>
+               </div>
+              </div>
              <?php } ?>
             </section>
         </main>
     </body>
 </html>
+
