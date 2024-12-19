@@ -13,7 +13,7 @@ catch (PDOException $e) {
 
 // Appel de l'API pour récupérer les stages
 
-$api = "http://localhost/SAE-301-paulineorus/SAE301paulineorus/www/API/tousAnimateur.php";
+$api = "http://localhost/www/API/tousAnimateur.php";
 $response = file_get_contents($api);
 $donnees = json_decode($response, true);
 
