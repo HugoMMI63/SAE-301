@@ -69,7 +69,7 @@ include("ressources/ressourcesCommunes.php");
         <main>
         <!-- Informations du stage -->
 
-            <section class="info bg-light p-4 rounded shadow-sm mb-5">
+            <section class="bg-light p-4 rounded shadow-sm mb-5 container-fluid text-center">
                 <h1 id="titreStage" class="text-primary text-center mb-4"><?php echo $stage[0]['titre']; ?></h1>
                 <img src="img/barre_separation.png" alt="Barre de séparation" class="d-block mx-auto my-3">
                 <ul class="list-unstyled">
@@ -80,7 +80,7 @@ include("ressources/ressourcesCommunes.php");
                     <li id="nbplaceStage" class="mb-2"><strong>Nombre de places :</strong> <?php echo $stage[0]['nb_places']; ?></li>
                     <li id="tarifStage" class="mb-2"><strong>Tarif :</strong> <?php echo $stage[0]['tarif_min']; ?> à <?php echo $stage[0]['tarif_max']; ?>€ selon le quotient familial</li>
                 </ul>
-                <img id="miniatureStage" src="<?php echo $stage[0]['miniature']; ?>" alt="Image du stage" class="img-fluid d-block mx-auto my-4">
+                <img id="miniatureStage" src="<?php echo $stage[0]['miniature']; ?>" alt="Image du stage" class="col-6 d-block mx-auto my-4">
                 <p id="descriptionStage"><strong>Description :</strong> <?php echo $stage[0]['description']; ?></p>
                 <div class="text-center">
                     <a href="" class="btn btn-yellow px-4 py-2">S'INSCRIRE AU STAGE ></a>

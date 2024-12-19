@@ -28,7 +28,7 @@
                         <div class="carousel-caption d-md-block bg-dark bg-opacity-50 rounded p-3">
                         <h2 class="text-uppercase fw-bold text-warning">Vacances d'automne 2025 - Théâtre d'improvisation</h2>
                         <p class="lead">Plonge dans l'univers captivant du théâtre improvisé cet automne et libère ta créativité sur scène. Découvre des jeux scéniques drôles, dynamiques et pleins de surprises durant ce stage unique !</p>
-                        <a href="details_stage.php?id=1" class="btn btn-warning fw-bold px-4 py-2"><button value="1" type="button" class="btn-yellow">DÉCOUVRIR LE STAGE</button></a>
+                        <a href="details_stage.php?id=1" class="btn btn-warning fw-bold px-4 py-2">DÉCOUVRIR LE STAGE</a>
                     </div>
                 </div>
                 <div class="carousel-item">
