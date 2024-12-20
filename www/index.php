@@ -26,33 +26,33 @@
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <img src="https://www.zupimages.net/up/24/51/od2a.jpg" class="d-block w-100 img-fluid object-fit-cover" alt="Bannière 1">
-                            <div class="carousel-caption bg-dark bg-opacity-75 rounded p-3 d-flex flex-column justify-content-center">
-                                <h2 class="text-uppercase text-warning">Vacances d'automne 2025 - Théâtre d'improvisation</h2>
+                            <div class="carousel-caption bg-dark bg-opacity-75 rounded p-2 d-flex flex-column justify-content-center">
+                                <h2 class="text-uppercase text-warning text-center fs-2">Vacances d'automne 2025 - Théâtre d'improvisation</h2>
                                 <p class="lead d-none d-xl-block">Plonge dans l'univers captivant du théâtre improvisé cet automne et libère ta créativité sur scène. Découvre des jeux scéniques drôles, dynamiques et pleins de surprises durant ce stage unique !</p>
                                 <a href="details_stage.php?id=1" class="btn btn-warning fw-bold px-4 py-2 text-uppercase">Découvrir le stage ></a>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <img src="https://www.zupimages.net/up/24/51/qwd4.jpg" class="d-block w-100 img-fluid object-fit-cover" alt="Bannière 2">
-                        <div class="carousel-caption bg-dark bg-opacity-75 rounded p-3 d-flex flex-column justify-content-center">
-                            <h2 class="text-uppercase text-warning">Vacances d'automne 2025 - Découverte de la sérigraphie</h2>
+                        <div class="carousel-caption bg-dark bg-opacity-75 rounded p-2 d-flex flex-column justify-content-center">
+                            <h2 class="text-uppercase text-warning text-center fs-2">Vacances d'automne 2025 - Découverte de la sérigraphie</h2>
                             <p class="lead d-none d-xl-block">Découvre l'art fascinant de la sérigraphie cet automne et crée des œuvres uniques avec tes propres mains ! Laisse libre cours à ton imagination lors de ce stage créatif !</p>
                             <a href="details_stage.php?id=3" class="btn btn-warning fw-bold px-4 py-2 text-uppercase">Découvrir le stage ></a>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <img src="https://www.zupimages.net/up/24/51/h4zo.png" class="d-block w-100 img-fluid object-fit-cover" alt="Bannière 3">
-                        <div class="carousel-caption bg-dark bg-opacity-75 rounded p-3 d-flex flex-column justify-content-center">
-                            <h2 class="text-uppercase text-warning">Vacances d'été 2025 - Cuisine</h2>
+                        <div class="carousel-caption bg-dark bg-opacity-75 rounded p-2 d-flex flex-column justify-content-center">
+                            <h2 class="text-uppercase text-warning text-center fs-2">Vacances d'été 2025 - Cuisine</h2>
                             <p class="lead d-none d-xl-block">La Ka'fête ô mômes ouvre ses portes aux gourmands ! Cet été, mets la main à la pâte et explore l'art de la cuisine dans un stage gourmand et plein de saveurs ! Rejoins nous vite !</p>
                             <a href="details_stage.php?id=4" class="btn btn-warning fw-bold px-4 py-2 text-uppercase">Découvrir le stage ></a>
                         </div>
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <button class="carousel-control-prev d-none d-lg-block" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Previous</span>
                     </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <button class="carousel-control-next d-none d-lg-block" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Next</span>
                     </button>
