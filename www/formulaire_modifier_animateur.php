@@ -39,50 +39,67 @@ $resultats->closeCursor();    // On ferme l'exécution de la requête une fois q
         <header>
             <?php include("navbars/navbarAdmin.php"); ?>
         </header>
-        <main>
-            <section class="container text-center my-5">
+        <main class="container">
+            <div class="col-12 d-flex flex-column align-items-center">
                 <a href="admin_animateurs.php"><i class="colorR bi bi-arrow-left-circle" style="font-size: 30px;"></i></a>
                 <h1 class="colorB mt-4">Modifier l'animateur</h1>
                 <img src="img/barre_separation.png" alt="Barre de séparation" class="img-fluid my-4" style="max-width: 150px;">
-                <form method="POST" action="executable/modifierAnimateur.php?id=<?php echo $animateurId; ?>">
-                    <!-- Champ caché pour récupérer l'id du stage -->
-
-                    <input type="hidden" name="id" value="<?php echo $animateurId; ?>" />
+            </div>
+            <form class="d-flex flex-column justify-content-center align-items-center" method="POST" action="executable/modifierAnimateur.php?id=<?php echo $animateurId; ?>">
+                <!-- Champ caché pour récupérer l'id du stage -->
+                <input type="hidden" name="id" value="<?php echo $animateurId; ?>" />
+                <div class="d-flex flex-column col-5">
                     <div>
-                        <label for="nom">Nom :</label>
-                        <input id="nom" name="nom" type="text" value="<?php echo($animateur["nom"]); ?>" required="required">
+                        <i class="colorR fs-5 me-3 bi bi-tag"></i>
+                        <label for="nom"><h5>Nom :</h5></label>
                     </div>
-                    <br>
+                    <input class="rounded-4" id="nom" name="nom" type="text" value="<?php echo($animateur["nom"]); ?>" required="required">
+                </div>
+                <br>
+                <div class="d-flex flex-column col-5">
                     <div>
-                        <label for="prenom">Prénom :</label>
-                        <input id="prenom" name="prenom" type="text" value="<?php echo($animateur["prenom"]); ?>" required="required">
+                        <i class="colorR fs-5 me-3 bi bi-threads"></i>
+                        <label for="prenom"><h5>Prénom :</h5></label>
                     </div>
-                    <br>
+                    <input class="rounded-4" id="prenom" name="prenom" type="text" value="<?php echo($animateur["prenom"]); ?>" required="required">
+                </div>
+                <br>
+                <div class="d-flex flex-column col-5">
                     <div>
-                        <label for="age">Âge :</label>
-                        <input id="age" name="age" type="number" value="<?php echo($animateur["age"]); ?>" required="required">
+                        <i class="colorR fs-5 me-3 bi bi-calendar-event"></i>
+                        <label for="age"><h5>Âge :</h5></label>
                     </div>
-                    <br>
+                    <input class="rounded-4" id="age" name="age" type="number" value="<?php echo($animateur["age"]); ?>" required="required">
+                </div>
+                <br>
+                <div class="d-flex flex-column col-5">
                     <div>
-                        <label for="telephone">Téléphone :</label>
-                        <input id="telephone" name="telephone" type="text" value="<?php echo($animateur["telephone"]); ?>" required="required">
+                        <i class="colorR fs-5 me-3 bi bi-telephone"></i>
+                        <label for="telephone"><h5>Téléphone :</h5></label>
                     </div>
-                    <br>
+                    <input class="rounded-4" id="telephone" name="telephone" type="text" value="<?php echo($animateur["telephone"]); ?>" required="required">
+                </div>
+                <br>
+                <div class="d-flex flex-column col-5">
                     <div>
-                        <label for="description">Description :</label>
-                        <textarea id="description" name="description" required="required"><?php echo($animateur["description"]); ?></textarea>
+                        <i class="colorR fs-5 me-3 bi bi-card-text"></i>
+                        <label for="description"><h5>Description :</h5></label>
                     </div>
-                    <br>
+                    <textarea class="rounded-4" id="description" name="description" required="required"><?php echo($animateur["description"]); ?></textarea>
+                </div>
+                <br>
+                <div class="d-flex flex-column col-5">
                     <div>
-                        <label for="photo">Photo :</label>
-                        <input id="photo" name="photo" type="url" value="<?php echo($animateur["photo"]); ?>" required="required">
+                        <i class="colorR fs-5 me-3 bi bi-person-bounding-box"></i>
+                        <label for="photo"><h5>Photo :</h5></label>
                     </div>
-                    <br>
-                    <div>
-                        <input class="btn btn-warning fw-bold px-4 py-2" type="submit" value="Modifier l'animateur">
-                    </div>
-                </form>
-            </section>
+                    <input class="rounded-4" id="photo" name="photo" type="url" value="<?php echo($animateur["photo"]); ?>" required="required">
+                </div>
+                <br>
+                <div class="d-flex flex-column col-5 align-items-center">
+                    <input class="btn-warning px-4 py-2 mb-4 text-uppercase rounded-4 border border-0 col-6" type="submit" value="Ajouter l'animateur">
+                </div>
+            </form>
         </main>
     </body>
 </html>

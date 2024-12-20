@@ -21,43 +21,63 @@ $resultats->closeCursor();    // On ferme l'exécution de la requête une fois q
             <?php include("navbars/navbarAdmin.php"); ?>
         </header>
         <main>
-            <section class="container text-center my-5">
-                <a href="admin_animateurs.php"><i class="colorR bi bi-arrow-left-circle" style="font-size: 30px;"></i></a>
-                <h1 class="colorB mt-4">Ajouter un animateur</h1>
-                <img src="img/barre_separation.png" alt="Barre de séparation" class="img-fluid my-4" style="max-width: 150px;">
-                <form method="POST" action="executable/ajouterAnimateur.php">
-                    <div>
-                        <label for="nom">Nom :</label>
-                        <input id="nom" name="nom" type="text" required="required">
+            <section class="container my-5">
+                <div class="col-12 d-flex flex-column align-items-center">
+                    <a href="admin_animateurs.php"><i class="colorR bi bi-arrow-left-circle" style="font-size: 30px;"></i></a>
+                    <h1 class="colorB mt-4">Ajouter un animateur</h1>
+                    <img src="img/barre_separation.png" alt="Barre de séparation" class="img-fluid my-4" style="max-width: 150px;">
+                </div>
+                <form class="d-flex flex-column justify-content-center align-items-center" method="POST" action="executable/ajouterAnimateur.php">
+                    <div class="d-flex flex-column col-5">
+                        <div>
+                            <i class="colorR fs-5 me-3 bi bi-tag"></i>
+                            <label for="nom">Nom :</label>
+                        </div>
+                        <input class="rounded-4" id="nom" name="nom" type="text" required="required">
                     </div>
                     <br>
-                    <div>
-                        <label for="prenom">Prénom :</label>
-                        <input id="prenom" name="prenom" type="text" required="required">
+                    <div class="d-flex flex-column col-5">
+                        <div>
+                            <i class="colorR fs-5 me-3 bi bi-threads"></i>
+                            <label for="prenom">Prénom :</label>
+                        </div>
+                        <input class="rounded-4" id="prenom" name="prenom" type="text" required="required">
                     </div>
                     <br>
-                    <div>
-                        <label for="age">Âge :</label>
-                        <input id="age" name="age" type="number" required="required">
+                    <div class="d-flex flex-column col-5">
+                        <div>
+                            <i class="colorR fs-5 me-3 bi bi-calendar-event"></i>
+                            <label for="age">Âge :</label>
+                        </div>
+                        <input class="rounded-4" id="age" name="age" type="number" required="required">
                     </div>
                     <br>
-                    <div>
-                        <label for="telephone">Téléphone :</label>
-                        <input id="telephone" name="telephone" type="text" required="required">
+                    <div class="d-flex flex-column col-5">
+                        <div>
+                            <i class="colorR fs-5 me-3 bi bi-telephone"></i>
+                            <label for="telephone">Téléphone :</label>
+                        </div>
+                        <input class="rounded-4" id="telephone" name="telephone" type="text" required="required">
                     </div>
                     <br>
-                    <div>
-                        <label for="description">Description :</label>
-                        <textarea id="description" name="description" required="required"></textarea>
+                    <div class="d-flex flex-column col-5">
+                        <div>
+                            <i class="colorR fs-5 me-3 bi bi-card-text"></i>
+                            <label for="description">Description :</label>
+                        </div>
+                        <textarea class="rounded-4" id="description" name="description" required="required"></textarea>
                     </div>
                     <br>
-                    <div>
-                        <label for="photo">Photo :</label>
-                        <input id="photo" name="photo" type="url" required="required">
+                    <div class="d-flex flex-column col-5">
+                        <div>
+                            <i class="colorR fs-5 me-3 bi bi-person-bounding-box"></i>
+                            <label for="photo">Photo :</label>
+                        </div>
+                        <input class="rounded-4" id="photo" name="photo" type="url" required="required">
                     </div>
                     <br>
-                    <div>
-                        <input class="btn btn-warning fw-bold px-4 py-2" type="submit" value="Ajouter l'animateur">
+                    <div class="d-flex flex-column col-5 align-items-center">
+                        <input class="btn-warning px-4 py-2 mb-4 text-uppercase rounded-4 border border-0 col-6" type="submit" value="Ajouter l'animateur">
                     </div>
                 </form>
             </section>

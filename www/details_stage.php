@@ -88,7 +88,7 @@ $stagesAleatoires = $data['randStage'];
 
             <!-- Les animateurs -->
 
-            <section>
+            <section class="container">
                 <h2 class="text-center mb-4 colorB">Les animateurs</h2>
                 <div id="animateurs" class="row gap-3 justify-content-center">
                     <?php
@@ -105,12 +105,12 @@ $stagesAleatoires = $data['randStage'];
 
             <!-- Affichage de 3 stages aléatoires -->
 
-            <section class="mt-5">
+            <section class="container mt-5">
                 <h2 class="text-center mb-4 colorB">D'autres stages</h2>
-                <div id="autresStages" class="row justify-content-center gap-4">
+                <div id="autresStages" class="row justify-content-center gap-3">
                     <?php
                     for ($i=0;$i<count($stagesAleatoires);$i++) {
-                        echo "<div class='col-md-4'>";
+                        echo "<div class='col-xl-3 col-12'>";
                         echo "<div class='card shadow-sm h-100'>"; 
                         echo "<img src=".$stagesAleatoires[$i]['miniature']." alt='Image du stage' class='card-img-top' style='height: 200px; object-fit: cover;'>"; 
                         echo "<div class='card-body d-flex flex-column'>";
