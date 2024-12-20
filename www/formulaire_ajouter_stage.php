@@ -2,9 +2,16 @@
 // On se connecte à la base de données
 
 require("config/config.php");
-$bdd_gestion_stages = new PDO($dsn, $identifiant, $mot_de_passe, $options);
 
-$resultats = $bdd_gestion_stages->query("SELECT * FROM `categorie`;");
+try {
+    $dbh = new PDO($dsn, $identifiant, $mot_de_passe, $options);
+    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+}
+catch (PDOException $e) {
+    echo 'Échec lors de la connexion : '.$e->getMessage();
+}
+
+$resultats = $dbh->query("SELECT * FROM `categorie`;");
 $donnees = $resultats->fetchAll(PDO::FETCH_ASSOC);
 $resultats->closeCursor();    // On ferme l'exécution de la requête une fois qu'elle est complétement terminée pour libérer une potentielle future requête
 ?>
@@ -25,9 +32,9 @@ $resultats->closeCursor();    // On ferme l'exécution de la requête une fois q
                 <a href="admin_stages.php"><i class="colorR bi bi-arrow-left-circle" style="font-size: 30px;"></i></a>
                 <h1 class=" colorB mt-4">Ajouter un stage</h1>
             </div>
-            <img class="mx-auto d-block my-4" src="img/barre_separation.png" alt="barre de séparation" style="max-width: 150px;>
+            <img class="mx-auto d-block my-4" src="img/barre_separation.png" alt="barre de séparation" style="max-width: 150px;">
 
-            <form class="mx-auto my-5 " method="POST" action="executable/ajouterStage.php" style="width: 40%;">
+            <form class="mx-auto my-5" method="POST" action="executable/ajouterStage.php" style="width: 40%;">
                 <div>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-image colorR me-2" viewBox="0 0 16 16">
                 <path d="M6.502 7a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"/>
