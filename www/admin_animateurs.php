@@ -46,7 +46,7 @@ else {
             <section class="container justify-content-center my-5" id="liste_animateur">
                 <h1 class="colorB text-center">Nos animateurs</h1>
                 <img src="img/barre_separation.png" alt="Barre de séparation" class="img-fluid my-4" style="max-width: 150px;">
-                <a href="formulaire_ajouter_animateur.php" class="col-12 col-lg-8 d-flex align-items-center justify-content-center border border-2 border-black rounded-4 m-4 mb-5 mt-5 text-center p-4">
+                <a href="formulaire_ajouter_animateur.php" class="col-12 col-lg-8 d-flex align-items-center justify-content-center border border-2 border-black rounded-4 m-4 mb-4 mt-5 text-center p-4">
                 <i class="iconPlus bi bi-plus-circle"></i></a>
                 <!-- Boucle pour afficher tous les animateurs -->
 
@@ -63,18 +63,20 @@ else {
                     $animateur_data["photo"]
                     );
                 ?>
-                <div class="col-12 col-md-8 mb-4">
-                    <button class="suppr btn-warning" value=<?php echo $animateur->id?>>Supprimer</button>
-                    <a href="formulaire_modifier_animateur.php?id=<?php echo $animateur->id ?>"><button class="modif btn-warning" value=<?php echo $animateur->id?>>Modifier</button></a>
-                    <div class="d-flex align-items-start p-4 bg-light rounded shadow animateur-card">
-                    <img src="<?php echo $animateur->photo; ?>" alt="Photo de <?php echo $animateur->prenom; ?>" class="rounded-circle me-4 animateur-photo" style="width: 150px; height: 150px; object-fit: cover; flex-shrink: 0;">
-                    <div class="flex-grow-1">
-                    <h3 class="fw-bold text-danger mb-1"><?php echo $animateur->prenom." ".$animateur->nom; ?></h3>
-                    <p class="text-muted mb-2"><?php echo $animateur->age." ans"; ?></p>
-                    <p class="mb-2"><?php echo $animateur->telephone; ?></p>
-                    <p><?php echo $animateur->description; ?></p>
-                </div>
-               </div>
+                <div class="col-12 col-md-8 mb-4 border border-2 border-black rounded-4 p-4">
+                    <div class="d-flex justify-content-end gap-1">
+                        <button class="suppr col-1" value=<?php echo $animateur->id?>><i class="iconNoir bi bi-x-circle"></i></button>
+                        <a href="formulaire_modifier_animateur.php?id=<?php echo $animateur->id ?>"><button class="modif col-1" value=<?php echo $animateur->id?>><i class="iconNoir bi bi-pencil"></i></a>
+                    </div>
+                    <div class="d-flex gap-4 flex-column flex-lg-row align-items-center align-items-lg-start p-4 animateur-card">
+                        <img src="<?php echo $animateur->photo; ?>" alt="Photo de <?php echo $animateur->prenom; ?>" class="rounded-circle me-4 animateur-photo" style="width: 150px; height: 150px; object-fit: cover; flex-shrink: 0;">
+                        <div>
+                            <h3 class="colorR mb-1 text-center text-lg-start"><?php echo $animateur->prenom." ".$animateur->nom; ?></h3>
+                            <p class="text-center text-lg-start mb-2 fst-italic"><?php echo $animateur->age." ans"; ?></p>
+                            <p class="text-center text-lg-start mb-2"><?php echo $animateur->telephone; ?></p>
+                            <p><?php echo $animateur->description; ?></p>
+                        </div>
+                    </div>
               </div>
              <?php } ?>
             </section>
