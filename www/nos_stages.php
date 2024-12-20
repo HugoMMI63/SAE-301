@@ -92,7 +92,7 @@ else {
                         </div>
                         <p><?php echo $stage->description; ?></p>
                         <?php if ($places_restantes > 0) {
-                            echo "<a href='details_stage.php?id=".$stage->id."''><button class='btn-warning fw-bold px-4 py-2 mb-4 text-uppercase'>Découvrire ce stage ></button></a>";
+                            echo "<a href='details_stage.php?id=".$stage->id."''><button class='btn-warning fw-bold px-4 py-2 mb-4 text-uppercase'>Découvrir ce stage ></button></a>";
                             } else { 
                             echo "<p>Ce stage est complet.</p>";
                         }?>

@@ -11,7 +11,7 @@ $resultats->closeCursor();    // On ferme l'exécution de la requête une fois q
 $login = $_POST["login"];
 $mdp = $_POST["mdp"];
 
-if ($login == $donnees["login"] && $mdp == $donnees["mdp"]) {
+if ($login == $donnees["login"] && sha1($mdp) == $donnees["mdp"]) {
     header("Location: ../admin_stages.php");  
     exit();
 }

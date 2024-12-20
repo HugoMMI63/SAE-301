@@ -57,7 +57,7 @@ $res->closeCursor();
                     <button id="stage" class="btn-warning" value="<?php echo $stage[0]['id'] ?>">Le stage</button>
                     <button id="participants" class="btn-warning" value="<?php echo $stage[0]['id'] ?>">Les participants</button>
                 </div>
-                <a href="formulaire_modifier_stage.php?id=<?php echo $stage[0]['id']; ?>"><button class="modif col-1 nude" value=<?php echo $stage[0]['id'];?>><img class="w-100" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAACXBIWXMAAAsTAAALEwEAmpwYAAAFP0lEQVR4nO2da4xdUxTHfzpt6dzxFtQrqYZMJkQIKUKIikSpUK3SD8IHEh9IVEoiSEPEIAgR8QyJFBEN0noURQmCCj6IpAlB69HHMN6G1pGd7MbN5M7ctc7Z57H3rF+yPt4ze//X3Y+z/+vuAcMwDMMwDMMwjInBJGAhsBzYAPwNbATWAFcBu9TdwJQ5BPgYyMaJzcC5dTc0RY4Dfuwi/vb4F1hSd4NT4kTgF6H47XFd3Q1PgZOBX3OIb0kIwOnAnwXEtyQU4EzgrwDiWxJysNBvL0OJb0lQsAj4RyjoT8BpwHuWhDBcAmwTijkEHO0/1wLetCQU4zK/f5eI/wNw+KjPuyS8YUnIxxLFPP4dMDDGcywJObhGIf5XwMwuz3NJeN1GgowbFUJ9CcwQPrcXWG1JGJsdgDsVAn0O7I8OS8I44t+jEP8zYDr5cEl4zUbC//QAjyoEWQvsSTG0I+FqEmUy8IRCiHeB3QL9bZeEV4V/122F55MYU4FnFOK/VYKztSOwQvj3N6fkrO2k6Hjmv6nuG1sG04CXhe1w9mb09AKvKMRf6RNWJu75Lwna4jzmqGkpdyAr/DRR1ZT4fJf2bCJidgXeUYj/pF+kq3baxjt7cl5ElOwBfKgQ/zG/Pa2SkwQe89dEyN7AJwrxH/R1Pk30mJ8iMqb7t1ap+Hf7t+IqOUPhMc8jIg4E1inEv7WGNp4DjAjb90ENX47czPAnlVLxH6mhjecrbM4hwZF3YzgUWK8Q38UwcGyDPeZZREI/8K1S/KqTkNdjbjwDwPc5xa8qCUU95sZyFLCloPhlJyGUx9w4jvFDNQsYoZMQ2mOOskh2xFcmDyuSEGLxu0Uh/jq/fU5S/LPbpquhCkZCFR5zbcxRvD3+7ksF2yk7CVV6zJUzV1Gh/Bswe4znlJWEHv9iJxX/I2AvImG+4gVmGDi+y/NmBV4T3PH1MqXH7I7Jo2CS3yFoTjUlhEqC1mN2hbs7ExFzFJ3LfAwKn110OnLiP6tolyvY7SMyutl1WU1JcB7zKkV7XvRGfFQcoJj7sw6xtKTpaLay/Hy5Hy3RsbSA+FmJI0ETzs2aQoT0eC80izgJy2ow+INxlvDkMKtxOhov7q/BYw7KC1066I4j9lHOxYMVjYT7YrIRO3EQsLVLJx/K+VOgwZKTcBsJcJOgo+7CjO30AW+XMB2dpxRf+txGM1lgL7oTxNG0Ao8ErcF/PYkwT9DZxWN8thUoCf3+AibJM5zVeCUJsUpwxu+q3igpCQPeGpSKfzkJcbCgcsAdfHWjlTMJGo/ZbRIuJjEkNp47nJPQp1yYH1bs/93xyAUkxlTBi9UGZfVySzkSJDGS6j1wki2f255qaQVMQrvHnByrBQte3rKNVoAkdPKYk2GmoHLMJagIrQJJcB7zKSTM7QIRXGFrHqYAJwA3AO/nEH941Fs3KS6+mwQi9Cq3s5cCTxc82YyqQjkviwRC3KsQfEugBdddQXwEE4A1AjGOHPWZfYEFwAPKiolMGG47fBgTgH7B4vupL2Ca699Y15YgeNYW3/h7oScEdwl3INLa+qxgaC5iip5pJZngWY74GXgupgrlqhbfsuIPf3XBtb7OJ1rjvAiPVyj4Vr92uDXk1Aou4YiCUCUnWYfY5v+5wh3+B9FR1WJWhfQfIEjjC78tvRDYr+7OxcDGmhferOFROtLboiZqlM7iBnQya3CUjrMMbRqivgQ4LmrANy1raFTGzQ3obNbAqJQF/uy97k5nDYrK2R24wv+Ibb3iZpEs0TAMwzAMwzAMwzAMwzAMOvEfHShJhKcuKygAAAAASUVORK5CYII=" alt="border-color"></button></a>
+                <a href="formulaire_modifier_stage.php?id=<?php echo $stage[0]['id']; ?>"><button class="modif col-1" value=<?php echo $stage[0]['id']; ?>><i class="iconNoir bi bi-pencil"></i></a>
             </div>
 
             <div id="stageInfo">
@@ -83,7 +83,7 @@ $res->closeCursor();
                 </section>
 
                 <!-- Les animateurs -->
-                <section id="animateur" class="row">
+                <section id="animateur">
                     <div class="d-flex flex-column align-items-center">
                         <h2 class="text-center mb-1 colorB">Les animateurs</h2>
                         <img src="img/barre_separation.png" alt="Barre de séparation" class="img-fluid my-4" style="max-width: 150px;">
@@ -143,7 +143,7 @@ $res->closeCursor();
 
             <!-- Bouton pour revenir à la liste des stages -->
             <div class="text-center my-4">
-                <a href="admin_stages.php" class="btn btn-yellow">Retour à la liste des stages</a>
+                <a href="admin_stages.php" class="btn btn-warning my-5">Retour à la liste des stages</a>
             </div>
         </main>
     </body>

@@ -96,12 +96,7 @@ else {
                             <strong>Places restantes : <?php echo $places_restantes; ?></strong>
                         </div>
                         <p><?php echo $stage->description; ?></p>
-                        <a class="nude" href="admin_details_stage.php?id=<?php echo $stage->id; ?>">
-                            <div class="mb-3 ms-3 me-3 mt-auto rounded-pill d-flex align-items-center justify-content-center fondJaune pe-2 ps-2 pt-3 pb-3">
-                                <h6 class="mb-0 ms-3">Détails du stage</h6>
-                                <i class="iconNoir bi bi-chevron-right"></i>
-                            </div>
-                        </a>
+                        <a href='admin_details_stage.php?id=<?php echo $stage->id; ?>'><button class='btn-warning fw-bold px-4 py-2 mb-4 text-uppercase'>Détails du stage ></button></a>
                     </div>
                     <?php } ?>
                 </div>

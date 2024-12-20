@@ -69,8 +69,8 @@ $stagesAleatoires = $data['randStage'];
         <!-- Informations du stage -->
 
             <section class="p-4 rounded shadow-sm mb-5 container-fluid text-center">
-                <h1 id="titreStage" class="colorB text-center mb-4"><?php echo $stage[0]['titre']; ?></h1>
-                <img src="img/barre_separation.png" alt="Barre de séparation" class="d-block mx-auto my-3">
+                <h1 id="titreStage" class="colorB text-center mb-1"><?php echo $stage[0]['titre']; ?></h1>
+                <img src="img/barre_separation.png" alt="Barre de séparation" class="img-fluid my-4" style="max-width: 150px;">
                 <ul class="list-unstyled">
                     <li id="categorieStage" class="mb-2"><strong>Catégorie :</strong> <?php echo $stage[0]['intitule']; ?></li>
                     <li id="periodeStage" class="mb-2"><strong>Période :</strong> <?php echo $stage[0]['date']; ?></li>
@@ -123,7 +123,7 @@ $stagesAleatoires = $data['randStage'];
                         echo "<h5 class='card-title'>".$stagesAleatoires[$i]['titre']."</h5>";
                         echo "<p class='text-muted'><small>".$stagesAleatoires[$i]['date']."</small></p>";
                         echo "<p class='card-text flex-grow-1'>".$stagesAleatoires[$i]['description']."</p>";
-                        echo "<button class='btn btn-warning w-100 mt-auto plusInfo' value=".$stagesAleatoires[$i]['id'].">Découvrire ce stage ></button>";
+                        echo "<button class='btn btn-warning w-100 mt-auto plusInfo' value=".$stagesAleatoires[$i]['id'].">Découvrir ce stage ></button>";
                         echo "</div>";
                         echo "</div>";
                         echo "</div>";

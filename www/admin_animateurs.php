@@ -44,7 +44,7 @@ else {
         </header>
         <main>
             <section class="container justify-content-center my-5" id="liste_animateur">
-                <h1 class="colorB text-center">Nos animateurs</h1>
+                <h1 class="colorB text-center">Vos animateurs</h1>
                 <img src="img/barre_separation.png" alt="Barre de séparation" class="img-fluid my-4" style="max-width: 150px;">
                 <a href="formulaire_ajouter_animateur.php" class="col-12 col-lg-8 d-flex align-items-center justify-content-center border border-2 border-black rounded-4 m-4 mb-4 mt-5 text-center p-4">
                 <i class="iconPlus bi bi-plus-circle"></i></a>
