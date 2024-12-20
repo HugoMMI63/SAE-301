@@ -94,6 +94,13 @@ $fileName = basename($Url);
                 <a class="nude" href="nos_animateurs.php"><div class="rounded-4 p-3"><h6 class="mb-0">Nos animateurs</h6></div></a>
                 <?php
             }
+            elseif ($fileName == "formulaire_inscription.php") {
+                ?>
+                <a class="nude" href="index.php"><div class="rounded-4 p-3"><h6 class="mb-0">Accueil</h6></div></a>
+                <a class="nude" href="nos_stages.php"><div class="rounded-4 p-3"><h6 class="mb-0">Nos stages</h6></div></a>
+                <a class="nude" href="nos_animateurs.php"><div class="rounded-4 p-3"><h6 class="mb-0">Nos animateurs</h6></div></a>
+                <?php
+            }
             else {
                 ?>
                 <a class="nude" href="index.php"><div class="rounded-4 p-3"><h6 class="mb-0">Accueil</h6></div></a>
