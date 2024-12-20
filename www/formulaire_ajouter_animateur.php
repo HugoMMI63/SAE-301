@@ -29,37 +29,37 @@ $resultats->closeCursor(); // On ferme l'exécution de la requête une fois qu'e
         <form class="mx-auto my-5" method="POST" action="executable/ajouterAnimateur.php" style="width: 40%;">
             <div>
                 <i class="colorR fs-5 me-3 bi bi-tag"></i>
-                <label for="nom">Nom :</label><br>
+                <label for="nom"><h5>Nom :</h5></label><br>
                 <input class="rounded" id="nom" name="nom" type="text" required="required">
             </div>
             <br>
             <div>
                 <i class="colorR fs-5 me-3 bi bi-threads"></i>
-                <label for="prenom">Prénom :</label><br>
+                <label for="prenom"><h5>Prénom :</h5></label><br>
                 <input class="rounded" id="prenom" name="prenom" type="text" required="required">
             </div>
             <br>
             <div>
                 <i class="colorR fs-5 me-3 bi bi-calendar-event"></i>
-                <label for="age">Âge :</label><br>
+                <label for="age"><h5>Âge :</h5></label><br>
                 <input class="rounded" id="age" name="age" type="number" required="required">
             </div>
             <br>
             <div>
                 <i class="colorR fs-5 me-3 bi bi-telephone"></i>
-                <label for="telephone">Téléphone :</label><br>
+                <label for="telephone"><h5>Téléphone :</h5></label><br>
                 <input class="rounded" id="telephone" name="telephone" type="text" required="required">
             </div>
             <br>
             <div>
                 <i class="colorR fs-5 me-3 bi bi-card-text"></i>
-                <label for="description">Description :</label><br>
+                <label for="description"><h5>Description :</h5></label><br>
                 <textarea class="rounded" id="description" name="description" required="required"></textarea>
             </div>
             <br>
             <div>
                 <i class="colorR fs-5 me-3 bi bi-person-bounding-box"></i>
-                <label for="photo">Photo :</label><br>
+                <label for="photo"><h5>Photo :</h5></label><br>
                 <input class="rounded" id="photo" name="photo" type="url" required="required">
             </div>
             <br>
