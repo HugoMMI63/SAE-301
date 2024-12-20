@@ -60,27 +60,59 @@ class Stage {
         echo("Catégorie : ".$this->id_categorie."<br>");
     }
 
-    public function ajouterBDD() {
-        /* On réalise une requête préparée (en utilisant la variable globale "$bdd_gestion_stages") mais uniquement si :
-        - L'attribut "id" est égal à "null"
-        */
+    public function ajouterBDD($tab_valeurs, $animateurs_selectionnes) {
+       // Inclusion du fichier de configuration
+        include_once('../config/config.php'); 
 
-        if ($this->id == null) {
-            $requete_preparee = $GLOBALS["bdd_gestion_stages"]->prepare("INSERT INTO `stage` (miniature, titre, date, horaire_debut, horaire_fin, description, nb_places, lieu, tarif_min, tarif_max, id_categorie) VALUES (:miniature, :titre, :date, :horaire_debut, :horaire_fin, :description, :nb_places, :lieu, :tarif_min, :tarif_max, :id_categorie);");
-            
-            for ($index = 0; $index < count($this->attributs); $index = $index + 1) {
-                if ($this->attributs[$index] == "nb_places" || $this->attributs[$index] == "tarif_min" || $this->attributs[$index] == "tarif_max" || $this->attributs[$index] == "id_categorie") {
-                    $requete_preparee->bindValue(":".$this->attributs[$index], $this->valeurs[$index], PDO::PARAM_INT);
-                }
-                else {
-                    $requete_preparee->bindValue(":".$this->attributs[$index], $this->valeurs[$index], PDO::PARAM_STR);
-                }
-            }
+        global $dbh;
+
+        if (!$dbh) {
+            echo 'Échec lors de la connexion à la base de données';
+            return;
+        }
+
+        // Vérifie si le nombre d'éléments dans $tab_valeurs correspond à celui attendu
+        if (count($tab_valeurs) == count($this->attributs)) {
+
+            // Crée la requête SQL préparée pour l'ajout des informations du stage
+            $requete_preparee = $dbh->prepare("
+                INSERT INTO `stage` 
+                (miniature, titre, date, horaire_debut, horaire_fin, description, nb_places, lieu, tarif_min, tarif_max, id_categorie)
+                VALUES
+                (:miniature, :titre, :date, :horaire_debut, :horaire_fin, :description, :nb_places, :lieu, :tarif_min, :tarif_max, :id_categorie)
+            ");
+
+            // Lier les paramètres à partir du tableau associatif
+            $requete_preparee->bindValue(":id_categorie", $tab_valeurs['id_categorie'], PDO::PARAM_INT);
+            $requete_preparee->bindValue(":miniature", $tab_valeurs['miniature'], PDO::PARAM_STR);
+            $requete_preparee->bindValue(":titre", $tab_valeurs['titre'], PDO::PARAM_STR);
+            $requete_preparee->bindValue(":date", $tab_valeurs['date'], PDO::PARAM_STR);
+            $requete_preparee->bindValue(":horaire_debut", $tab_valeurs['horaire_debut'], PDO::PARAM_STR);
+            $requete_preparee->bindValue(":horaire_fin", $tab_valeurs['horaire_fin'], PDO::PARAM_STR);
+            $requete_preparee->bindValue(":description", $tab_valeurs['description'], PDO::PARAM_STR);
+            $requete_preparee->bindValue(":nb_places", $tab_valeurs['nb_places'], PDO::PARAM_INT);
+            $requete_preparee->bindValue(":lieu", $tab_valeurs['lieu'], PDO::PARAM_STR);
+            $requete_preparee->bindValue(":tarif_min", $tab_valeurs['tarif_min'], PDO::PARAM_INT);
+            $requete_preparee->bindValue(":tarif_max", $tab_valeurs['tarif_max'], PDO::PARAM_INT);
 
             // On exécute la requête préparée et on stocke l'état de cette-dernière (1 = réussie, 0 = échec)
 
             $etat = $requete_preparee->execute();
 
+            // Si l'insertion a réussi, récupérer l'ID du stage inséré
+            if ($etat) {
+                // Récupère l'ID du dernier stage inséré (AUTO_INCREMENT)
+                $id_stage = $dbh->lastInsertId();
+
+                // Insérer les nouveaux animateurs associés au stage
+                foreach ($animateurs_selectionnes as $id_animateur) {
+                    $requete_insert = "INSERT INTO anime (id_stage, id_animateur) VALUES (:id_stage, :id_animateur)";
+                    $stmt = $dbh->prepare($requete_insert);
+                    $stmt->bindParam(':id_stage', $id_stage, PDO::PARAM_INT);
+                    $stmt->bindParam(':id_animateur', $id_animateur, PDO::PARAM_INT);
+                    $stmt->execute();
+                }
+                
             // L'administrateur est automatiquement redirigé vers la page "redirection.php" avec un message lié à la raison de la redirection (échec ou réussite)
 
             if ($etat == 0) {
