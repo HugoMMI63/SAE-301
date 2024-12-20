@@ -53,7 +53,7 @@ $resultats->closeCursor();    // On ferme l'exécution de la requête une fois q
                         <i class="colorR fs-5 me-3 bi bi-tag"></i>
                         <label for="nom"><h5>Nom :</h5></label>
                     </div>
-                    <input class="rounded-4" id="nom" name="nom" type="text" value="<?php echo($animateur["nom"]); ?>" required="required">
+                    <input class="rounded" id="nom" name="nom" type="text" value="<?php echo($animateur["nom"]); ?>" required="required">
                 </div>
                 <br>
                 <div class="d-flex flex-column col-5">
@@ -61,7 +61,7 @@ $resultats->closeCursor();    // On ferme l'exécution de la requête une fois q
                         <i class="colorR fs-5 me-3 bi bi-threads"></i>
                         <label for="prenom"><h5>Prénom :</h5></label>
                     </div>
-                    <input class="rounded-4" id="prenom" name="prenom" type="text" value="<?php echo($animateur["prenom"]); ?>" required="required">
+                    <input class="rounded" id="prenom" name="prenom" type="text" value="<?php echo($animateur["prenom"]); ?>" required="required">
                 </div>
                 <br>
                 <div class="d-flex flex-column col-5">
@@ -69,7 +69,7 @@ $resultats->closeCursor();    // On ferme l'exécution de la requête une fois q
                         <i class="colorR fs-5 me-3 bi bi-calendar-event"></i>
                         <label for="age"><h5>Âge :</h5></label>
                     </div>
-                    <input class="rounded-4" id="age" name="age" type="number" value="<?php echo($animateur["age"]); ?>" required="required">
+                    <input class="rounded" id="age" name="age" type="number" value="<?php echo($animateur["age"]); ?>" required="required">
                 </div>
                 <br>
                 <div class="d-flex flex-column col-5">
@@ -77,7 +77,7 @@ $resultats->closeCursor();    // On ferme l'exécution de la requête une fois q
                         <i class="colorR fs-5 me-3 bi bi-telephone"></i>
                         <label for="telephone"><h5>Téléphone :</h5></label>
                     </div>
-                    <input class="rounded-4" id="telephone" name="telephone" type="text" value="<?php echo($animateur["telephone"]); ?>" required="required">
+                    <input class="rounded" id="telephone" name="telephone" type="text" value="<?php echo($animateur["telephone"]); ?>" required="required">
                 </div>
                 <br>
                 <div class="d-flex flex-column col-5">
@@ -85,7 +85,7 @@ $resultats->closeCursor();    // On ferme l'exécution de la requête une fois q
                         <i class="colorR fs-5 me-3 bi bi-card-text"></i>
                         <label for="description"><h5>Description :</h5></label>
                     </div>
-                    <textarea class="rounded-4" id="description" name="description" required="required"><?php echo($animateur["description"]); ?></textarea>
+                    <textarea class="rounded" id="description" name="description" required="required"><?php echo($animateur["description"]); ?></textarea>
                 </div>
                 <br>
                 <div class="d-flex flex-column col-5">
@@ -93,7 +93,7 @@ $resultats->closeCursor();    // On ferme l'exécution de la requête une fois q
                         <i class="colorR fs-5 me-3 bi bi-person-bounding-box"></i>
                         <label for="photo"><h5>Photo :</h5></label>
                     </div>
-                    <input class="rounded-4" id="photo" name="photo" type="url" value="<?php echo($animateur["photo"]); ?>" required="required">
+                    <input class="rounded" id="photo" name="photo" type="url" value="<?php echo($animateur["photo"]); ?>" required="required">
                 </div>
                 <br>
                 <div class="d-flex flex-column col-5 align-items-center">

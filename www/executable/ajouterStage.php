@@ -2,36 +2,56 @@
 require("../config/config.php");
 require("../classes/Stage.php");
 
+try {
+    $dbh = new PDO($dsn, $identifiant, $mot_de_passe, $options);
+    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+}
+catch (PDOException $e) {
+    echo 'Échec lors de la connexion : '.$e->getMessage();
+}
+
 $valide = true;
 
-$attributs = ["miniature", "titre", "date", "horaire_debut", "horaire_fin", "description", "nb_places", "lieu", "tarif_min", "tarif_max", "id_categorie"];
-
-foreach ($attributs as $attribut) {
-    if (isset($_POST[$attribut]) == false) {
-        $valide = false;
-        break;
-    }
-}
-
 if ($valide == true) {
+    // Création d'un tableau associatif des données du stage
+    $tab_valeurs = [
+        'id_categorie' => $_POST['id_categorie'],
+        'miniature' => $_POST['miniature'],
+        'titre' => $_POST['titre'],
+        'date' => $_POST['date'],
+        'horaire_debut' => $_POST['horaire_debut'],
+        'horaire_fin' => $_POST['horaire_fin'],
+        'description' => $_POST['description'],
+        'nb_places' => $_POST['nb_places'],
+        'lieu' => $_POST['lieu'],
+        'tarif_min' => $_POST['tarif_min'],
+        'tarif_max' => $_POST['tarif_max']
+    ];
+
+    // Créer une instance de la classe "Stage" avec l'ID du stage et les autres données du formulaire
     $stage = new Stage(
-        null,
-        $_POST["miniature"],
-        $_POST["titre"],
-        $_POST["date"],
-        $_POST["horaire_debut"],
-        $_POST["horaire_fin"],
-        $_POST["description"],
-        $_POST["nb_places"],
-        $_POST["lieu"],
-        $_POST["tarif_min"],
-        $_POST["tarif_max"],
-        $_POST["id_categorie"]
+        $id_stage, 
+        $tab_stage['titre'],
+        $tab_stage['miniature'],
+        $tab_stage['date'],
+        $tab_stage['horaire_debut'],
+        $tab_stage['horaire_fin'],
+        $tab_stage['nb_places'],
+        $tab_stage['lieu'],
+        $tab_stage['tarif_min'],
+        $tab_stage['tarif_max'],
+        $tab_stage['description'],
+        $tab_stage['id_categorie']
     );
-    
-    $stage->ajouterBDD();
-}
-else {
+
+    // Récupérer les ID des animateurs sélectionnés
+    $animateurs_selectionnes = isset($_POST['animateurs']) ? $_POST['animateurs'] : [];
+
+
+    // Appeler la méthode "modifierBDD" pour modifier le stage dans la base de données
+    $stage->ajouterBDD($tab_valeurs, $animateurs_selectionnes);
+
+} else {
     header("Location: ../redirection.php");
     exit();
 }
