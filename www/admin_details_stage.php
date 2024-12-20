@@ -51,19 +51,25 @@ $res->closeCursor();
         <header>
             <?php include("navbars/navbarAdmin.php"); ?>
         </header>
-        <main>
-            <div>
-                <button id="stage" value="<?php echo $stage[0]['id'] ?>">Le stage</button>
-                <button id="participants" value="<?php echo $stage[0]['id'] ?>">Les participants</button>
+        <main class="container">
+            <div class="d-flex justify-content-between">
+                <div >
+                    <button id="stage" class="btn-warning" value="<?php echo $stage[0]['id'] ?>">Le stage</button>
+                    <button id="participants" class="btn-warning" value="<?php echo $stage[0]['id'] ?>">Les participants</button>
+                </div>
+                <a href="formulaire_modifier_stage.php?id=<?php echo $stage[0]['id']; ?>"><button class="modif col-1 nude" value=<?php echo $stage[0]['id'];?>><img class="w-100" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAACXBIWXMAAAsTAAALEwEAmpwYAAAFP0lEQVR4nO2da4xdUxTHfzpt6dzxFtQrqYZMJkQIKUKIikSpUK3SD8IHEh9IVEoiSEPEIAgR8QyJFBEN0noURQmCCj6IpAlB69HHMN6G1pGd7MbN5M7ctc7Z57H3rF+yPt4ze//X3Y+z/+vuAcMwDMMwDMMwjInBJGAhsBzYAPwNbATWAFcBu9TdwJQ5BPgYyMaJzcC5dTc0RY4Dfuwi/vb4F1hSd4NT4kTgF6H47XFd3Q1PgZOBX3OIb0kIwOnAnwXEtyQU4EzgrwDiWxJysNBvL0OJb0lQsAj4RyjoT8BpwHuWhDBcAmwTijkEHO0/1wLetCQU4zK/f5eI/wNw+KjPuyS8YUnIxxLFPP4dMDDGcywJObhGIf5XwMwuz3NJeN1GgowbFUJ9CcwQPrcXWG1JGJsdgDsVAn0O7I8OS8I44t+jEP8zYDr5cEl4zUbC//QAjyoEWQvsSTG0I+FqEmUy8IRCiHeB3QL9bZeEV4V/122F55MYU4FnFOK/VYKztSOwQvj3N6fkrO2k6Hjmv6nuG1sG04CXhe1w9mb09AKvKMRf6RNWJu75Lwna4jzmqGkpdyAr/DRR1ZT4fJf2bCJidgXeUYj/pF+kq3baxjt7cl5ElOwBfKgQ/zG/Pa2SkwQe89dEyN7AJwrxH/R1Pk30mJ8iMqb7t1ap+Hf7t+IqOUPhMc8jIg4E1inEv7WGNp4DjAjb90ENX47czPAnlVLxH6mhjecrbM4hwZF3YzgUWK8Q38UwcGyDPeZZREI/8K1S/KqTkNdjbjwDwPc5xa8qCUU95sZyFLCloPhlJyGUx9w4jvFDNQsYoZMQ2mOOskh2xFcmDyuSEGLxu0Uh/jq/fU5S/LPbpquhCkZCFR5zbcxRvD3+7ksF2yk7CVV6zJUzV1Gh/Bswe4znlJWEHv9iJxX/I2AvImG+4gVmGDi+y/NmBV4T3PH1MqXH7I7Jo2CS3yFoTjUlhEqC1mN2hbs7ExFzFJ3LfAwKn110OnLiP6tolyvY7SMyutl1WU1JcB7zKkV7XvRGfFQcoJj7sw6xtKTpaLay/Hy5Hy3RsbSA+FmJI0ETzs2aQoT0eC80izgJy2ow+INxlvDkMKtxOhov7q/BYw7KC1066I4j9lHOxYMVjYT7YrIRO3EQsLVLJx/K+VOgwZKTcBsJcJOgo+7CjO30AW+XMB2dpxRf+txGM1lgL7oTxNG0Ao8ErcF/PYkwT9DZxWN8thUoCf3+AibJM5zVeCUJsUpwxu+q3igpCQPeGpSKfzkJcbCgcsAdfHWjlTMJGo/ZbRIuJjEkNp47nJPQp1yYH1bs/93xyAUkxlTBi9UGZfVySzkSJDGS6j1wki2f255qaQVMQrvHnByrBQte3rKNVoAkdPKYk2GmoHLMJagIrQJJcB7zKSTM7QIRXGFrHqYAJwA3AO/nEH941Fs3KS6+mwQi9Cq3s5cCTxc82YyqQjkviwRC3KsQfEugBdddQXwEE4A1AjGOHPWZfYEFwAPKiolMGG47fBgTgH7B4vupL2Ca699Y15YgeNYW3/h7oScEdwl3INLa+qxgaC5iip5pJZngWY74GXgupgrlqhbfsuIPf3XBtb7OJ1rjvAiPVyj4Vr92uDXk1Aou4YiCUCUnWYfY5v+5wh3+B9FR1WJWhfQfIEjjC78tvRDYr+7OxcDGmhferOFROtLboiZqlM7iBnQya3CUjrMMbRqivgQ4LmrANy1raFTGzQ3obNbAqJQF/uy97k5nDYrK2R24wv+Ibb3iZpEs0TAMwzAMwzAMwzAMwzAMOvEfHShJhKcuKygAAAAASUVORK5CYII=" alt="border-color"></button></a>
             </div>
+
             <div id="stageInfo">
-                <div class="d-flex justify-content-end">
-                    <a href="formulaire_modifier_stage.php?id=<?php echo $stage[0]['id']; ?>"><button class="modif col-1 nude" value=<?php echo $stage[0]['id'];?>><img class="w-100" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAACXBIWXMAAAsTAAALEwEAmpwYAAAFP0lEQVR4nO2da4xdUxTHfzpt6dzxFtQrqYZMJkQIKUKIikSpUK3SD8IHEh9IVEoiSEPEIAgR8QyJFBEN0noURQmCCj6IpAlB69HHMN6G1pGd7MbN5M7ctc7Z57H3rF+yPt4ze//X3Y+z/+vuAcMwDMMwDMMwjInBJGAhsBzYAPwNbATWAFcBu9TdwJQ5BPgYyMaJzcC5dTc0RY4Dfuwi/vb4F1hSd4NT4kTgF6H47XFd3Q1PgZOBX3OIb0kIwOnAnwXEtyQU4EzgrwDiWxJysNBvL0OJb0lQsAj4RyjoT8BpwHuWhDBcAmwTijkEHO0/1wLetCQU4zK/f5eI/wNw+KjPuyS8YUnIxxLFPP4dMDDGcywJObhGIf5XwMwuz3NJeN1GgowbFUJ9CcwQPrcXWG1JGJsdgDsVAn0O7I8OS8I44t+jEP8zYDr5cEl4zUbC//QAjyoEWQvsSTG0I+FqEmUy8IRCiHeB3QL9bZeEV4V/122F55MYU4FnFOK/VYKztSOwQvj3N6fkrO2k6Hjmv6nuG1sG04CXhe1w9mb09AKvKMRf6RNWJu75Lwna4jzmqGkpdyAr/DRR1ZT4fJf2bCJidgXeUYj/pF+kq3baxjt7cl5ElOwBfKgQ/zG/Pa2SkwQe89dEyN7AJwrxH/R1Pk30mJ8iMqb7t1ap+Hf7t+IqOUPhMc8jIg4E1inEv7WGNp4DjAjb90ENX47czPAnlVLxH6mhjecrbM4hwZF3YzgUWK8Q38UwcGyDPeZZREI/8K1S/KqTkNdjbjwDwPc5xa8qCUU95sZyFLCloPhlJyGUx9w4jvFDNQsYoZMQ2mOOskh2xFcmDyuSEGLxu0Uh/jq/fU5S/LPbpquhCkZCFR5zbcxRvD3+7ksF2yk7CVV6zJUzV1Gh/Bswe4znlJWEHv9iJxX/I2AvImG+4gVmGDi+y/NmBV4T3PH1MqXH7I7Jo2CS3yFoTjUlhEqC1mN2hbs7ExFzFJ3LfAwKn110OnLiP6tolyvY7SMyutl1WU1JcB7zKkV7XvRGfFQcoJj7sw6xtKTpaLay/Hy5Hy3RsbSA+FmJI0ETzs2aQoT0eC80izgJy2ow+INxlvDkMKtxOhov7q/BYw7KC1066I4j9lHOxYMVjYT7YrIRO3EQsLVLJx/K+VOgwZKTcBsJcJOgo+7CjO30AW+XMB2dpxRf+txGM1lgL7oTxNG0Ao8ErcF/PYkwT9DZxWN8thUoCf3+AibJM5zVeCUJsUpwxu+q3igpCQPeGpSKfzkJcbCgcsAdfHWjlTMJGo/ZbRIuJjEkNp47nJPQp1yYH1bs/93xyAUkxlTBi9UGZfVySzkSJDGS6j1wki2f255qaQVMQrvHnByrBQte3rKNVoAkdPKYk2GmoHLMJagIrQJJcB7zKSTM7QIRXGFrHqYAJwA3AO/nEH941Fs3KS6+mwQi9Cq3s5cCTxc82YyqQjkviwRC3KsQfEugBdddQXwEE4A1AjGOHPWZfYEFwAPKiolMGG47fBgTgH7B4vupL2Ca699Y15YgeNYW3/h7oScEdwl3INLa+qxgaC5iip5pJZngWY74GXgupgrlqhbfsuIPf3XBtb7OJ1rjvAiPVyj4Vr92uDXk1Aou4YiCUCUnWYfY5v+5wh3+B9FR1WJWhfQfIEjjC78tvRDYr+7OxcDGmhferOFROtLboiZqlM7iBnQya3CUjrMMbRqivgQ4LmrANy1raFTGzQ3obNbAqJQF/uy97k5nDYrK2R24wv+Ibb3iZpEs0TAMwzAMwzAMwzAMwzAMOvEfHShJhKcuKygAAAAASUVORK5CYII=" alt="border-color"></button></a>
+                <div class="d-flex justify-content-between">
+                    
                 </div>
                 <!-- Informations du stage -->
-                <section id="info_stage" class="info bg-light p-4 rounded shadow-sm mb-5">
-                    <h1 id="titreStage" class="text-primary text-center mb-4"><?php echo $stage[0]['titre']; ?></h1>
-                    <img src="img/barre_separation.png" alt="Barre de séparation" class="d-block mx-auto my-3">
+                <section id="info_stage" class="info p-4 rounded mb-5 text-center">
+                    <div class="d-flex flex-column align-items-center">
+                        <h1 id="titreStage" class="colorB text-center"><?php echo $stage[0]['titre']; ?></h1>
+                        <img src="img/barre_separation.png" alt="Barre de séparation" class="img-fluid my-4" style="max-width: 150px;">
+                    </div>
                     <ul class="list-unstyled">
                         <li id="categorieStage" class="mb-2"><strong>Catégorie :</strong> <?php echo $stage[0]['intitule']; ?></li>
                         <li id="periodeStage" class="mb-2"><strong>Période :</strong> <?php echo $stage[0]['date']; ?></li>
@@ -72,20 +78,23 @@ $res->closeCursor();
                         <li id="nbplaceStage" class="mb-2"><strong>Nombre de places :</strong> <?php echo $stage[0]['nb_places']; ?></li>
                         <li id="tarifStage" class="mb-2"><strong>Tarif :</strong> <?php echo $stage[0]['tarif_min']; ?> à <?php echo $stage[0]['tarif_max']; ?>€ selon le quotient familial</li>
                     </ul>
-                    <img id="miniatureStage" src="<?php echo $stage[0]['miniature']; ?>" alt="Image du stage" class="img-fluid d-block mx-auto my-4">
-                    <p id="descriptionStage"><strong>Description :</strong> <?php echo $stage[0]['description']; ?></p>
+                    <img id="miniatureStage" src="<?php echo $stage[0]['miniature']; ?>" alt="Image du stage" class="col-6 text-center mx-auto my-4">
+                    <p id="descriptionStage" class="col-6 text-center mx-auto my-4"><strong>Description :</strong> <?php echo $stage[0]['description']; ?></p>
                 </section>
 
                 <!-- Les animateurs -->
-                <section id="animateur">
-                    <h2 class="text-center mb-4 h2-custom">Les animateurs</h2>
-                    <div id="animateurs" class="row g-3">
+                <section id="animateur" class="row">
+                    <div class="d-flex flex-column align-items-center">
+                        <h2 class="text-center mb-1 colorB">Les animateurs</h2>
+                        <img src="img/barre_separation.png" alt="Barre de séparation" class="img-fluid my-4" style="max-width: 150px;">
+                    </div>
+                    <div id="animateurs" class="row justify-content-center gap-3">
                         <?php
                         $nbAnimateur=count($stage);
                         for ($i = 0; $i < $nbAnimateur; $i++) {
                             echo "<div class='col-md-4 text-center'>";
                             echo "<img src=".$stage[$i]['photo']." alt='Photo de ".$stage[$i]['prenom']."' class='img-fluid rounded-circle mb-3' style='width: 150px; height: 150px; object-fit: cover;'>";
-                            echo "<h3>". $stage[$i]['prenom'] ."</h3>";
+                            echo "<h3 class='colorR'>". $stage[$i]['prenom'] ."</h3>";
                             echo "</div>";
                         }
                         ?>
@@ -133,7 +142,7 @@ $res->closeCursor();
             </section>
 
             <!-- Bouton pour revenir à la liste des stages -->
-            <div class="text-center mt-4">
+            <div class="text-center my-4">
                 <a href="admin_stages.php" class="btn btn-yellow">Retour à la liste des stages</a>
             </div>
         </main>
