@@ -70,15 +70,30 @@ class Personne {
             // L'administrateur est automatiquement redirigé vers la page "redirection.php" avec un message lié à la raison de la redirection (échec ou réussite)
 
             if ($etat == 0) {
-                header("Location: ../redirection.php?raison=requete_erreur");
+                if ($this->attributs == ["nom", "prenom", "age", "telephone", "description", "photo"]) {
+                    header("Location: ../redirection.php?raison=requete_erreur&contexte=animateurs&action=ajouter");
+                }
+                else {
+                    header("Location: ../redirection.php?raison=requete_erreur&contexte=reservations&action=ajouter");
+                }
             }
             else {
-                header("Location: ../redirection.php?raison=requete_reussie");
+                if ($this->attributs == ["nom", "prenom", "age", "telephone", "description", "photo"]) {
+                    header("Location: ../redirection.php?raison=requete_reussie&contexte=animateurs&action=ajouter");
+                }
+                else {
+                    header("Location: ../redirection.php?raison=requete_reussie&contexte=reservations&action=ajouter");
+                }
             }
             exit();
         }
         else {
-            header("Location: ../redirection.php?raison=requete_erreur");
+            if ($this->attributs == ["nom", "prenom", "age", "telephone", "description", "photo"]) {
+                header("Location: ../redirection.php?raison=requete_erreur&contexte=animateurs&action=ajouter");
+            }
+            else {
+                header("Location: ../redirection.php?raison=requete_erreur&contexte=reservations&action=ajouter");
+            }
             exit();
         }
     }
@@ -109,15 +124,15 @@ class Personne {
             // L'administrateur est automatiquement redirigé vers la page "redirection.php" avec un message lié à la raison de la redirection (échec ou réussite)
 
             if ($etat == 0) {
-                header("Location: ../redirection.php?raison=requete_erreur");
+                header("Location: ../redirection.php?raison=requete_erreur&contexte=animateurs&action=modifier");
             }
-            // else {
-            //     header("Location: ../redirection.php?raison=requete_reussie");
-            // }
-            // exit();
+            else {
+                header("Location: ../redirection.php?raison=requete_reussie&contexte=animateurs&action=modifier");
+            }
+            exit();
         }
         else {
-            header("Location: ../redirection.php?raison=requete_erreur");
+            header("Location: ../redirection.php?raison=requete_erreur&contexte=animateurs&action=modifier");
             exit();
         }
     }
@@ -136,7 +151,7 @@ class Personne {
             $etat = $requete_preparee->execute();
         }
         else {
-            header("Location: ../redirection.php?raison=requete_erreur");
+            header("Location: ../redirection.php?raison=requete_erreur&contexte=animateurs&action=supprimer");
             exit();
         }
     }

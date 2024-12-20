@@ -16,7 +16,7 @@ if ($login == $donnees["login"] && $mdp == $donnees["mdp"]) {
     exit();
 }
 else {
-    header("Location: ../redirection.php?raison=login_erreur");
+    header("Location: ../redirection.php?raison=login_erreur&contexte=connexion&action=connexion");
     exit();
 }
 ?>

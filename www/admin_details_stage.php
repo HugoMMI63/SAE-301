@@ -78,7 +78,7 @@ $res->closeCursor();
 
                 <!-- Les animateurs -->
                 <section id="animateur">
-                    <h2 class="text-center mb-4 h2-custom">LES ANIMATEURS</h2>
+                    <h2 class="text-center mb-4 h2-custom">Les animateurs</h2>
                     <div id="animateurs" class="row g-3">
                         <?php
                         $nbAnimateur=count($stage);
@@ -103,11 +103,11 @@ $res->closeCursor();
                             <th scope="col" class="bg-light text-center">Prénom</th>
                             <th scope="col" class="bg-white text-center">Âge</th>
                             <th scope="col" class="bg-white text-center">Problèmes médicaux</th>
-                            <th scope="col" class="bg-white text-center">Prescription</th>
+                            <th scope="col" class="bg-white text-center">Prescriptions</th>
                             <th scope="col" class="bg-light text-center">Responsable légal</th>
-                            <th scope="col" class="bg-white text-center">Téléphone</th>
-                            <th scope="col" class="bg-light text-center">Mail</th>
-                            <th scope="col" class="bg-white text-center">Etat du paiement</th>
+                            <th scope="col" class="bg-white text-center">Numéro de téléphone</th>
+                            <th scope="col" class="bg-light text-center">Adresse e-mail</th>
+                            <th scope="col" class="bg-white text-center">État du paiement</th>
                         </tr>
                         </thead>
                         <tbody id="resa">

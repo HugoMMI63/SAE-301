@@ -42,9 +42,10 @@ else {
         <header>
             <?php include("navbars/navbarAdmin.php"); ?>
         </header>
-        <main class="container py-5">
-            <h1 class="text-center text-primary fw-bold mb-2">NOS ANIMATEURS</h1>
-            <section class="row justify-content-center" id="liste_animateur">
+        <main>
+            <section class="container justify-content-center my-5" id="liste_animateur">
+                <h1 class="colorB text-center">Nos animateurs</h1>
+                <img src="img/barre_separation.png" alt="Barre de séparation" class="img-fluid my-4" style="max-width: 150px;">
                 <a href="formulaire_ajouter_animateur.php" class="ajouter">Ajouter un animateur</a>
                 <!-- Boucle pour afficher tous les animateurs -->
 
@@ -69,7 +70,7 @@ else {
                     <div class="flex-grow-1">
                     <h3 class="fw-bold text-danger mb-1"><?php echo $animateur->prenom." ".$animateur->nom; ?></h3>
                     <p class="text-muted mb-2"><?php echo $animateur->age." ans"; ?></p>
-                    <p class="mb-0"><?php echo $animateur->telephone; ?></p>
+                    <p class="mb-2"><?php echo $animateur->telephone; ?></p>
                     <p><?php echo $animateur->description; ?></p>
                 </div>
                </div>
@@ -79,4 +80,3 @@ else {
         </main>
     </body>
 </html>
-

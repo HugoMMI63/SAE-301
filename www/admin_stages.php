@@ -39,14 +39,13 @@ else {
         <?php include("ressources/ressourcesCommunes.php"); ?>
     </head>
     <body>
-<!--Navbar-->
         <header>
             <?php include("navbars/navbarAdmin.php"); ?>
         </header>
-<!--Les stages-->
         <main>
-        <h1 class="font colorB text-center">VOS STAGES</h1>
-            <section id="liste_stage" class="container">
+            <section id="liste_stage" class="container text-center my-5">
+                <h1 class="colorB">Vos stages</h1>
+                <img src="img/barre_separation.png" alt="Barre de séparation" class="img-fluid my-4" style="max-width: 150px;">
                 <div class="row justify-content-between">
                     <a href="formulaire_ajouter_stage.php" class="col-12 col-lg-5 d-flex align-items-center justify-content-center border border-2 border-black rounded-4 m-4 mb-5 mt-5 text-center p-4">
                         <i class="iconPlus bi bi-plus-circle"></i>
@@ -74,14 +73,14 @@ else {
                     <div class="col-12 col-lg-5 border border-2 border-black rounded-4 m-4 mb-5 mt-5 text-center p-4">
                         <!-- Récupérer icon croix avec bootstrap -->
                         
-                        <div class="d-flex justify-content-end">
-                            <button class="suppr rounded-4 me-3 col-1" value=<?php echo $stage->id?>><i class="iconNoir bi bi-x-square"></i></button>
-                            <a href="formulaire_modifier_stage.php?id=<?php echo $stage->id ?>"><button class="modif col-1 rounded-4" value=<?php echo $stage->id?>><i class="iconNoir bi bi-pencil-square"></i></a>
+                        <div class="d-flex justify-content-end gap-1">
+                            <button class="suppr col-1" value=<?php echo $stage->id?>><i class="iconNoir bi bi-x-circle"></i></button>
+                            <a href="formulaire_modifier_stage.php?id=<?php echo $stage->id ?>"><button class="modif col-1" value=<?php echo $stage->id?>><i class="iconNoir bi bi-pencil"></i></a>
                         </div>
                         <h3 class="colorR my-3"><?php echo $stage->titre; ?></h3>
                         <img class="w-100 rounded-4" src="<?php echo $stage->miniature; ?>" alt="Image du stage" style="width: 300px; height: auto;">
                         <div class="d-flex justify-content-between my-3">
-                            <strong>Date : <?php echo $stage->date; ?></strong>
+                            <strong><?php echo $stage->date; ?></strong>
                             <?php
                                 // Récupérer le nombre de participants pour ce stage
                                 $requete = 'SELECT COUNT(*) FROM reservation WHERE id_stage = ' . $stage->id;
@@ -99,7 +98,7 @@ else {
                         <p><?php echo $stage->description; ?></p>
                         <a class="nude" href="admin_details_stage.php?id=<?php echo $stage->id; ?>">
                             <div class="mb-3 ms-3 me-3 mt-auto rounded-pill d-flex align-items-center justify-content-center fondJaune pe-2 ps-2 pt-3 pb-3">
-                                <h6 class="mb-0 ms-3">DETAILS DU STAGE</h6>
+                                <h6 class="mb-0 ms-3">Détails du stage</h6>
                                 <i class="iconNoir bi bi-chevron-right"></i>
                             </div>
                         </a>

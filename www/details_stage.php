@@ -82,14 +82,14 @@ $stagesAleatoires = $data['randStage'];
                 <img id="miniatureStage" src="<?php echo $stage[0]['miniature']; ?>" alt="Image du stage" class="col-6 mx-auto my-4">
                 <p id="descriptionStage" class="col-6 text-center mx-auto my-4"><strong>Description :</strong> <?php echo $stage[0]['description']; ?></p>
                 <div class="text-center">
-                    <a href="" class="btn btn-yellow px-4 py-2">S'INSCRIRE AU STAGE ></a>
+                    <a href="" class="btn btn-yellow px-4 py-2">S'inscrire au stage></a>
                 </div>
             </section>
 
             <!-- Les animateurs -->
 
             <section>
-                <h2 class="text-center mb-4 colorB">LES ANIMATEURS</h2>
+                <h2 class="text-center mb-4 colorB">Les animateurs</h2>
                 <div id="animateurs" class="row gap-3 justify-content-center">
                     <?php
                     $nbAnimateur=count($stage);
@@ -106,7 +106,7 @@ $stagesAleatoires = $data['randStage'];
             <!-- Affichage de 3 stages aléatoires -->
 
             <section class="mt-5">
-                <h2 class="text-center mb-4 colorB">D'AUTRES STAGES</h2>
+                <h2 class="text-center mb-4 colorB">D'autres stages</h2>
                 <div id="autresStages" class="row justify-content-center gap-4">
                     <?php
                     for ($i=0;$i<count($stagesAleatoires);$i++) {

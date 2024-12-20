@@ -87,6 +87,8 @@ nav{display: flex;padding: 1rem;}
 }
 
 .btn-warning {
+    font-family: "Miso", sans-serif;
+    font-size: 18px;
     background-color: #FFE41B;
     border: none;
     border-radius: 30px;
@@ -130,8 +132,7 @@ p {
 
 .carousel-caption p {
     color: #ffffff;
-    font-size: 1.2rem;
-    text-align: justify;
+    font-size: 1rem;
 }
 
 #carouselExampleIndicators {
@@ -206,29 +207,17 @@ p {
     color: #6c757d; /* Gris Bootstrap */
 }
 
-.suppr {
+.suppr, .modif {
+    width: 50px;
+    height: 50px;
     background-color: #FFE41B;
     border: none;
-    border-radius: 30px;
+    border-radius: 50%;
     color: #000;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.suppr:hover {
-    background-color: #CEB70B;
-    transform: translateY(-3px);
-    color: #000;
-}
-
-.modif {
-    background-color: #FFE41B;
-    border: none;
-    border-radius: 30px;
-    color: #000;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.modif:hover {
+.suppr:hover, .modif:hover {
     background-color: #CEB70B;
     transform: translateY(-3px);
     color: #000;

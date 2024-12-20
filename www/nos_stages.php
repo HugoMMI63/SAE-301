@@ -92,12 +92,7 @@ else {
                         </div>
                         <p><?php echo $stage->description; ?></p>
                         <?php if ($places_restantes > 0) {
-                            echo "<a class='nude' href='details_stage.php?id=".$stage->id."'>";
-                            echo "<div class='mb-3 ms-3 me-3 mt-auto rounded-pill d-flex align-items-center justify-content-center fondJaune pe-2 ps-2 pt-3 pb-3'>";
-                            echo "<h6 class='mb-0 ms-3'>DECOUVRIR LE STAGE</h6>";
-                            echo "<img width='25' height='25' src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAACXBIWXMAAAsTAAALEwEAmpwYAAABvUlEQVR4nO3du0okURRG4d/LmwijmbA3UvPMJgYihvoywiReMFAbgxahTUSxReyzhlofVL7pRZ2qZFcnkiRJP7Dlr8dwmOQ8yWOSRZLTJAejh5pzjPsky3fXbZJp9HBzdP5BjLfrziibtb06pj4LYpQBHr4IsvRO2ayTNYIsjbI5e6sHuFFAKsn1N6L8HT3wHBgFyChARgEyCpBRgIwCVL4S85RReMooPGUUnjIKTxmFp4zCU0bhKaPwlFF4yig8ZRSeMgpPGYWnjMJTRuEpo/CUUXjKKDxlFJ4yCk8ZhaeMwlNG4Smj8JRReMooPNNqQ2udTa7XNbw/oweeg+kbUY5HDzsXtebx9W/0oHPRSW7WCHI1etA5mDyyOCYf6v/fMbX0qxK/zxgg7Z3B0cbgaGNwtDE42hgcbQyONgZHG4OjjcHRxuBoY3C0MTjaGBxtDI42Bkcbg6ONwdHG4GhjcLQxONoYHG0MjjYGRxuDo43BYQwQY4AYA8QYIMYAMQaIMUD2/etVljPXyDh2kizc6ePYTfLsgiXLpduuLEdJHj/5uMvr3rgGRblYHV9PSU790g7nIb89eghJkqT8lhfcmbLovD1dtwAAAABJRU5ErkJggg==' alt='forward--v1'>";
-                            echo "</div>";
-                            echo "</a>";
+                            echo "<a href='details_stage.php?id=".$stage->id."''><button class='btn-warning fw-bold px-4 py-2 mb-4 text-uppercase'>Découvrir nos stages ></button></a>";
                             } else { 
                             echo "<p>Ce stage est complet.</p>";
                         }?>
