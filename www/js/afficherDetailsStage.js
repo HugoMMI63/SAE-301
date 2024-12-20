@@ -70,14 +70,14 @@ function afficherInfoStage(){
 
                 response.randStage.forEach(function(randStage, index) {
                     let nouveauStages = `
-                        <div class='col-md-4'>
+                        <div class='col-xl-3 col-10'>
                         <div class='card shadow-sm h-100'>
                         <img src="${randStage.miniature}" alt='Image du stage' class='card-img-top' style='height: 200px; object-fit: cover;'>
                         <div class='card-body d-flex flex-column'>
                         <h5 class='card-title'>${randStage.titre}</h5>
                         <p class='text-muted'><small>${randStage.date}</small></p>
                         <p class='card-text flex-grow-1'>${randStage.description}</p>
-                        <button class='btn btn-yellow w-100 mt-auto plusInfo' value="${randStage.id}">PLUS D'INFO</button>
+                        <button class='btn btn-warning w-100 mt-auto plusInfo' value="${randStage.id}">Découvrir ce stage ></button>
                         </div>
                         </div>
                         </div>
