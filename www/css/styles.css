@@ -45,7 +45,7 @@ body {
 /*CSS custom pour menu Burger*/
 li{list-style: none;}
 nav{display: flex;padding: 1rem;}
-.horsChamps{background-color: white; height: 100vh; width: 100%; max-width: 250px; position: fixed; top: 0; right: -450px; display: flex; flex-direction: column; justify-content: center; text-align: center; font-size: 3rem; transition: .3s ease;padding-right: 5%;}
+.horsChamps{background-color: white; height: 100vh; width: 100%; max-width: 250px; position: fixed; top: 0; right: -450px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; font-size: 3rem; transition: .3s ease;}
 .horsChamps.active{right: 0;}
 .menuBurger{height: 50px; width: 50px; position: relative;z-index: 2;}
 .menuBurger span{height: 5px; width: 100%;background-color: black;border-radius: 25px; position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);transition: .3s ease;}
