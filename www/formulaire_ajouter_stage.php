@@ -20,12 +20,12 @@ $resultats->closeCursor();    // On ferme l'exécution de la requête une fois q
         <header>
             <?php include("navbars/navbarAdmin.php"); ?>
         </header>
-        <main class="mt-5">
+        <main class="container my-5">
             <div class="text-center">
                 <a href="admin_stages.php"><i class="colorR bi bi-arrow-left-circle" style="font-size: 30px;"></i></a>
                 <h1 class=" colorB mt-4">Ajouter un stage</h1>
             </div>
-            <img class="mx-auto d-block my-4" src="img/barre_separation.png" alt="barre de séparation">
+            <img class="mx-auto d-block my-4" src="img/barre_separation.png" alt="barre de séparation" style="max-width: 150px;>
 
             <form class="mx-auto my-5 " method="POST" action="executable/ajouterStage.php" style="width: 40%;">
                 <div>
