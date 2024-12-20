@@ -33,7 +33,7 @@ $resultats->closeCursor();    // On ferme l'exécution de la requête une fois q
                             <i class="colorR fs-5 me-3 bi bi-tag"></i>
                             <label for="nom">Nom :</label>
                         </div>
-                        <input class="rounded-4" id="nom" name="nom" type="text" required="required">
+                        <input class="rounded" id="nom" name="nom" type="text" required="required">
                     </div>
                     <br>
                     <div class="d-flex flex-column col-5">
@@ -41,7 +41,7 @@ $resultats->closeCursor();    // On ferme l'exécution de la requête une fois q
                             <i class="colorR fs-5 me-3 bi bi-threads"></i>
                             <label for="prenom">Prénom :</label>
                         </div>
-                        <input class="rounded-4" id="prenom" name="prenom" type="text" required="required">
+                        <input class="rounded" id="prenom" name="prenom" type="text" required="required">
                     </div>
                     <br>
                     <div class="d-flex flex-column col-5">
@@ -49,7 +49,7 @@ $resultats->closeCursor();    // On ferme l'exécution de la requête une fois q
                             <i class="colorR fs-5 me-3 bi bi-calendar-event"></i>
                             <label for="age">Âge :</label>
                         </div>
-                        <input class="rounded-4" id="age" name="age" type="number" required="required">
+                        <input class="rounded" id="age" name="age" type="number" required="required">
                     </div>
                     <br>
                     <div class="d-flex flex-column col-5">
@@ -57,7 +57,7 @@ $resultats->closeCursor();    // On ferme l'exécution de la requête une fois q
                             <i class="colorR fs-5 me-3 bi bi-telephone"></i>
                             <label for="telephone">Téléphone :</label>
                         </div>
-                        <input class="rounded-4" id="telephone" name="telephone" type="text" required="required">
+                        <input class="rounded" id="telephone" name="telephone" type="text" required="required">
                     </div>
                     <br>
                     <div class="d-flex flex-column col-5">
@@ -65,7 +65,7 @@ $resultats->closeCursor();    // On ferme l'exécution de la requête une fois q
                             <i class="colorR fs-5 me-3 bi bi-card-text"></i>
                             <label for="description">Description :</label>
                         </div>
-                        <textarea class="rounded-4" id="description" name="description" required="required"></textarea>
+                        <textarea class="rounded" id="description" name="description" required="required"></textarea>
                     </div>
                     <br>
                     <div class="d-flex flex-column col-5">
@@ -73,7 +73,7 @@ $resultats->closeCursor();    // On ferme l'exécution de la requête une fois q
                             <i class="colorR fs-5 me-3 bi bi-person-bounding-box"></i>
                             <label for="photo">Photo :</label>
                         </div>
-                        <input class="rounded-4" id="photo" name="photo" type="url" required="required">
+                        <input class="rounded" id="photo" name="photo" type="url" required="required">
                     </div>
                     <br>
                     <div class="d-flex flex-column col-5 align-items-center">
