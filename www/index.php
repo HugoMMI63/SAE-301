@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Ka'fête ô mômes - Stages</title>
+        <title>Ka'fête ô mômes - Accueil</title>
         <meta name="description" content="La Ka'fête ô mômes propose des stages de vacances scolaires pour vos enfants ! Située à Lyon, notre équipe s'engage à apporter de la joie et de la bonne humeur à chaque instant !">
         <meta name="keywords" content="Ka'fête ô mômes, association, stages, vacances scolaires, vacances, enfants, parents, familles, Lyon, équipe, animateurs">
         <?php include("ressources/ressourcesCommunes.php"); ?>
@@ -101,7 +101,7 @@
             <section class="container my-5">
                 <div class="row align-items-center flex-row-reverse">
                     <div class="col-lg-6 col-12 text-center">
-                        <img src=https://www.zupimages.net/up/24/51/4l41.png alt="Image montrant des enfants qui s'amusent" class="img-fluid rounded-4 img-custom">
+                        <img src="https://www.zupimages.net/up/24/51/zsi6.png" alt="Image montrant des enfants qui s'amusent" class="img-fluid rounded-4 img-custom">
                     </div>
                     <div class="col-lg-6 col-12 text-start">
                         <h2 class="colorB mb-4">Les stages des vacances scolaires</h2>                
@@ -117,7 +117,7 @@
             <section class="container my-5">
                 <div class="row align-items-center">
                     <div class="col-lg-6 col-12 text-center">
-                        <img src=https://www.zupimages.net/up/24/51/zsi6.png alt="Image montrant notre équipe" class="img-fluid rounded-4 img-custom">
+                        <img src="img/notre_equipe.png" alt="Image montrant notre équipe" class="img-fluid rounded-4 img-custom">
                     </div>
                     <div class="col-lg-6 col-12 text-start">
                         <h2 class="colorB mb-4">L'équipe de la Ka'fête</h2>                
