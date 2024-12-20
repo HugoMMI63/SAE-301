@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : ven. 20 déc. 2024 à 00:01
+-- Généré le : ven. 20 déc. 2024 à 12:03
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.2.12
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `administrateur` (
   `login` varchar(30) NOT NULL,
-  `mdp` varchar(30) NOT NULL
+  `mdp` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
@@ -37,7 +37,7 @@ CREATE TABLE `administrateur` (
 --
 
 INSERT INTO `administrateur` (`login`, `mdp`) VALUES
-('admin', 'admin');
+('admin', 'd033e22ae348aeb5660fc2140aec35850c4da997');
 
 -- --------------------------------------------------------
 
